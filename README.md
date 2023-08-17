@@ -2,7 +2,7 @@
 
 `Tecnologia em Análise e Desenvolvimento de Sistemas`
 
-`Projeto: Desenvolvimento de um Sistema Sociotécnico Inovador`
+`Projeto: Desenvolvimento de um Sistema Sociotécnico Inovador.`
 
 `Eixo 5`
 
