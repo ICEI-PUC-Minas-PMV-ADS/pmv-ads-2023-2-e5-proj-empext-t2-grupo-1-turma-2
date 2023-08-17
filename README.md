@@ -14,7 +14,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 - Michelle Leal Rodrigues
 - Pedro Daniel Jardim
 - Renata Diniz Guimarães de Oliveira
-- Vania Maria Tiburzio Rezende
+- Vania Maria Tiburzio Rezende Reis
 - Victor Bruno Kulessa
 
 ## Orientador
