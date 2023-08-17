@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# Ana Diniz Doceria
 
-`CURSO`
+`Tecnologia em Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de um Sistema Sociotécnico Inovador`
 
-`SEMESTRE`
+`Eixo 5`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+- Cristiano Garcia Ridolfi
+- Michelle Leal Rodrigues
+- Pedro Daniel Jardim
+- Renata Diniz Guimarães de Oliveira
+- Vania Maria Tiburzio Rezende
+- Victor Bruno Kulessa
 
 ## Orientador
 
-* Nome completo do professor 1
+* Soraia Lúcia da Silva
 
 ## Instruções de utilização
 
