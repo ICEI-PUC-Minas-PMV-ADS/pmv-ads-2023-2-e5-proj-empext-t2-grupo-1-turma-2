@@ -1,12 +1,12 @@
 # Introdução
 
-Para alcançar a era contemporânea, a humanidade passou por grandes revoluções em seus modos de organização social. Nas revoluções Cognitiva, Agrícola e Científica, foi aprendido e desenvolvido métodos que facilitaram a comunicação, a sobrevivência e as relações entre indivíduos e sociedades. Atualmente, a humanidade vive a era científica, iniciada a cerca de 500 anos atrás e que resultou em uma transformação completa dos modos de vida anteriores baseados na agricultura de subsistência (HARARI, 2014).
+Para alcançar a era contemporânea, a humanidade passou por grandes revoluções em seus modos de organização social. Nas revoluções Cognitiva, Agrícola e Científica, foi aprendido e desenvolvido métodos que facilitaram a comunicação, a sobrevivência e as relações entre indivíduos e sociedades. Atualmente, a humanidade vive a era científica, iniciada a cerca de 500 anos atrás e que resultou em uma transformação completa dos modos de vida anteriores baseados na agricultura de subsistência (Harari, 2014).
 
-Uma das grandes revoluções ocorridas na era científica foi a industrial, que modificou os modos de produção, consumo e trabalho, além de estimular a produção de novas tecnologias. Após esse período, as principais estruturas do mundo foram baseadas no trabalho industrial (CAVALCANTE; SILVA, 2011).
+Uma das grandes revoluções ocorridas na era científica foi a industrial, que modificou os modos de produção, consumo e trabalho, além de estimular a produção de novas tecnologias. Após esse período, as principais estruturas do mundo foram baseadas no trabalho industrial (Cavalcante; Silva, 2011).
 
-Seguindo o exemplo da revolução industrial, as guerras também foram marcos importantes na era científica, servindo como propulsores no desenvolvimento de novas tecnologias. No período entre o fim da Segunda Guerra Mundial (1945) até o início dos anos 1990, as inovações que impactaram o mundo, ocorreram de forma espaçada e com um grau de previsibilidade. Os modelos de trabalho do período eram baseados na predominância de corporações industriais com alcance mundial, monopólio de grandes marcas, empresas com ciclos de vida longos, cultura de planejamento de médio e longo prazo e concepção de clientes como receptores de bens e serviços (RAMOS, 2018).
+Seguindo o exemplo da revolução industrial, as guerras também foram marcos importantes na era científica, servindo como propulsores no desenvolvimento de novas tecnologias. No período entre o fim da Segunda Guerra Mundial (1945) até o início dos anos 1990, as inovações que impactaram o mundo, ocorreram de forma espaçada e com um grau de previsibilidade. Os modelos de trabalho do período eram baseados na predominância de corporações industriais com alcance mundial, monopólio de grandes marcas, empresas com ciclos de vida longos, cultura de planejamento de médio e longo prazo e concepção de clientes como receptores de bens e serviços (Ramos, 2018).
 
-Contudo, a partir dos anos 1990, teve início a era digital que provocou grandes mudanças, como a ampliação do consumo de computadores individuais, a expansão da telefonia celular, novas formas de adquirir, vender, trocar mercadorias e contratar serviços, e comunicação praticamente sem limites ou barreiras. Com isso, as formas de pensar, comunicar, trabalhar, divertir e se relacionar, foram permanentemente alteradas (RAMOS, 2018).
+Contudo, a partir dos anos 1990, teve início a era digital que provocou grandes mudanças, como a ampliação do consumo de computadores individuais, a expansão da telefonia celular, novas formas de adquirir, vender, trocar mercadorias e contratar serviços, e comunicação praticamente sem limites ou barreiras. Com isso, as formas de pensar, comunicar, trabalhar, divertir e se relacionar, foram permanentemente alteradas (Ramos, 2018).
 
 Com a facilidade na comunicação, o alcance das empresas, mercados e clientes tiveram um aumento significativo, os consumidores passaram a ter papel de protagonistas, onde todo o negócio é pensado para agradá-los, e o ritmo das inovações e mudanças constantes alterou a configuração das empresas, do mercado de trabalho e da oferta de serviços. Para se adaptar a esse novo cenário, definido como a transição da economia industrial para a economia digital, é preciso mudar também as formas de trabalho para se incluir nas facilidades que a tecnologia proporciona. A economia digital é um caminho sem retorno e tende a se intensificar ainda mais nos próximos anos. Como aconteceu nas revoluções anteriores, pessoas que atravessam momentos de mudanças intensas de ciclos econômicos provocados pela aceleração de novas tecnologias, são colocadas entre a destruição de estruturas econômicas estabelecidas e o surgimento de novas oportunidades.
 
@@ -59,3 +59,17 @@ Relacionar a situação-problema da organização com o impacto social esperado 
 ## Descrição do Parceiro
 
 Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
+
+# Referências
+
+ALVARENGA, Darlan. Com pandemia, comércio eletrônico tem salto em 2020 e dobra a participação no varejo brasileiro. G1, 22 fev. 2021. **Economia**. Disponível em: https://g1.globo.com/economia/noticia/2021/02/26/com-pandemia-comercio-eletronico-tem-salto-em-2020-e-dobra-participacao-no-varejo-brasileiro.ghtml. Acesso em: 01 set. 2021.  
+
+CAVALCANTE, Zedequiasa Vieira; SILVA, Mauro Luis Siqueira da. A importância da revolução industrial no mundo da tecnologia. In: ENCONTRO INTERNACIONAL DE PRODUÇÃO CIENTÍFICA CESUMAR, 7., 2011, Maringá. **Anais eletrônico**. Maringá: CESUMAR, 2011. Disponível em: http://rdu.unicesumar.edu.br/handle/123456789/6395. Acesso em: 25 ago. 2021. 
+
+HARARI, Yuval Noah. **Sapiens**: uma breve história da humanidade.  4.ed. Rio Grande do Sul: L&PM, 2014. 452 p. 
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Pesquisa mostra que 82,7% dos domicílios brasileiros têm acesso à internet**. 2021. Disponível em: https://www.gov.br/mcom/pt-br/noticias/2021/a bril/pesquisa-mostra-que-82-7-dos-domicilios-brasileiros-tem-acesso-a-internet#:~:text=Em%202019%2C%20en tre%20as%20183,estudantes%20(75%2C8%25).. Acesso em: 25 ago. 2021. 
+
+MOLZ, Rolf Fredi. Prefácio. In: LEDUR, Cleverson Lopes; SARAIVA, Maurício de Oliveira; FREITAS, Pedro Henrique Chagas. **Programação back end II**. Porto Algre: Sagah, 2019.
+
+RAMOS, Roberto. **A era digital e a economia do século XXI**. 2018. Disponível em: https://www.brasildefatope.com.br/2018/09/19/artigo-or-a-era-digital-e-a-economia-do-seculo-xxi. Acesso em: 25 ago. 2021.
