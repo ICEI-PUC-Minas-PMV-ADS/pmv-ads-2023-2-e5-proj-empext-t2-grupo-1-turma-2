@@ -15,7 +15,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 - Pedro Daniel Jardim
 - Renata Diniz Guimarães de Oliveira
 - Vania Maria Tiburzio Rezende Reis
-- Victor Bruno Kulessa
+- Victor Bruno Kulessa 
 
 ## Orientador
 
