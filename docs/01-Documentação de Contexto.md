@@ -58,7 +58,7 @@ Em 1987, o Encontro de Pró-Reitores de Extensão das Universidades Públicas Br
 
 Com isso, a extensão universitária coloca em prática o conhecimento adquirido na universidade, proporcionando uma troca de saberes e produção de conhecimento mútuo
 
-A universidade tem como pilares o ensino, a pesquisa e a extensão. A extensão universitária, proporciona que os graduandos participem de projetos diretamente com a sociedade promovendo uma melhoria da qualidade de vida e um maior grau de conscientização dos sujeitos de um segmento da sociedade, no nosso caso, o microempreendedor, proporcionando o diálogo entre a comunidade interna e externa da universidade.  O Microempreendedor Individual passa por desafios diariamente, eles possuem um papel importante na economia e na sociedade e, através deles podemos desenvolver um sistema sociotécnico, agregando o conhecimento técnico universitário à demanda de um microempreendedor, impactando diretamente, em sua visibilidade, vendas e rentabilidade.
+A universidade tem como pilares o ensino, a pesquisa e a extensão. A extensão universitária, proporciona que os graduandos participem de projetos diretamente com a sociedade promovendo uma melhoria da qualidade de vida e um maior grau de conscientização dos sujeitos de um segmento da sociedade, no nosso caso, o microempreendedor, proporcionando o diálogo entre a comunidade interna e externa da universidade.  O Microempreendedor Individual passa por desafios diariamente, eles possuem um papel importante na economia e na sociedade e, através deles podemos desenvolver um sistema sociotécnico, agregando o conhecimento técnico universitário à demanda de um microempreendedor, impactando diretamente, em sua visibilidade, vendas, melhorias nas condições de trabalho e aumento do faturamento.
 
 ## Descrição do Parceiro
 
@@ -70,13 +70,13 @@ ALVARENGA, Darlan. Com pandemia, comércio eletrônico tem salto em 2020 e dobra
 
 BARROS, Ev'Ângela Batista Rodrigues de (org.).** Extensão PUC Minas**: encontros e diálogos. Belo Horizonte, MG: PUC Minas, 2018. *E-book*. ISBN 978-85-8239-074-0. Disponível em: http://bib.pucminas.br:8080/pergamumweb/vinculos/000046/00004698.pdf. Acesso em: 18 ago. 2023.
 
-BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil de 1988. Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 21 ago. 2023.
+BRASIL. [Constituição (1988)]. **Constituição da República Federativa do Brasil de 1988**. Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 21 ago. 2023.
 
-BRASIL. Lei de diretrizes e bases da educação nacional (1996). Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9394.htm. Acesso em: 21 ago. 2023.
+BRASIL. **Lei de diretrizes e bases da educação nacional (1996)**. Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9394.htm. Acesso em: 21 ago. 2023.
 
 CAVALCANTE, Zedequiasa Vieira; SILVA, Mauro Luis Siqueira da. A importância da revolução industrial no mundo da tecnologia. In: ENCONTRO INTERNACIONAL DE PRODUÇÃO CIENTÍFICA CESUMAR, 7., 2011, Maringá. **Anais eletrônico**. Maringá: CESUMAR, 2011. Disponível em: http://rdu.unicesumar.edu.br/handle/123456789/6395. Acesso em: 18 ago. 2023. 
 
-ENCONTRO DE PRÓ-REITORES DE EXTENSÃO DAS UNIVERSIDADES PÚBLICAS BRASILEIRAS, 1., 1987, Brasília. Conceito de extensão, institucionalização e financiamento. Brasília: UNB, 1987. Disponível em: https://www.ufmg.br/proex/renex/images/documentos/1987-I-Encontro-Nacional-do-FORPROEX.pdf. Acesso em: 21 ago. 2023.
+ENCONTRO DE PRÓ-REITORES DE EXTENSÃO DAS UNIVERSIDADES PÚBLICAS BRASILEIRAS, 1., 1987, Brasília. **Conceito de extensão, institucionalização e financiamento**. Brasília: UNB, 1987. Disponível em: https://www.ufmg.br/proex/renex/images/documentos/1987-I-Encontro-Nacional-do-FORPROEX.pdf. Acesso em: 21 ago. 2023.
 
 HARARI, Yuval Noah. **Sapiens**: uma breve história da humanidade.  4.ed. Rio Grande do Sul: L&PM, 2014. 452 p. 
 
