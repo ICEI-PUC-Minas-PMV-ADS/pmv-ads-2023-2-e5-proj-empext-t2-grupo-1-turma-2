@@ -68,7 +68,7 @@ Apresente uma descrição resumida sobre a organização onde o projeto será de
 
 ALVARENGA, Darlan. Com pandemia, comércio eletrônico tem salto em 2020 e dobra a participação no varejo brasileiro. G1, 22 fev. 2021. **Economia**. Disponível em: https://g1.globo.com/economia/noticia/2021/02/26/com-pandemia-comercio-eletronico-tem-salto-em-2020-e-dobra-participacao-no-varejo-brasileiro.ghtml. Acesso em: 18 ago. 2023.  
 
-BARROS, Ev'Ângela Batista Rodrigues de (org.).** Extensão PUC Minas**: encontros e diálogos. Belo Horizonte, MG: PUC Minas, 2018. *E-book*. ISBN 978-85-8239-074-0. Disponível em: http://bib.pucminas.br:8080/pergamumweb/vinculos/000046/00004698.pdf. Acesso em: 18 ago. 2023.
+BARROS, Ev'Ângela Batista Rodrigues de (org.).**Extensão PUC Minas**: encontros e diálogos. Belo Horizonte, MG: PUC Minas, 2018. *E-book*. ISBN 978-85-8239-074-0. Disponível em: http://bib.pucminas.br:8080/pergamumweb/vinculos/000046/00004698.pdf. Acesso em: 18 ago. 2023.
 
 BRASIL. [Constituição (1988)]. **Constituição da República Federativa do Brasil de 1988**. Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 21 ago. 2023.
 
