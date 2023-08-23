@@ -26,7 +26,7 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-O objetivo geral deste trabalho é a criação de um app que possibilite a exibição de portfólio, o contato direto entre a proprietária da loja de doces e o cliente final, e assim, facilite o processo da venda on-line, tornando-o mais confortável e seguro. Sendo esta uma característica que aumentará o raio de alcance para captação de novos clientes e a colocará em outro patamar em relação ao modelo de venda convencional, abrindo assim diversas outras oportunidades de mercado. 
+O objetivo geral deste trabalho é a criação de um app que possibilite a exibição de portfólio, o contato direto entre a proprietária da loja de doces e o cliente final, e assim, facilite o processo da venda on-line, tornando-o mais confortável e seguro. Sendo esta uma característica que aumentará o raio de alcance para captação de novos clientes e a colocará em outro patamar em relação ao modelo de venda convencional, abrindo assim diversas outras oportunidades de mercado. Ou seja, a criação de um serviço que inovará os serviços do estabelecimento.
  
 Como objetivos específicos, podemos ressaltar: 
  
@@ -40,11 +40,11 @@ Como objetivos específicos, podemos ressaltar:
 
 ## Justificativa
 
-O comércio eletrônico depois da pandemia Covid-19 passou a ser comum na vida das pessoas. O e-commerce brasileiro registrou um recorde em 2020, um crescimento de “68% comparando com 2019, elevando a participação do e-commerce no faturamento total do varejo” (ALVARENGA, 2021). 
+O comércio eletrônico depois da pandemia Covid-19 passou a ser comum na vida das pessoas. O e-commerce brasileiro registrou um recorde em 2020, um crescimento de “68% comparando com 2019, elevando a participação do e-commerce no faturamento total do varejo” (Alvarenga, 2021). 
  
-Com isso, necessidades de disponibilizar uma loja virtual que direciona o público agregando conforto e agilidade nas escolhas além de criar uma relação de proximidade e fidelidade com os clientes passam a ser primordial no e-commerce. 
+Com isso, necessidades de disponibilizar uma loja virtual que direciona o público agregando conforto e agilidade nas escolhas além de criar uma relação de proximidade e fidelidade com os clientes passam a ser primordial no e-commerce, inovando a relação proprietário-cliente.
 
-A aplicação mobile (app) é a interface de interação do usuário, ou seja, é o cartão de visita do e-commerce pois “é responsável por apresentar dados ao usuário, coletar dados deste – em várias formas – e processá-los” (MOLZ, 2019) garantindo que o usuário navegue de maneira tranquila, confiável, segura, intuitiva e agradável, elementos essenciais para captação e fidelização do cliente.
+A aplicação mobile (app) é a interface de interação do usuário, ou seja, é o cartão de visita do e-commerce pois “é responsável por apresentar dados ao usuário, coletar dados deste – em várias formas – e processá-los” (Molz, 2019) garantindo que o usuário navegue de maneira tranquila, confiável, segura, intuitiva e agradável, elementos essenciais para captação e fidelização do cliente.
 
 ## Público-Alvo
 
@@ -61,6 +61,19 @@ Com isso, a extensão universitária coloca em prática o conhecimento adquirido
 A universidade tem como pilares o ensino, a pesquisa e a extensão. A extensão universitária, proporciona que os graduandos participem de projetos diretamente com a sociedade promovendo uma melhoria da qualidade de vida e um maior grau de conscientização dos sujeitos de um segmento da sociedade, no nosso caso, o microempreendedor, proporcionando o diálogo entre a comunidade interna e externa da universidade.  O Microempreendedor Individual passa por desafios diariamente, eles possuem um papel importante na economia e na sociedade e, através deles podemos desenvolver um sistema sociotécnico, agregando o conhecimento técnico universitário à demanda de um microempreendedor, impactando diretamente, em sua visibilidade, vendas, melhorias nas condições de trabalho e aumento do faturamento.
 
 ## Descrição do Parceiro
+
+Quem somos      
+ 
+“A arte de viver momentos doces”
+
+A Ana Diniz Doceria surgiu no ano de 2016 com a Ana Diniz, que também é professora de inglês, fazendo brownies e doces para presentear seus alunos. Desde então, começou a receber encomendas e conquistou todos com suas experiências e gostosuras.
+ 
+Ana Diniz não tinha conhecimento de confeitaria mas tinha persistência, dedicação e vontade de aprender. Seguiu fazendo cursos e aperfeiçoando suas técnicas. Durante 4 anos utilizou a área gourmet do seu pai como sua cozinha.
+ 
+Desde então sua vida e de sua família estão engajadas nesse projeto e, em 2020, abriu sua loja física, alterou o nome de Ana Diniz Brownies para Ana Diniz Doceria e especializou-se em adoçar vidas através de momentos e experiências únicas.
+ 
+
+
 
 Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
 
