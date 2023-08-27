@@ -67,7 +67,9 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-![Diagrama de Caso de Uso](img/diagramadecasodeuso.png)
+O diagrama abaixo ilustra as principais ligações entre casos de uso e os atores relacionados aos requisitos funcionais levantados para o projeto.
+
+![Diagrama de Caso de Uso](img/diagramadecasodeuso2.png)
 
 ## Modelo ER (Projeto Conceitual)
 
