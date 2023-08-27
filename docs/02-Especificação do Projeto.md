@@ -12,10 +12,9 @@ o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a s
 
 ## Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
+Abaixo ilustração com o quadro Business Model Canvas apresentando os noves blocos e abordando como a emprese pretende atuar e gerar valor para seus clientes. Quadro desenvolvido no canvanizer.com
 
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
+![Business Model Canvas](img/businessmodelcanvas.png)
 
 ## Requisitos
 
