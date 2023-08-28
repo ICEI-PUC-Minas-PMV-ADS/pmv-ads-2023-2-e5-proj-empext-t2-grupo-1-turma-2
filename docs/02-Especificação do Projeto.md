@@ -24,15 +24,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
-
+| RF-001 | O sistema deverá permitir a criação de um perfil de usuário.  | ALTA | 
+| RF-002 | O sistema deverá permitir a alteração e a exclusão dos dados de usuários.   | ALTA | 
+| RF-003 | O sistema deverá permitir armazenar os produtos. | ALTA |
+| RF-004 | O sistema deverá permitir a edição e a exclusão dos produtos.    | MÉDIA |
+| RF-005 | O sistema deverá permitir a busca de produtos com a opção de filtrar sua pesquisa. | ALTA |
+| RF-006 | o sistema deverá permitir a opção de salvar a receita escolhida.  | BAIXA |
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| RNF-001 | A aplicação deve ser compatível com sistemas Android e iOS. | ALTA | 
+| RNF-002 | A aplicação deve ser compatível com os principais navegadores Web. | ALTA |
+| RNF-003 | O projeto deverá ser implementado com um banco de dados NoSQL. |  MÉDIA |
+| RNF-004 | O sistema deve processar requisições do usuário em no máximo 11 segundos. |  BAIXA |
+| RNF-005 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
