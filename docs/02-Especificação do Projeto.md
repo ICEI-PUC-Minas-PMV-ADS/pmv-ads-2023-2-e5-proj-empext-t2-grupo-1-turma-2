@@ -118,17 +118,6 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 |Alexandre (Atendente)  | Conseguir separar os pedidos com mais agilidade| Para diminuir o tempo gasto com logística entre o momento do pedido ao destino do produto|
 |Alexandre (Atendente)  | Ter ordenação de pedidos por prioridade, ordem de chegada, local de entrega| Para as prioridades de pedidos serem respeitados na hora de preparar/organizar pedidos|
 
-
-## Arquitetura e Tecnologias
-
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
-
-## Project Model Canvas
-
-Abaixo ilustração com o quadro Business Model Canvas apresentando os noves blocos e abordando como a emprese pretende atuar e gerar valor para seus clientes. Quadro desenvolvido no canvanizer.com
-
-![Business Model Canvas](img/businessmodelcanvas.png)
-
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
@@ -167,6 +156,17 @@ Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Cla
 Lembre-se que cada requisito deve corresponder à uma e somente uma
 característica alvo da sua solução. Além disso, certifique-se de que
 todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+
+## Arquitetura e Tecnologias
+
+o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+
+## Project Model Canvas
+
+Abaixo ilustração com o quadro Business Model Canvas apresentando os noves blocos e abordando como a emprese pretende atuar e gerar valor para seus clientes. Quadro desenvolvido no canvanizer.com
+
+![Business Model Canvas](img/businessmodelcanvas.png)
+
 
 ## Restrições
 
