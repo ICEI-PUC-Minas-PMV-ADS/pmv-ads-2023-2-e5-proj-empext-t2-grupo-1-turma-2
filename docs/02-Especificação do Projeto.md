@@ -128,19 +128,22 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 | RF-001 | O sistema deverá permitir a criação de um perfil de usuário.  | ALTA | 
 | RF-002 | O sistema deverá permitir a alteração e a exclusão dos dados de usuários.   | ALTA | 
-| RF-003 | O sistema deverá permitir armazenar os produtos. | ALTA |
+| RF-003 | O sistema deverá permitir que os pedidos sejam ordenados por ordem de chegada, local de entrega e prioridade. | ALTA |
 | RF-004 | O sistema deverá permitir a edição e a exclusão dos produtos.    | MÉDIA |
 | RF-005 | O sistema deverá permitir a busca de produtos com a opção de filtrar sua pesquisa. | ALTA |
-| RF-006 | o sistema deverá permitir a opção de salvar a receita escolhida.  | BAIXA |
+| RF-006 | O sistema deverá permitir a opção de salvar o produto escolhido.  | BAIXA |
+| RF-007 | O sistema deverá permitir a chegada de uma notificação a cada pedido efetuado.  | ALTA |
+| RF-008 | O sistema deverá permitir a visualização da disponibilidade do produto.  | MÉDIA |
+
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 | RNF-001 | A aplicação deve ser compatível com sistemas Android e iOS. | ALTA | 
 | RNF-002 | A aplicação deve ser compatível com os principais navegadores Web. | ALTA |
-| RNF-003 | O projeto deverá ser implementado com um banco de dados NoSQL. |  MÉDIA |
-| RNF-004 | O sistema deve processar requisições do usuário em no máximo 11 segundos. |  BAIXA |
-| RNF-005 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA |
+| RNF-003 | O sistema deve processar requisições do usuário em no máximo 11 segundos. |  BAIXA |
+| RNF-004 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA |
+| RNF-005 | O sistema deve permitir salvar as informações dos clientes respeitando a LGPD.  | MÉDIA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
@@ -157,6 +160,22 @@ Lembre-se que cada requisito deve corresponder à uma e somente uma
 característica alvo da sua solução. Além disso, certifique-se de que
 todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
+## Restrições
+
+O projeto está restrito pelos itens apresentados na tabela a seguir.
+
+|ID| Restrição                                             |
+|--|-------------------------------------------------------|
+|01| O projeto deverá ser entregue até o final do semestre letivo, não podendo extrapolar a data de 17/12/2023 |
+|02| O projeto poderá ser construido com base nas tecnologias desenvolvidas durante os semestres anteriores.   |
+|03| A equipe não pode subcontratar o desenvolvimento do projeto. |
+
+Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
+
+> **Links Úteis**:
+> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
+> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+
 ## Arquitetura e Tecnologias
 
 o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
@@ -167,21 +186,6 @@ Abaixo ilustração com o quadro Business Model Canvas apresentando os noves blo
 
 ![Business Model Canvas](img/businessmodelcanvas.png)
 
-
-## Restrições
-
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
