@@ -11,7 +11,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 | RF-001 | A aplicação deverá permitir a criação de um perfil de usuário.  | ALTA | 
-| RF-002 | A aplicação deverá permitir que o administrador gerencie o realatório de compras. | ALTA |
+| RF-002 | A aplicação deverá permitir que o administrador gerencie o relatório de compras. | ALTA |
 | RF-003 | A aplicação deverá permitir a alteração e a exclusão dos dados de usuários.   | ALTA | 
 | RF-004 | A aplicação deverá permitir que os pedidos sejam ordenados por ordem de chegada, local de entrega e prioridade. | ALTA |
 | RF-005 | A aplicação deverá permitir a edição e a exclusão dos produtos.    | MÉDIA |
