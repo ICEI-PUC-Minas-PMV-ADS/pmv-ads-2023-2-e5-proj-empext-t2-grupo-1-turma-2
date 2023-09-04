@@ -11,14 +11,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 | RF-001 | A aplicação deverá permitir a criação de um perfil de usuário.  | ALTA | 
-| RF-002 | A aplicação deverá permitir a alteração e a exclusão dos dados de usuários.   | ALTA | 
-| RF-003 | A aplicação deverá permitir que os pedidos sejam ordenados por ordem de chegada, local de entrega e prioridade. | ALTA |
-| RF-004 | A aplicação deverá permitir a edição e a exclusão dos produtos.    | MÉDIA |
-| RF-005 | A aplicação deverá permitir a busca de produtos com a opção de filtrar sua pesquisa. | ALTA |
-| RF-006 | A aplicação deverá permitir a opção de salvar o produto escolhido.  | BAIXA |
-| RF-007 | A aplicação deverá permitir a chegada de uma notificação a cada pedido efetuado.  | ALTA |
-| RF-008 | A aplicação deverá permitir a visualização da disponibilidade do produto.  | MÉDIA |
-| RF-009 | A aplicação deverá permitir que os usuários possam fazer pedidos. | ALTA |
+| RF-002 | A aplicação deverá permitir que o administrador gerencie o realatório de compras. | ALTA |
+| RF-003 | A aplicação deverá permitir a alteração e a exclusão dos dados de usuários.   | ALTA | 
+| RF-004 | A aplicação deverá permitir que os pedidos sejam ordenados por ordem de chegada, local de entrega e prioridade. | ALTA |
+| RF-005 | A aplicação deverá permitir a edição e a exclusão dos produtos.    | MÉDIA |
+| RF-006 | A aplicação deverá permitir a busca de produtos com a opção de filtrar sua pesquisa. | ALTA |
+| RF-007 | A aplicação deverá permitir a opção de salvar o produto escolhido.  | BAIXA |
+| RF-008 | A aplicação deverá permitir a chegada de uma notificação a cada pedido efetuado.  | ALTA |
+| RF-009 | A aplicação deverá permitir a visualização da disponibilidade do produto.  | MÉDIA |
+| RF-010 | A aplicação deverá permitir que os usuários possam fazer pedidos. | ALTA |
+
 
 ### Requisitos não Funcionais
 
