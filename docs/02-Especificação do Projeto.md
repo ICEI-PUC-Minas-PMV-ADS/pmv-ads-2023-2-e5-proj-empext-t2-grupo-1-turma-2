@@ -18,8 +18,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RF-006 | A aplicação deverá permitir a busca de produtos com a opção de filtrar sua pesquisa. | ALTA |
 | RF-007 | A aplicação deverá permitir a opção de salvar o produto escolhido.  | BAIXA |
 | RF-008 | A aplicação deverá permitir a chegada de uma notificação a cada pedido efetuado.  | ALTA |
-| RF-009 | A aplicação deverá permitir a visualização da disponibilidade do produto.  | MÉDIA |
+| RF-009 | A aplicação deverá permitir a visualização da quantidade e produtos em estoque.  | MÉDIA |
 | RF-010 | A aplicação deverá permitir que os usuários possam fazer pedidos. | ALTA |
+| RF-011 | A aplicação deverá possibilitar aos usuários varias formas de pagamento ( Cartão, Dinheiro, Pix ).  | ALTA |
+| RF-012 | A aplicação deverá informar aos usuários os valores das taxas de entrega de acordo com sua localidade. | ALTA |
+| RF-013 | A aplicação devera fidelizar os clientes mais frequente oferecendo benefícios e vantagens. | MÉDIA |
+
 
 
 ### Requisitos não Funcionais
