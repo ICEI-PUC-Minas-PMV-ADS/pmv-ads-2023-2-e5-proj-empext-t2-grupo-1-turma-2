@@ -43,7 +43,20 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Arquitetura e Tecnologias
 
-Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+Para atender os requisitos funcionais e não funcionais propomos a seguinte arquitetura.
+
+![Diagrama de Integrações](img/digragramadeintegracoes2.png)
+
+# Tecnologias e Integrações
+
+- Back End - App Java sendo executada em containers Docker.
+- Front End - será desenvolvido em React Native.
+- Banco de Dados - Banco de Dados Relacional MySQL.
+- API de Entrega - Express Delivery para a entrega dos produtos.
+- Gateway de Pagamento - em definição.
+- API dos Correios - para definição do raio de CEPs atendimentos pela Ana Diniz Doceria.
+- Whatsapp - para comunicação direta com o cliente.
+- Instagram - para divulgação e marketing.
 
 ## Project Model Canvas
 
