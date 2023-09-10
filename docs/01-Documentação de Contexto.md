@@ -15,10 +15,6 @@ Hoje, no Brasil, segundo o Instituto Brasileiro de Geografia e Estatística, 82,
 ## Problema
 O problema que se busca resolver com este projeto é o de expandir o canal de vendas de uma doceria de uma cidade do interior de Minas Gerais através da criação de um app, na qual os clientes possam acessar cardápio, valores, informações sobre pagamentos e entregas proporcionando confiabilidade, agilidade e qualidade para clientes e proprietário.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
 ## Objetivos
 
 O objetivo geral deste trabalho é a criação de um app que possibilite a exibição de portfólio, o contato direto entre a proprietária da loja de doces e o cliente final, e assim, facilite o processo da venda on-line, tornando-o mais confortável e seguro. Sendo esta uma característica que aumentará o raio de alcance para captação de novos clientes e a colocará em outro patamar em relação ao modelo de venda convencional, abrindo assim diversas outras oportunidades de mercado. Ou seja, a criação de um serviço que inovará os serviços do estabelecimento.
@@ -67,10 +63,6 @@ Ana Diniz não tinha conhecimento de confeitaria mas tinha persistência, dedica
  
 Desde então sua vida e de sua família estão engajadas nesse projeto e, em 2020, abriu sua loja física, alterou o nome de Ana Diniz Brownies para Ana Diniz Doceria e especializou-se em adoçar vidas através de momentos e experiências únicas.
  
-
-
-
-Apresente uma descrição resumida sobre a organização onde o projeto será desenvolvido para que possa ser compreendido o cenário sistema sociotécnico.
 
 # Referências
 
