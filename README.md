@@ -6,7 +6,7 @@
 
 `Eixo 5`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto Ana Diniz Doceria visa oferecer um ambiente de compras intuitivo para aumentar o alcance da empresa e consequentemente os seus lucros.
 
 ## Integrantes
 
@@ -14,7 +14,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 - Michelle Leal Rodrigues
 - Pedro Daniel Jardim
 - Renata Diniz Guimarães de Oliveira
-- Vania Maria Tiburzio Rezende Reis
+- Vania Maria Tiburzio Rezende
 - Victor Bruno Kulessa
 
 ## Orientador
