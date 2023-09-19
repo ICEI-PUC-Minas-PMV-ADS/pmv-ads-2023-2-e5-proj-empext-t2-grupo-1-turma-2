@@ -10,7 +10,7 @@ O protótipo interativo das telas desenvolvidas pode ser acessado clicando aqui:
 
 As telas abaixo foram desenvolvidas com o objetivo de oferecer agilidade, acessibilidade e usabilidade as funcionalidades solicitadas. Estabelecendo uma identidade visual padronizada para a aplicação considerando as cores oficiais da marca.
 
-<img width="3511" alt="Group 1 (2)" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/d7c1c2db-a1c7-4836-a87d-0a11774158b4">
+<img width="3511" alt="Group 1 (3)" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/7666c34d-aa72-4a62-8e0a-0a9fda1e7ade">
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/da811ec9-ffd5-45d8-8baf-31ac55a0f19e)
 
@@ -21,7 +21,8 @@ As telas abaixo foram desenvolvidas com o objetivo de oferecer agilidade, acessi
 ![Group 7](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/0a0c2bda-acac-4cfe-96ce-fd19a4fb3543)
 ### Gerenciar Produtos
 
-![Group 8](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/fa69a8e3-7c1b-4daa-b211-379a619fae91)
+![Group 8 (3)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/07c26ad3-ff8b-4a39-95a3-e429aa57424c)
+
 ### Gerenciar Pedidos
 
 ![Group 9](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/assets/86931711/c33b911a-5792-426d-9e68-e30d75f3996d)
