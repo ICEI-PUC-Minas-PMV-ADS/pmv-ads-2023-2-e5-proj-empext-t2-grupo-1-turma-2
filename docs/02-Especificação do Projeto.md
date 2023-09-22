@@ -12,7 +12,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RF-002 | A aplicação deverá permitir que o administrador gerencie o relatório de compras.                                | ALTA       |
 | RF-003 | A aplicação deverá permitir a alteração dos dados de usuários.                                                  | ALTA       |
 | RF-004 | A aplicação deverá permitir que os pedidos sejam ordenados por ordem de chegada, local de entrega e prioridade. | ALTA       |
-| RF-005 | A aplicação deverá permitir a edição e a exclusão dos produtos.                                                 | MÉDIA      |
+| RF-005 | A aplicação deverá permitir a criação, edição, e a exclusão dos produtos.                                       | MÉDIA      |
 | RF-006 | A aplicação deverá permitir a busca de produtos com a opção de filtrar sua pesquisa.                            | ALTA       |
 | RF-007 | A aplicação deverá permitir a opção de salvar o produto escolhido.                                              | BAIXA      |
 | RF-008 | A aplicação deverá permitir a chegada de uma notificação a cada pedido efetuado.                                | ALTA       |
