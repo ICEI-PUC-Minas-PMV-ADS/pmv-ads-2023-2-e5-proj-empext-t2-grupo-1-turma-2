@@ -4,6 +4,10 @@ import Cadastro from "../Screens/2-Cadastro/index";
 import ChooseSweet from "../Screens/17-ChooseSweet/index";
 import Cabecalho from "../Screens/Cabecalho/index";
 
+//Telas Administrativas de Produtos
+import Produtos from "../Screens/8-Produtos/index";
+import NovoProduto from "../Screens/9-NovoProduto/index";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +41,22 @@ const Main = () => {
       <Stack.Screen
         name="Cabecalho"
         component={Cabecalho}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="Produtos"
+        component={Produtos}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="NovoProduto"
+        component={NovoProduto}
         options={{
           header: () => null,
         }}
