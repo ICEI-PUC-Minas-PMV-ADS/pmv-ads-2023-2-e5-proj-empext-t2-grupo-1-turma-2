@@ -132,3 +132,38 @@ A Scrum Master acompanhará estas sprints (tarefas) semanalamente.
 
 O projeto seguirá o seguinte fluxo de metodologia:
 
+![Scrum](img/SCRUM.png)
+
+Utilizando essa metodologia, prevê-se ter uma maior produtividade, melhoria na comunicação, maior qualidade, integração entre os integrantes, respostas a imprevistos.
+
+### Processo
+
+<p align="justify">Para organização e distribuição das tarefas do projeto, a equipe está utilizando o quadro Kanban no Projects, própria ferramenta do Github, 
+com estrutura e desenvolvimento nas seguintes status:
+
+**To Do:** Nessa coluna, estão alocadas as tarefas estabelecidas para a Sprint atual e que ainda não foram iniciadas, assim como os membros da equipe responsáveis por cada item. <br>
+
+**In progress:** Tarefas que já foram iniciadas mas ainda não finalizadas, são acompanhadas rotineiramente seguindo os ritos da metodologia ágil.<br>
+
+**Test:** Tarefas iniciadas e finalizadas, passam por validações de negócio e de lógica, assim preservando um controle de qualidade e evitando que aconteça bugs inesperados.<br>
+
+**Test Return:** Coluna para sinalizar tarefas que de alguma maneira não passaram no teste de qualidade e sendo necessário um retrabalho para passar no teste de qualidade.<br>
+
+**Waiting Deploy:** Quando uma tarefa tiver sido iniciada e finalizada, é movida para a coluna de waiting deploy, para que o responsável revise o código feito e aprove para as branch de teste.<br>
+
+**Done:** Tarefas concluídas e aprovadas no teste de qualidade.
+
+O quadro kanban do projeto no Github está disponível em: https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/588/views/2 .
+
+### Ferramentas
+
+As ferramentas empregadas no projeto são:
+- **Editor de Código:** O editor de código escolhido foi o _Visual Studio_ pela integração com outras ferramentas utilizadas no projeto como _GitHub_ e o _SQL Server_.
+- **Ferramentas de comunicação:** A ferramenta de comunicação escolhida foi o _Microsoft Teams_ devido a facilidade de comunicação, reuniões em vídeo, compartilhamento de arquivos e a criação de um ambiente de trabalho exclusivamente focado no nosso projeto.
+- **Ferramentas de desenho de tela (wireframing):** A ferramenta escolhida para a elaboração dos wireframes foi o _Canva_. A escolha se deu dado a sua capacidade de geração de wireframes interativos detalhados.
+- **Ferramentas de elaboração de diagramas:** Para a elaboração dos diversos diagramas do projeto (diagramas de fluxo, diagramas de classes, modelo ER e esquema relacional), a ferramenta _Draw.io_ foi escolhida por conta de sua versatilidade para elaboração de diagramas de diversos tipos.
+- **Ferramentas de controle de versão:** Conforme descrito na seção “Controle de Versão”, a ferramenta de controle de versão escolhida foi o _Git_, cuja utilização se deu através da integração com o editor de código _Visual Studio_, para a hospedagem do repositório será utilizado o _GitHub_. Essa escolha foi feita devido à robustez dessas ferramentas e a familiaridade dos membros da equipe com as elas.
+- **Ferramenta de gerenciamento de projeto:** A ferramenta _Github_ foi escolhida para a organização e distribuição das tarefas seguindo o modelo Scrum, conforme descrito na subseção “Processo” da seção “Gerenciamento de Projeto”. A ferramenta foi escolhida dada sua facilidade de uso e sua compatibilidade com a metodologia Scrum, com diversos materiais disponíveis sobre sua integração com esta.
+   
+</p> 
+ 
