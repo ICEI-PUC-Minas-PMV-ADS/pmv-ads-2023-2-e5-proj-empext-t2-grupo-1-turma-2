@@ -1,0 +1,42 @@
+package com.br.pucminas.backend.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+
+import java.security.SecureRandom;
+
+@Configuration
+public class SecurityConfig {
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new PasswordEncoder() {
+
+            final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10, new SecureRandom());
+
+            @Override public String encode(CharSequence rawPassword) {
+                return encoder.encode(rawPassword);
+            }
+
+            @Override public boolean matches(CharSequence rawPassword, String encodedPassword) {
+                return encoder.matches(rawPassword, encodedPassword);
+            }
+        };
+    }
+
+
+    @Bean
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+                .authorizeHttpRequests().antMatchers("/api/**", "/h2-console/**").permitAll()
+                .anyRequest().authenticated();
+        http.headers().frameOptions().disable();
+        return http.build();
+    }
+
+}
