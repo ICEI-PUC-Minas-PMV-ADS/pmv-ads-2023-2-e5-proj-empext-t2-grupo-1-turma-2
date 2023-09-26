@@ -84,35 +84,12 @@ O projeto da base de dados corresponde à representação das entidades e relaci
 
 ![Projeto da Base de Dados](img/dados-Projeto%20BD.png)
 
-## Controle de Versão
-A gestão de código fonte ou controle de versões diz respeito ao monitoramento e gerenciamento das alterações no código, de preferência com histórico de execuções de desenvolvimento e, também, auxilia na resolução de conflitos e reverte versões anteriores de um projeto, quando necessário. Esse componente é essencial para o processo de desenvolvimento do software. 
-
-Com isso, para gestão do código fonte utilizaremos o Git Flow, um modelo de organização de branches, o qual dita que tipos de ramificações configurar e como fazer merge. Desta forma, todas as manutenções no código são realizadas em branches separados, identificados como Main, Hotfix, Release, Develop e Feature, ou seja, um modelo de ramificação de manutenção que permite corrigir com rapidez lançamentos de produção mantendo uma linha de desenvolvimento dedicada para atualização de segurança, permitindo que a equipe trabalhe com problemas sem interromper o fluxo do trabalho ou esperar o próximo ciclo de lançamento. 
-
-**Main**: branch principal, somente versão de produção; 
-
-**Hotfix**:  branch de correção: responsável pela realização de alguma correção crítica encontrada em produção; 
-
-**Release**: branch de lançamento: utilizada como ambiente de homologação e é removida após realizar os testes e do merge com a Main. Caso haja alguma alteração, ela também deve ser sincronizada com a Develop; 
-
-**Develop**: branch criada a partir da branch main, contém código em nível preparatório para o próximo deploy/versão. Ou seja, quando features são terminadas, elas são juntadas com a branch develop, testadas e somente depois as atualizações da branch develop passam por mais um processo para então ser juntadas com a branch main; 
-
-**Feature**: branch de melhorias: utiliza-se para o desenvolvimento de uma funcionalidade específica/nova, inicia-se com a palavra feature e são criadas sempre a partir da branch develop. Exemplo: feature/cadastro;
-
-**Screen**: branch de criação de telas da aplicação.
-
-O projeto segue a seguinte convenção para o nome de branches:
-
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `stating`: versão em testes do software
-- `feature`: versão de desenvolvimento do software
-- `screen`: versão inicial da tela desenvolvida
-
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
-etiquetas:
-
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: indica novas solicitações de recurso ou uma funcionalidade precisa ser melhorada 
-- `question`: indica que um problema, pull request ou discussão precisa de mais informações 
+### Relação de Ambientes de Trabalho
+   
+| Ambiente      | Plataforma                | Link de Acesso             |
+|---------------|---------------------------|----------------------------|
+| Repositório de Código Fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2.git |
+| Documentação do Projeto | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/tree/main/docs |
+| Projeto de Interface  | Canva | https://canva.com |
+| Diagramas  | Draw io | https://draw.io |
+| Gerenciamento do Projeto | Github | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/588/views/2 |
