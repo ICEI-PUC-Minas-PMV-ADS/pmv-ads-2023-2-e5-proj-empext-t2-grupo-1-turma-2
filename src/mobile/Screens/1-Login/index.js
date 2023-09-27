@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { View, ScrollView, TouchableOpacity, Text } from "react-native";
-import { TextInput, Button } from "react-native-paper";
+import { TextInput } from "react-native-paper";
 import Logo from "../../Components/Logo/index";
 import Statusbar from "../../Components/StatusBar";
-import DefaultButton from "../../Components/Buttons/Default";
+import BasicButton from "../../Components/Buttons/Basic";
 import { styles } from "./styles";
 
 
@@ -17,57 +17,52 @@ const Login = () => {
   const [senha, setSenha] = useState("");
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Statusbar />
-        <Logo />
+        <View style={styles.container}>
+        <View style={styles.logo}>
+          <Logo />
+        </View>
 
-        <TextInput
-          style={styles.input}
+        <View style={styles.inputs}>
+        <TextInput style={styles.input}
           label="E-mail"
           value={email}
           autoCorrect={false}
           onChangeText={(text) => setEmail(text)}
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"
-          left={<TextInput.Icon name="account" />}
+          activeOutlineColor="#C05C63"
+          outlineColor="#fff"
         />
 
-        <TextInput
-          style={styles.input}
+        <TextInput style={styles.input}
           autoCorrect={false}
           onChangeText={(text) => setSenha(text)}
           label="Senha"
           value={senha}
           secureTextEntry={true}
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"
-          left={<TextInput.Icon name="key" />}
+          activeOutlineColor="#C05C63"
+          outlineColor="#fff"
         />
-       
-        <DefaultButton text={"Entrar"} 
+        <BasicButton text={"Entrar"} 
         onPress={realizeLogin} />
+        </View>
 
-        <Text style={styles.paragraph}>
-            {'\n'}
-        </Text>
-
-         <TouchableOpacity style={styles.password}>
-          <Text style={styles.password}> Esqueceu a senha?</Text>
+        <View>
+        <TouchableOpacity>
+          <Text style={styles.links}
+            onPress={() => navigation.navigate("RecuperarSenha")}
+          >
+          Esqueci minha senha</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.register}>
-          <Text> Não tem conta? </Text>
-          <Text
-            style={styles.registerText}
+        <TouchableOpacity>
+          <Text style={styles.links}
             onPress={() => navigation.navigate("Cadastro")}
           >
-          Cadastre-se aqui!</Text>
+          Cadastre-se</Text>
         </TouchableOpacity>
-      </View>
-    </ScrollView>
+        </View>
+        </View>
   );
 };
 
