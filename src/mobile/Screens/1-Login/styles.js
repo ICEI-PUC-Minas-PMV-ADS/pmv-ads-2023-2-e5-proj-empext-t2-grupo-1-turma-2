@@ -1,19 +1,21 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const styles2 = StyleSheet.create({
+  background: {
+    backgroundColor: "#f2e8e3"
+  },
   container: {
-    flex: 1,
-    backgroundColor: "#f2e8e3",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    justifyContent: 'space-between'
   },
   input: {
     width: 263,
     height: 50,
     fontSize: 16,
     borderRadius: 4,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#fff",
     marginBottom: 14,
+    
   },
   button: {
     width: 263,
@@ -30,19 +32,44 @@ export const styles = StyleSheet.create({
     color: "#C05C63",
   },
   register: {
-    flex: 1,
-    flexDirection: 'row'
+    display:'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   registerText: {
     color: "#C05C63",
     fontWeight: "bold",
-  },
-  password: {
-    alignSelf: "flex-end",
-    marginBottom: 7,
-    paddingRight: 25
+    margin:10
   },
   text: {
     fontSize: 16,
   },
+});
+
+export const styles = StyleSheet.create({
+
+  container:{
+    height: "100%",
+    backgroundColor: "#f2e8e3",
+    display: "flex",
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  logo:{
+  },
+  inputs:{
+    width: "50%"
+  },
+  input:{
+    height: 50,
+    fontSize: 16,
+    borderRadius: 4,
+    backgroundColor: "#fff",
+    marginBottom: 14,
+  },
+  links:{
+      color: "#C05C63",
+      fontWeight: "bold",
+      alignSelf: "center"
+    },
 });
