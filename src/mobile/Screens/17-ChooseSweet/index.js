@@ -8,20 +8,25 @@ import Doces3 from '../../assets/icons/copoes.png';
 import Doces4 from '../../assets/icons/tortinhas.png';
 import Doces5 from '../../assets/icons/salgados.png';
 import Doces6 from '../../assets/icons/bebidas.png';
+import { useNavigation } from '@react-navigation/native';
 
 function ChooseSweet() {
+  const navigation = useNavigation();
+
+  
+
   return (
     <View style={styles.container}>
       <Logo/>
       <View style={styles.row}>
         {/* Botão 1 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
           <Image source={Doces1} style={styles.image}/>
           <Text style={styles.text}>Indispensáveis</Text>
         </TouchableOpacity>
 
         {/* Botão 2 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
         <Image source={Doces2} style={styles.image}/>
           <Text style={styles.text}>Coxinhas Doces</Text>
         </TouchableOpacity>
@@ -29,13 +34,13 @@ function ChooseSweet() {
 
       <View style={styles.row}>
         {/* Botão 3 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
         <Image source={Doces3} style={styles.image}/>
           <Text style={styles.text}>Copões</Text>
         </TouchableOpacity>
 
         {/* Botão 4 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
         <Image source={Doces4} style={styles.image}/>
           <Text style={styles.text}>Tortinhas</Text>
         </TouchableOpacity>
@@ -43,13 +48,13 @@ function ChooseSweet() {
 
       <View style={styles.row}>
         {/* Botão 5 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
         <Image source={Doces5} style={styles.image}/>
           <Text style={styles.text}>Salgados</Text>
         </TouchableOpacity>
 
         {/* Botão 6 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
         <Image source={Doces6} style={styles.image}/>
           <Text style={styles.text}>Bebidas</Text>
         </TouchableOpacity>

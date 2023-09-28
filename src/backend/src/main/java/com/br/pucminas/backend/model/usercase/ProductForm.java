@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserForm {
+public class ProductForm {
     private String name;
-    private String email;
-    private String password;
-    private String phone;
-    private String address;
-    private String zipCode;
+    private String description;
+    private String category;
+    private Integer quantity;
+    private Float price;
+    private String link;
+
 }

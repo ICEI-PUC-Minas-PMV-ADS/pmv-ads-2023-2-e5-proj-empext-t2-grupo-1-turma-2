@@ -5,22 +5,61 @@ import { View, TouchableOpacity, Text, StyleSheet, ScrollView } from 'react-nati
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
 import Logo from '../../Components/Logo';
 import Statusbar from "../../Components/StatusBar";
+import { useNavigation } from '@react-navigation/native'
 
 
-function Produtos() {
+function NovoProduto() {
+  const navigation = useNavigation();
 
-  const addProduto = () => {
-    console.log("Adicionando produto...");
-  }
-
-  const anexarImagem = () => {
-    console.log("Anexando imagem ao produto...");
-  }
-  
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [categoria, setCategoria] = useState("");
   const [quantidade, setQuantidade] = useState("");
+  const [linkFoto, setLinkFoto] = useState("");
+  const [preco, setPreco] = useState("");
+
+
+  const addProduto = async () => {
+    console.log("enter in addProduto")
+    
+    let product = {
+      name: titulo,
+      description: descricao,
+      category: categoria,
+      quantity: quantidade,
+      link: linkFoto,
+      price: preco
+    };
+
+    let encoderProduct = JSON.stringify(product);
+    console.log(encoderProduct)
+
+    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
+    const host = 'http://192.168.0.211'
+    const port = '8080' 
+    
+    const endpoint = `${host}:${port}/api/v1/product`;
+
+    console.log(endpoint);
+
+    await fetch(endpoint,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: encoderProduct
+      }
+    ).then((response) => 
+      response.json()
+    ).then(async (responseData) => {
+      console.log(`Response: ${JSON.stringify(responseData)}`)
+      navigation.navigate("GerenciaProdutos");
+    })
+    .catch( async (error) => {
+      console.error(error);
+    });
+
+  }
   
 
   return (
@@ -54,10 +93,17 @@ function Produtos() {
           outlineColor="#FFFFFF"          
         />
 
-        {/* Botão anexar imagem */}
-        <TouchableOpacity style={styles.buttonanexaimg} onPress={anexarImagem}>          
-          <Text style={styles.text}>Anexar Imagem</Text>
-        </TouchableOpacity>
+
+        <TextInput
+          style={styles.input}
+          label="linkFoto"
+          value={linkFoto}
+          autoCorrect={false}
+          onChangeText={(text) => setLinkFoto(text)}
+          mode="outlined"
+          activeOutlineColor="#FFFFFF"
+          outlineColor="#FFFFFF"          
+        />  
 
       <TextInput
           style={styles.input}
@@ -76,6 +122,17 @@ function Produtos() {
           value={quantidade}
           autoCorrect={false}
           onChangeText={(text) => setQuantidade(text)}                    
+          mode="outlined"
+          activeOutlineColor="#FFFFFF"
+          outlineColor="#FFFFFF"                    
+        />
+
+        <TextInput
+          style={styles.input}
+          label="Preço"
+          value={preco}
+          autoCorrect={false}
+          onChangeText={(text) => setPreco(text)}                    
           mode="outlined"
           activeOutlineColor="#FFFFFF"
           outlineColor="#FFFFFF"                    
@@ -160,4 +217,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Produtos;
+export default NovoProduto;

@@ -4,15 +4,20 @@ import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja 
 import Logo from '../../Components/Logo';
 import Statusbar from "../../Components/StatusBar";
 import TelaNovoProduto from '../9-NovoProduto'
+import { useNavigation } from '@react-navigation/native'
 
-function Produtos() {
-  
+function GerenciaProdutos() {
+  const navigation = useNavigation();
+
   const novoProduto = () => {
     console.log("Inserir novo Produto");
+    navigation.navigate('NovoProduto');
   }
 
   const produtosDisponiveis = () => {
     console.log("Listar produtos disponíveis");
+    navigation.navigate('ChooseSweet');
+
   }
 
   return (
@@ -79,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Produtos;
+export default GerenciaProdutos;
