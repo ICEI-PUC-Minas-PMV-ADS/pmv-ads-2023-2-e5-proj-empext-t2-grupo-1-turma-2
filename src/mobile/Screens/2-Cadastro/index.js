@@ -5,30 +5,66 @@ import Logo from "../../Components/Logo/index";
 import Statusbar from "../../Components/StatusBar";
 import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
+import { useNavigation } from '@react-navigation/native'
 
 
-const Registration = () => {
+const Cadastrar = () => {
+  const navigation = useNavigation();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [placeholder, setPlaceholder] = useState("");
   const [cell, setCell] = useState("");
   const [password, setPassword] = useState("");
   const [confirmedPassword, setConfirmedPassword] = useState("");
+  const [zipCode, setZipCode] = useState("");
+
+  let cadastraUsuario = async () => {
+    console.log("enter in cadastraUsuario")
+    let user = {
+      name: name,
+      email: email,
+      adress: placeholder,
+      password: confirmedPassword,
+      zipCode: zipCode,
+      cell: cell
+    };
+
+    let encoderUser = JSON.stringify(user);
+    console.log(encoderUser)
+
+    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
+    const host = 'http://192.168.0.32'
+    const port = '8080' 
+    
+    const endpoint = `${host}:${port}/api/v1/user`;
+
+    console.log(endpoint);
+
+    await fetch(endpoint,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: encoderUser
+      }
+    ).then((response) => 
+      response.json()
+    ).then(async (responseData) => {
+      console.log(`Response: ${JSON.stringify(responseData)}`)
+      navigation.navigate("Login");
+    })
+    .catch( async (error) => {
+      console.error(error);
+    });
+
+  }
 
   return (
     <ScrollView>
       <View style={styles.container}>
         <Statusbar />
         <Logo />
-        
-        <Text style={styles.paragraph}>
-        {'\n'}
-       Cadastro
-        </Text>
-
-        <Text style={styles.paragraph}>
-        {'\n'}
-        </Text>
 
         <TextInput
           style={styles.input}
@@ -48,7 +84,6 @@ const Registration = () => {
           mode="outlined"
           activeOutlineColor="#eaeaea"
           outlineColor="#eaeaea"
-          borderRadius= "25"
         />
 
           <TextInput
@@ -56,6 +91,16 @@ const Registration = () => {
           label="Endereço"
           value={placeholder}
           onChangeText={(placeholder) =>setPlaceholder(placeholder)}
+          mode="outlined"
+          activeOutlineColor="#eaeaea"
+          outlineColor="#eaeaea"
+        />
+
+        <TextInput
+          style={styles.input}
+          label="Cep"
+          value={zipCode}
+          onChangeText={(zipCode) => setZipCode(zipCode)}
           mode="outlined"
           activeOutlineColor="#eaeaea"
           outlineColor="#eaeaea"
@@ -98,10 +143,10 @@ const Registration = () => {
           outlineColor="#eaeaea"
         />
 
-        <DefaultButton text={"Cadastrar"}  onPress={Registration} />
+        <DefaultButton text={"Cadastrar"}  onPress={cadastraUsuario} />
       </View>
     </ScrollView>
   );
 };
 
-export default Registration;
+export default Cadastrar;

@@ -13,4 +13,5 @@ public class AutenticationDTO {
     private Integer id;
     private String email;
     private String token;
+    private Boolean isRootUser;
 }

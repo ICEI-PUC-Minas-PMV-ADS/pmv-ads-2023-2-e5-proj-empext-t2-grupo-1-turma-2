@@ -8,12 +8,30 @@ import Doces3 from '../../assets/icons/copoes.png';
 import Doces4 from '../../assets/icons/tortinhas.png';
 import Doces5 from '../../assets/icons/salgados.png';
 import Doces6 from '../../assets/icons/bebidas.png';
+import { useCallback } from 'react';
+
+import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
+const ListaProdutos = () => {
 
-const Produtos = () => {
+  const navigation = useNavigation();
 
 
+  const categoryClick = async () => {
+    // console.log(category)
+
+    // let params = ""
+    // params.concat(`&categoria=${category}`)
+
+    // console.log(params)
+    // AsyncStorage.setItem('categoria', JSON.stringify(params));
+
+    
+    navigation.navigate('ExibeProdutos');
+  }
+  
  return (
     <View style={styles.container}>
       <Logo/>
@@ -26,13 +44,13 @@ const Produtos = () => {
 
        <View style={styles.row}>
         {/* Botão 1 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
           <Image source={Doces1} style={styles.image}/>
           <Text style={styles.text}>Indispensáveis</Text>
         </TouchableOpacity>
 
         {/* Botão 2 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
         <Image source={Doces2} style={styles.image}/>
           <Text style={styles.text}>Coxinhas Doces</Text>
         </TouchableOpacity>
@@ -40,13 +58,13 @@ const Produtos = () => {
 
       <View style={styles.row}>
         {/* Botão 3 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
         <Image source={Doces3} style={styles.image}/>
           <Text style={styles.text}>Copões</Text>
         </TouchableOpacity>
 
         {/* Botão 4 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
         <Image source={Doces4} style={styles.image}/>
           <Text style={styles.text}>Tortinhas</Text>
         </TouchableOpacity>
@@ -54,13 +72,13 @@ const Produtos = () => {
 
       <View style={styles.row}>
         {/* Botão 5 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
         <Image source={Doces5} style={styles.image}/>
           <Text style={styles.text}>Salgados</Text>
         </TouchableOpacity>
 
         {/* Botão 6 */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
         <Image source={Doces6} style={styles.image}/>
           <Text style={styles.text}>Bebidas</Text>
         </TouchableOpacity>
@@ -106,4 +124,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Produtos;
+export default ListaProdutos;

@@ -5,15 +5,20 @@ import ChooseSweet from "../Screens/17-ChooseSweet/index";
 import Cabecalho from "../Screens/Cabecalho/index";
 
 //Telas Administrativas de Produtos
-import Produtos from "../Screens/8-Produtos/index";
+import GerenciaProdutos from "../Screens/8-Produtos/index";
 import NovoProduto from "../Screens/9-NovoProduto/index";
-
+import Gerencial from "../Screens/3-Gerencial";
+import ListaProdutos from "../Screens/10-Produtos/index";
+import ExibeProdutos from "../Screens/10-b-ExibicaoProduto/index";
+import Produtos from "../Screens/10-Produtos/index";
+import ExibeProdutosCategoria from "../Screens/10-c-ExibicaoProdutoCategoria/index";
 
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
     <Stack.Navigator initialRouteName="Login">
+
       <Stack.Screen
         name="Login"
         component={Login}
@@ -29,6 +34,16 @@ const Main = () => {
           header: () => null,
         }}
       />
+
+
+      <Stack.Screen
+        name="Gerencial"
+        component={Gerencial}
+        options={{
+          header: () => null,
+        }}
+      />
+
 
       <Stack.Screen
         name="ChooseSweet"
@@ -47,8 +62,8 @@ const Main = () => {
       />
 
       <Stack.Screen
-        name="Produtos"
-        component={Produtos}
+        name="GerenciaProdutos"
+        component={GerenciaProdutos}
         options={{
           header: () => null,
         }}
@@ -57,6 +72,38 @@ const Main = () => {
       <Stack.Screen
         name="NovoProduto"
         component={NovoProduto}
+        options={{
+          header: () => null,
+        }}
+      />
+      
+      <Stack.Screen
+        name="ListaProdutos"
+        component={ListaProdutos}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="ExibeProdutos"
+        component={ExibeProdutos}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="Produtos"
+        component={Produtos}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="ExibeProdutosCategoria"
+        component={ExibeProdutosCategoria}
         options={{
           header: () => null,
         }}

@@ -14,8 +14,8 @@ import java.util.Objects;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user_profile")
-public class User {
+@Table(name = "product")
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,26 +23,26 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "description")
+    private String description;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "category")
+    private String category;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "quantity")
+    private Integer quantity;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "price")
+    private Float price;
 
-    @Column(name = "zip_code")
-    private String zipCode;
+    @Column(name = "link")
+    private String link;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        User user = (User) o;
+        Product user = (Product) o;
         return getId() != null && Objects.equals(getId(), user.getId());
     }
 
