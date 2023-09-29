@@ -22,7 +22,7 @@ const ExibeProdutosCategoria = () => {
 
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.211'
+    const host = 'http://192.168.0.132'
     const port = '8080' 
     
     
@@ -46,7 +46,7 @@ const ExibeProdutosCategoria = () => {
 
   return (
     <ScrollView>
-      <Nav onPress={() => navigation.navigate("GerenciaProdutos")} />
+      <Nav onPress={() => navigation.navigate("ChooseSweet")} />
 
       <View style={styles.container}>
         {isLoading ? <Text>Loading...</Text> : (

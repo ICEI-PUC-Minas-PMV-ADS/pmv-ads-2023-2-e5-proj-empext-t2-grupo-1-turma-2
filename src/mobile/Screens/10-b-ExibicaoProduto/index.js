@@ -18,7 +18,7 @@ const ExibeProdutos = () => {
   const getParams = async () => {
     
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.211'
+    const host = 'http://192.168.0.132'
     const port = '8080' 
     
     

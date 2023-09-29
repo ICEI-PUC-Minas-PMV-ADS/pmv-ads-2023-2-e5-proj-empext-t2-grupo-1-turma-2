@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import { ScrollView, View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import Nav from "../../Components/NavBar/index";
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
 import Logo from '../../Components/Logo';
 import Doces1 from '../../assets/icons/doces.png';
@@ -16,8 +17,9 @@ function ChooseSweet() {
   
 
   return (
+    <ScrollView>
+    <Nav onPress={() => navigation.navigate("Gerencial")} />
     <View style={styles.container}>
-      <Logo/>
       <View style={styles.row}>
         {/* Botão 1 */}
         <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
@@ -60,6 +62,7 @@ function ChooseSweet() {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 }
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from "react";
 import { TextInput, Button } from "react-native-paper";
+import Nav from "../../Components/NavBar/index";
+
 import { View, TouchableOpacity, Text, StyleSheet, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
 import Logo from '../../Components/Logo';
@@ -28,14 +30,14 @@ function NovoProduto() {
       category: categoria,
       quantity: quantidade,
       link: linkFoto,
-      price: preco
+      price: Number(preco)
     };
 
     let encoderProduct = JSON.stringify(product);
     console.log(encoderProduct)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.211'
+    const host = 'http://192.168.0.132'
     const port = '8080' 
     
     const endpoint = `${host}:${port}/api/v1/product`;
@@ -64,9 +66,10 @@ function NovoProduto() {
 
   return (
     <ScrollView>
+      <Nav onPress={() => navigation.navigate("Gerencial")} />
       <View style={styles.container}>
         <Statusbar />
-        <Logo />        
+
         <Text style={styles.texttop}>Novo Produto</Text>      
 
         <TextInput

@@ -5,6 +5,7 @@ import Logo from '../../Components/Logo';
 import Statusbar from "../../Components/StatusBar";
 import TelaNovoProduto from '../9-NovoProduto'
 import { useNavigation } from '@react-navigation/native'
+import Nav from "../../Components/NavBar/index";
 
 function GerenciaProdutos() {
   const navigation = useNavigation();
@@ -22,9 +23,10 @@ function GerenciaProdutos() {
 
   return (
     <ScrollView>
+      <Nav onPress={() => navigation.navigate("Gerencial")} />
+
       <View style={styles.container}>
         <Statusbar />
-        <Logo />       
         <Text style={styles.texttop}>Produtos        
         </Text>      
         
