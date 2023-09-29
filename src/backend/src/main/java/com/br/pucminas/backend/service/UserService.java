@@ -92,6 +92,7 @@ public class UserService {
             isRootUser = Boolean.TRUE;
         }
 
+        log.info("[UserService.login] - [User found]");
 
         return AutenticationDTO.builder().id(loadUser.getId()).email(loadUser.getEmail()).token(authHeader).isRootUser(isRootUser).build();
 
