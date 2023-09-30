@@ -65,25 +65,3 @@ Ana Diniz não tinha conhecimento de confeitaria mas tinha persistência, dedica
  
 Desde então sua vida e de sua família estão engajadas nesse projeto e, em 2020, abriu sua loja física, alterou o nome de Ana Diniz Brownies para Ana Diniz Doceria e especializou-se em adoçar vidas através de momentos e experiências únicas.
  
-
-# Referências
-
-ALVARENGA, Darlan. Com pandemia, comércio eletrônico tem salto em 2020 e dobra a participação no varejo brasileiro. G1, 22 fev. 2021. **Economia**. Disponível em: https://g1.globo.com/economia/noticia/2021/02/26/com-pandemia-comercio-eletronico-tem-salto-em-2020-e-dobra-participacao-no-varejo-brasileiro.ghtml. Acesso em: 18 ago. 2023.  
-
-BARROS, Ev'Ângela Batista Rodrigues de (org.).**Extensão PUC Minas**: encontros e diálogos. Belo Horizonte, MG: PUC Minas, 2018. *E-book*. ISBN 978-85-8239-074-0. Disponível em: http://bib.pucminas.br:8080/pergamumweb/vinculos/000046/00004698.pdf. Acesso em: 18 ago. 2023.
-
-BRASIL. [Constituição (1988)]. **Constituição da República Federativa do Brasil de 1988**. Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm. Acesso em: 21 ago. 2023.
-
-BRASIL. **Lei de diretrizes e bases da educação nacional (1996)**. Brasília, DF: Presidência da República, [2023]. Disponível em: https://www.planalto.gov.br/ccivil_03/leis/l9394.htm. Acesso em: 21 ago. 2023.
-
-CAVALCANTE, Zedequiasa Vieira; SILVA, Mauro Luis Siqueira da. A importância da revolução industrial no mundo da tecnologia. In: ENCONTRO INTERNACIONAL DE PRODUÇÃO CIENTÍFICA CESUMAR, 7., 2011, Maringá. **Anais eletrônico**. Maringá: CESUMAR, 2011. Disponível em: http://rdu.unicesumar.edu.br/handle/123456789/6395. Acesso em: 18 ago. 2023. 
-
-ENCONTRO DE PRÓ-REITORES DE EXTENSÃO DAS UNIVERSIDADES PÚBLICAS BRASILEIRAS, 1., 1987, Brasília. **Conceito de extensão, institucionalização e financiamento**. Brasília: UNB, 1987. Disponível em: https://www.ufmg.br/proex/renex/images/documentos/1987-I-Encontro-Nacional-do-FORPROEX.pdf. Acesso em: 21 ago. 2023.
-
-HARARI, Yuval Noah. **Sapiens**: uma breve história da humanidade.  4.ed. Rio Grande do Sul: L&PM, 2014. 452 p. 
-
-INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. **Pesquisa mostra que 82,7% dos domicílios brasileiros têm acesso à internet**. 2021. Disponível em: https://www.gov.br/mcom/pt-br/noticias/2021/a bril/pesquisa-mostra-que-82-7-dos-domicilios-brasileiros-tem-acesso-a-internet#:~:text=Em%202019%2C%20en tre%20as%20183,estudantes%20(75%2C8%25).. Acesso em: 18 ago. 2023. 
-
-MOLZ, Rolf Fredi. Prefácio. In: LEDUR, Cleverson Lopes; SARAIVA, Maurício de Oliveira; FREITAS, Pedro Henrique Chagas. **Programação back end II**. Porto Algre: Sagah, 2019.
-
-RAMOS, Roberto. **A era digital e a economia do século XXI**. 2018. Disponível em: https://www.brasildefatope.com.br/2018/09/19/artigo-or-a-era-digital-e-a-economia-do-seculo-xxi. Acesso em: 25 ago. 2021.
