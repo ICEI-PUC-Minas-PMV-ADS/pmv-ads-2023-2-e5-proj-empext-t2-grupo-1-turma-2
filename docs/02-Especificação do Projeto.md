@@ -175,9 +175,10 @@ Para Fontes (2017) a definição de segurança da informação é um conjunto de
 
 Para a Associação Brasileira de Normas Técnicas (2013), a norma 27001 trata a segurança da informação consegue ser alcançada aplicando-se os controles adequados, monitorando e melhorando esses controles, quando surgir a necessidade. Então, para garantir uma boa segurança da informação dentro de uma organização deve-se identificar quais os procedimentos corretos a serem aplicados, adequando-se aos requisitos de cada organização.
 
-A segurança da informação é um conjunto de práticas, estratégias e políticas, que visam proteger os dados para que não sejam acessados por pessoas, grupos ou setores não autorizados. Para garantir a segurança de forma adequada é necessário atender os três pilares básicos da segurança: confidencialidade, integridade e disponibilidade, além da autenticidade, irretratabilidade.
+A segurança da informação é um conjunto de práticas, estratégias e políticas, que visam proteger os dados para que não sejam acessados por pessoas, grupos ou setores não autorizados. Para garantir a segurança de forma adequada é necessário atender os três pilares básicos da segurança: confidencialidade, integridade e disponibilidade, além da legalidade, autenticidade, irretratabilidade.
 
-Segundo Machado
+Segundo Machado (2014), "a política de segurança prevê as bases da garantia de segurança de informação": normas, baselines, diretrizes e procedimentos; como por exemplo: termos de compromissos, identificação e autenticação de usuário, cópia de segurança, uso de antivírus, lembretes de seguança, entre outros. Estes procesos são necessários para a segurança da informação.
+
 
 # Referências
 
