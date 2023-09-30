@@ -125,13 +125,6 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |Passos |	1) Acessar a aplicação em dispositivos Android e IOS .	 |
 |Critérios de êxito| A aplicação deve ser compativel com os dois sistemas operacionais. |
 
-
-|Caso de teste   ?   | CT  -  Visualizar Notificações |
-|-------|-------------------------
-|Requisitos Associados | 	 RF-08 - A aplicação deve possuir uma seção de notificações onde o administrador receberá notificação de novos pedidos em tempo real.
-|Objetivo do teste| Verificar se a carga de notificações está acontecendo corretamente. |
-|Passos |	1) Acessar a aplicação . 2)  . 3)  . 4)  . 5) .  |
-|Critérios de êxito| As notificações devem ser exibidas corretamente para o administrador. 
  
 # Evidências de Testes de Software
 
