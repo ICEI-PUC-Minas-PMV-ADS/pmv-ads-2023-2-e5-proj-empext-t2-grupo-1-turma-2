@@ -169,9 +169,19 @@ As ferramentas empregadas no projeto são:
 
 ## Normas e Padrões de segurança para desenvolvimento de software
 
+Devido a importância da informação para as empresas, ela tem se tornado gradualmente um alvo de ataques. Devido a esses ataques torna-se imprescindível a adoção de um sistema de segurança da informação confiável, para garantir a integridade da informação. Uma boa implementação de um sistema de segurança da informação irá proteger a informação de possíveis riscos e diminuir a vulnerabilidade.
+
+Para Fontes (2017) a definição de segurança da informação é um conjunto de regras e ações que buscam proteger a informação. A segurança da informação tem como objetivo reduzir os riscos envolvidos quando há uma dependência deste recurso para o funcionamento de uma organização. Sem estes dados ou de forma incorreta, pode causar danos financeiros significativos.
+
+Para a Associação Brasileira de Normas Técnicas (2013), a norma 27001 trata a segurança da informação consegue ser alcançada aplicando-se os controles adequados, monitorando e melhorando esses controles, quando surgir a necessidade. Então, para garantir uma boa segurança da informação dentro de uma organização deve-se identificar quais os procedimentos corretos a serem aplicados, adequando-se aos requisitos de cada organização.
+
+A segurança da informação é um conjunto de práticas, estratégias e políticas, que visam proteger os dados para que não sejam acessados por pessoas, grupos ou setores não autorizados. Para garantir a segurança de forma adequada é necessário atender os três pilares básicos da segurança: confidencialidade, integridade e disponibilidade, além da autenticidade, irretratabilidade.
+
 # Referências
 
 ALVARENGA, Darlan. Com pandemia, comércio eletrônico tem salto em 2020 e dobra a participação no varejo brasileiro. G1, 22 fev. 2021. **Economia**. Disponível em: https://g1.globo.com/economia/noticia/2021/02/26/com-pandemia-comercio-eletronico-tem-salto-em-2020-e-dobra-participacao-no-varejo-brasileiro.ghtml. Acesso em: 18 ago. 2023.  
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR ISO/IEC 27001** - tecnologia da informação - técnicas de segurança - sistemas de gestão de segurança da informação - requisitos. 2. ed. Rio de Janeiro: ABNT, 2013. vi, 30 p. ISBN 9788507046080
 
 BARROS, Ev'Ângela Batista Rodrigues de (org.).**Extensão PUC Minas**: encontros e diálogos. Belo Horizonte, MG: PUC Minas, 2018. *E-book*. ISBN 978-85-8239-074-0. Disponível em: http://bib.pucminas.br:8080/pergamumweb/vinculos/000046/00004698.pdf. Acesso em: 18 ago. 2023.
 
@@ -182,6 +192,8 @@ BRASIL. **Lei de diretrizes e bases da educação nacional (1996)**. Brasília, 
 CAVALCANTE, Zedequiasa Vieira; SILVA, Mauro Luis Siqueira da. A importância da revolução industrial no mundo da tecnologia. In: ENCONTRO INTERNACIONAL DE PRODUÇÃO CIENTÍFICA CESUMAR, 7., 2011, Maringá. **Anais eletrônico**. Maringá: CESUMAR, 2011. Disponível em: http://rdu.unicesumar.edu.br/handle/123456789/6395. Acesso em: 18 ago. 2023. 
 
 ENCONTRO DE PRÓ-REITORES DE EXTENSÃO DAS UNIVERSIDADES PÚBLICAS BRASILEIRAS, 1., 1987, Brasília. **Conceito de extensão, institucionalização e financiamento**. Brasília: UNB, 1987. Disponível em: https://www.ufmg.br/proex/renex/images/documentos/1987-I-Encontro-Nacional-do-FORPROEX.pdf. Acesso em: 21 ago. 2023.
+
+FONTES, E. L. G. **Segurança da informação**. São Paulo: Saraiva, 2017.
 
 HARARI, Yuval Noah. **Sapiens**: uma breve história da humanidade.  4.ed. Rio Grande do Sul: L&PM, 2014. 452 p. 
 
