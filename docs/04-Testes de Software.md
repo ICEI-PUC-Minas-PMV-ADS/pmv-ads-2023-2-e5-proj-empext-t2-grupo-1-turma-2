@@ -124,4 +124,4 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
  
 # Evidências de Testes de Software
 
-Apresente imagens e/ou vídeos que comprovam que um determinado teste foi executado, e o resultado esperado foi obtido. Normalmente são screenshots de telas, ou vídeos do software em funcionamento.
+Vídeo do teste sendo executado e o resultado obtido disponível em https://youtu.be/6uhKPuJ4zO0
