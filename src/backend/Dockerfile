@@ -8,3 +8,5 @@ COPY target/backend.jar app.jar
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-Duser.timezone=America/Sao_Paulo", "-Xmx512m", "-jar", "/app.jar"]
+
+COPY --chown=user:group --from=BUILD /app.jar /app.jar
