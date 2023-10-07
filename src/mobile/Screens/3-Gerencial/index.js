@@ -18,7 +18,7 @@ const Gerencial = () => {
       <View style={styles.container}>
         <Statusbar />
 
-        <DefaultButton text={"Programa de Fidelidade"}  onPress={() => {navigation.navigate('ChooseSweet')}} />
+        <DefaultButton text={"Programa de Fidelidade"}  onPress={() => {navigation.navigate('MainFidelidade')}} />
         <Text style={styles.paragraph}> </Text>
 
         <DefaultButton text={"Produtos"}  onPress={() => {navigation.navigate('GerenciaProdutos')}} />

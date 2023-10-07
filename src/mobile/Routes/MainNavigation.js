@@ -13,12 +13,18 @@ import ExibeProdutos from "../Screens/10-b-ExibicaoProduto/index";
 import Produtos from "../Screens/10-Produtos/index";
 import ExibeProdutosCategoria from "../Screens/10-c-ExibicaoProdutoCategoria/index";
 
+//Telas Administrativas do programa de fidelidade
+import MainFidelidade from "../Screens/4-FidelidadeMain/index";
+import FidelidadeNovo from "../Screens/5-FidelidadeNovo/index";
+import FidelidadeList  from "../Screens/6-FidelidadeList/index";
+import FidelidadeEditar  from "../Screens/7-FidelidadeEditar/index";
+
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
     <Stack.Navigator initialRouteName="Login">
-
+  
       <Stack.Screen
         name="Login"
         component={Login}
@@ -39,6 +45,38 @@ const Main = () => {
       <Stack.Screen
         name="Gerencial"
         component={Gerencial}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="MainFidelidade"
+        component={MainFidelidade}
+        options={{
+          header: () => null,
+        }}
+      />
+
+    <Stack.Screen
+        name="FidelidadeNovo"
+        component={FidelidadeNovo}
+        options={{
+          header: () => null,
+        }}
+      />
+
+    <Stack.Screen
+        name="FidelidadeList"
+        component={FidelidadeList}
+        options={{
+          header: () => null,
+        }}
+      />
+    
+    <Stack.Screen
+        name="FidelidadeEditar"
+        component={FidelidadeEditar}
         options={{
           header: () => null,
         }}

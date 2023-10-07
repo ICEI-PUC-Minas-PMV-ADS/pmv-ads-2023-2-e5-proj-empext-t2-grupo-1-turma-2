@@ -1,9 +1,5 @@
 # Planos de Testes de Software
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
-
-Enumere quais cenários de testes foram selecionados para teste. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
-
 Os requisitos para realização dos testes de software são:
 
 - Aplicativo disponível para utilizar em Android e IOS
@@ -125,14 +121,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 |Passos |	1) Acessar a aplicação em dispositivos Android e IOS .	 |
 |Critérios de êxito| A aplicação deve ser compativel com os dois sistemas operacionais. |
 
-
-|Caso de teste   ?   | CT  -  Visualizar Notificações |
-|-------|-------------------------
-|Requisitos Associados | 	 RF-08 - A aplicação deve possuir uma seção de notificações onde o administrador receberá notificação de novos pedidos em tempo real.
-|Objetivo do teste| Verificar se a carga de notificações está acontecendo corretamente. |
-|Passos |	1) Acessar a aplicação . 2)  . 3)  . 4)  . 5) .  |
-|Critérios de êxito| As notificações devem ser exibidas corretamente para o administrador. 
  
 # Evidências de Testes de Software
 
-Apresente imagens e/ou vídeos que comprovam que um determinado teste foi executado, e o resultado esperado foi obtido. Normalmente são screenshots de telas, ou vídeos do software em funcionamento.
+Vídeo do teste sendo executado e o resultado obtido disponível em https://youtu.be/6uhKPuJ4zO0
