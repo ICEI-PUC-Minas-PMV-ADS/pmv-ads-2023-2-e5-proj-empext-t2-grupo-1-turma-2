@@ -14,6 +14,17 @@ const ExibeProdutos = () => {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
+  const retorno = async () => {
+    const user = await AsyncStorage.getItem('userData');
+
+    if(JSON.parse(user).isRootUser
+){
+      navigation.navigate("GerenciaProdutos");
+    }else{
+      navigation.navigate("ChooseSweet");
+    }
+
+  }
 
   const getParams = async () => {
     
@@ -42,7 +53,7 @@ const ExibeProdutos = () => {
 
   return (
     <ScrollView>
-      <Nav onPress={() => navigation.navigate("GerenciaProdutos")} />
+      <Nav onPress={retorno} />
 
       <View style={styles.container}>
         {isLoading ? <Text>Loading...</Text> : (

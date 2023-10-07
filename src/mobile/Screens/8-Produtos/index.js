@@ -17,7 +17,7 @@ function GerenciaProdutos() {
 
   const produtosDisponiveis = () => {
     console.log("Listar produtos disponíveis");
-    navigation.navigate('ChooseSweet');
+    navigation.navigate('ExibeProdutos');
 
   }
 

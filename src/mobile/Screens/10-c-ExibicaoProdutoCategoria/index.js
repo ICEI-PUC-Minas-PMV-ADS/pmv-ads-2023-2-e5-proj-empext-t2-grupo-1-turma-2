@@ -39,6 +39,7 @@ const ExibeProdutosCategoria = () => {
     setLoading(false);
   };
 
+
   useEffect(() => {
     setLoading(true);
     getParams();

@@ -10,15 +10,26 @@ import Doces4 from '../../assets/icons/tortinhas.png';
 import Doces5 from '../../assets/icons/salgados.png';
 import Doces6 from '../../assets/icons/bebidas.png';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function ChooseSweet() {
   const navigation = useNavigation();
 
-  
+  const retorno = async () => {
+    const user = await AsyncStorage.getItem('userData');
+    console.log(user)
+    if(JSON.parse(user).isRootUser){
+      navigation.navigate("Gerencial");
+    }else{
+      navigation.navigate("Login");
+    }
+
+  }
+
 
   return (
     <ScrollView>
-    <Nav onPress={() => navigation.navigate("Gerencial")} />
+    <Nav onPress={retorno}/>
     <View style={styles.container}>
       <View style={styles.row}>
         {/* Botão 1 */}
