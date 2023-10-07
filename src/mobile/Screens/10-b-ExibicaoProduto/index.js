@@ -14,11 +14,22 @@ const ExibeProdutos = () => {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
+  const retorno = async () => {
+    const user = await AsyncStorage.getItem('userData');
+
+    if(JSON.parse(user).isRootUser
+){
+      navigation.navigate("GerenciaProdutos");
+    }else{
+      navigation.navigate("ChooseSweet");
+    }
+
+  }
 
   const getParams = async () => {
     
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.211'
+    const host = 'http://192.168.0.132'
     const port = '8080' 
     
     
@@ -42,7 +53,7 @@ const ExibeProdutos = () => {
 
   return (
     <ScrollView>
-      <Nav onPress={() => navigation.navigate("GerenciaProdutos")} />
+      <Nav onPress={retorno} />
 
       <View style={styles.container}>
         {isLoading ? <Text>Loading...</Text> : (

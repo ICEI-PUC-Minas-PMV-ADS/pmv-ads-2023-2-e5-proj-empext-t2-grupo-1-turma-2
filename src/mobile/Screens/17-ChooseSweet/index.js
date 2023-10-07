@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import { ScrollView, View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import Nav from "../../Components/NavBar/index";
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
 import Logo from '../../Components/Logo';
 import Doces1 from '../../assets/icons/doces.png';
@@ -9,15 +10,27 @@ import Doces4 from '../../assets/icons/tortinhas.png';
 import Doces5 from '../../assets/icons/salgados.png';
 import Doces6 from '../../assets/icons/bebidas.png';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function ChooseSweet() {
   const navigation = useNavigation();
 
-  
+  const retorno = async () => {
+    const user = await AsyncStorage.getItem('userData');
+    console.log(user)
+    if(JSON.parse(user).isRootUser){
+      navigation.navigate("Gerencial");
+    }else{
+      navigation.navigate("Login");
+    }
+
+  }
+
 
   return (
+    <ScrollView>
+    <Nav onPress={retorno}/>
     <View style={styles.container}>
-      <Logo/>
       <View style={styles.row}>
         {/* Botão 1 */}
         <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
@@ -60,6 +73,7 @@ function ChooseSweet() {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 }
 

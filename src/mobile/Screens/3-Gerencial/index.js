@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Nav from "../../Components/NavBar/index";
 import { View, ScrollView, TouchableOpacity, Text } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import Logo from "../../Components/Logo/index";
@@ -13,10 +14,9 @@ const Gerencial = () => {
 
   return (
     <ScrollView>
-
+      <Nav onPress={() => navigation.navigate("Login")} />
       <View style={styles.container}>
         <Statusbar />
-        <Logo />
 
         <DefaultButton text={"Programa de Fidelidade"}  onPress={() => {navigation.navigate('MainFidelidade')}} />
         <Text style={styles.paragraph}> </Text>

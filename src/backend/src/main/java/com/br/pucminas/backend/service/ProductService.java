@@ -42,6 +42,7 @@ public class ProductService {
                 category(form.getCategory()).
                 quantity(form.getQuantity()).
                 link(form.getLink()).
+                price(form.getPrice()).
                 build();
 
         productRepository.save(newProduct);
