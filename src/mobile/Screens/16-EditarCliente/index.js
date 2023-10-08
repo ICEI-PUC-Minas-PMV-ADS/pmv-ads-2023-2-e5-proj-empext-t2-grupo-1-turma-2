@@ -6,6 +6,7 @@ import SaveButton from "../../Components/Buttons/Save";
 import DeleteButton from "../../Components/Buttons/Delete";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native';
+import Nav from "../../Components/NavBar";
 
 
 const EditarCliente = () => {
@@ -18,15 +19,14 @@ const EditarCliente = () => {
 
    
 return (
-     <ScrollView>
-         <View style={styles.container}>
-          <Logo />
-        
+     <ScrollView  style={styles.fundo}>
+        <Nav onPress={() => navigation.navigate("Clientes")} />
+         <View style={styles.container}>  
         <Text style={styles.paragraph}>
         {'\n'}
        Editar Cliente
         </Text>
-        <p></p>
+        
 
      <TextInput
           style={styles.input}
@@ -84,21 +84,19 @@ return (
           activeOutlineColor="#eaeaea"
           outlineColor="#eaeaea"
           backGroundColor="#f2e8e3"
-          left={<TextInput.Icon name="key" />}
+          right={<TextInput.Icon name="key" />}
         />
 
-       
         <SaveButton
           text={"Salvar"}
-          onPress={MeuPerfil}
+          //onPress={MeuPerfil}
         />
-        <p></p>
-
+<Text></Text>
         <DeleteButton
           text={"Excluir Conta"}
-          onPress={MeuPerfil}
+          
+          //onPress={MeuPerfil}
         />
-          <p></p>
         
       </View>
     </ScrollView>

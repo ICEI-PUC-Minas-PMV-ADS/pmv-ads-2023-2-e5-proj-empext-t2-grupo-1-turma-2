@@ -1,6 +1,11 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  fundo:{
+    backgroundColor:"#fff"
+
+  },
+  
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -20,5 +25,6 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: "#C05C63",
     fontWeight: "bold",
-  }
+  },
+
 });

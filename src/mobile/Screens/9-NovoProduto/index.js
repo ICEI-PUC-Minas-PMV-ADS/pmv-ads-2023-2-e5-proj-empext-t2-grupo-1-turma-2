@@ -64,7 +64,7 @@ function NovoProduto() {
   
 
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor:'white'}}>
       <Nav onPress={() => navigation.navigate("Gerencial")} />
       <View style={styles.container}>
         <Statusbar />

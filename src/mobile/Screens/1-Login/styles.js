@@ -4,7 +4,7 @@ import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 export const styles = StyleSheet.create({
   container:{
     width: vw(100),
-    height: vh(100),
+    height: vh(105),
     backgroundColor: "#f2e8e3",
     display: "flex",
     alignItems:"center",

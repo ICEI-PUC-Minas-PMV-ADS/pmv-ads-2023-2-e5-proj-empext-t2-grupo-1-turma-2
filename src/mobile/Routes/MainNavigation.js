@@ -19,6 +19,13 @@ import FidelidadeNovo from "../Screens/5-FidelidadeNovo/index";
 import FidelidadeList  from "../Screens/6-FidelidadeList/index";
 import FidelidadeEditar  from "../Screens/7-FidelidadeEditar/index";
 
+//Telas Administrativas de Pedidos
+import Pedidos from "../Screens/13-Pedidos/index";
+
+//Telas Administrativas Clientes
+import Clientes from "../Screens/15-ListaClientes/index";
+import EditarCliente from "../Screens/16-EditarCliente/index";
+
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
@@ -142,6 +149,30 @@ const Main = () => {
       <Stack.Screen
         name="ExibeProdutosCategoria"
         component={ExibeProdutosCategoria}
+        options={{
+          header: () => null,
+        }}
+      />
+
+<Stack.Screen
+        name="Pedidos"
+        component={Pedidos}
+        options={{
+          header: () => null,
+        }}
+      />
+
+<Stack.Screen
+        name="Clientes"
+        component={Clientes}
+        options={{
+          header: () => null,
+        }}
+      />
+
+<Stack.Screen
+        name="EditarCliente"
+        component={EditarCliente}
         options={{
           header: () => null,
         }}

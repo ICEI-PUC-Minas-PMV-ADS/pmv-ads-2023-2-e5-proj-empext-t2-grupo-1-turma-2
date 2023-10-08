@@ -13,10 +13,9 @@ const Gerencial = () => {
   const navigation = useNavigation();
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.background}>
       <Nav onPress={() => navigation.navigate("Login")} />
       <View style={styles.container}>
-        <Statusbar />
 
         <DefaultButton text={"Programa de Fidelidade"}  onPress={() => {navigation.navigate('MainFidelidade')}} />
         <Text style={styles.paragraph}> </Text>
@@ -24,13 +23,10 @@ const Gerencial = () => {
         <DefaultButton text={"Produtos"}  onPress={() => {navigation.navigate('GerenciaProdutos')}} />
         <Text style={styles.paragraph}> </Text>
 
-        <DefaultButton text={"Tela Principal"}  onPress={() => {navigation.navigate('ChooseSweet')}} />
+        <DefaultButton text={"Pedidos"}  onPress={() => {navigation.navigate('Pedidos')}} />
         <Text style={styles.paragraph}> </Text>
 
-        <DefaultButton text={"Pedidos"}  onPress={() => {navigation.navigate('ChooseSweet')}} />
-        <Text style={styles.paragraph}> </Text>
-
-        <DefaultButton text={"Clientes"}  onPress={() => {navigation.navigate('ChooseSweet')}} />
+        <DefaultButton text={"Clientes"}  onPress={() => {navigation.navigate('Clientes')}} />
         <Text style={styles.paragraph}> </Text>
 
       </View>

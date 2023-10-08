@@ -36,7 +36,7 @@ function FidelidadeMovo() {
   
 
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor:'white'}}>
       <Nav onPress={() => navigation.navigate("MainFidelidade")} />
       <View style={styles.container}>
         <Statusbar />

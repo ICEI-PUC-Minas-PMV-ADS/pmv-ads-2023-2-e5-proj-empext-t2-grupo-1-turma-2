@@ -18,7 +18,7 @@ const MeuPerfil = () => {
 
    
 return (
-     <ScrollView>
+     <ScrollView style={{backgroundColor:'white'}}>
          <View style={styles.container}>
           <Logo />
         
@@ -26,7 +26,7 @@ return (
         {'\n'}
        Meu Perfil
         </Text>
-        <p></p>
+        
 
      <TextInput
           style={styles.input}
@@ -84,7 +84,7 @@ return (
           activeOutlineColor="#eaeaea"
           outlineColor="#eaeaea"
           backGroundColor="#f2e8e3"
-          left={<TextInput.Icon name="key" />}
+          right={<TextInput.Icon name="key" />}
         />
 
        
@@ -92,13 +92,13 @@ return (
           text={"Salvar"}
           onPress={MeuPerfil}
         />
-        <p></p>
+        <Text></Text>
 
         <DeleteButton
           text={"Excluir Conta"}
           onPress={MeuPerfil}
         />
-          <p></p>
+        
         
       </View>
     </ScrollView>

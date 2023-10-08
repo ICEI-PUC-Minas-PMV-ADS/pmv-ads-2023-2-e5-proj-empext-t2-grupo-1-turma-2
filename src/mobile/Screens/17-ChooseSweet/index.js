@@ -28,9 +28,9 @@ function ChooseSweet() {
 
 
   return (
-    <ScrollView>
-    <Nav onPress={retorno}/>
+    <ScrollView style={{backgroundColor:'white'}}>
     <View style={styles.container}>
+      <Logo/>
       <View style={styles.row}>
         {/* Botão 1 */}
         <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>

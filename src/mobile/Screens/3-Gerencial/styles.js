@@ -1,11 +1,17 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  background:{
+    backgroundColor:"#ffffff",
+    
+  },
+  
   container: {
     flex: 1,
-    backgroundColor: "#f2e8e3",
+    backgroundColor: "#ffffff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent:'center',
+    marginTop:150,
   },
   input: {
     width: 263,
