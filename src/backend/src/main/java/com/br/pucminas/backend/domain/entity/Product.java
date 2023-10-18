@@ -38,6 +38,10 @@ public class Product {
     @Column(name = "link")
     private String link;
 
+    public Product (String name, String category){
+        this.name = name;
+        this.category = category;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
