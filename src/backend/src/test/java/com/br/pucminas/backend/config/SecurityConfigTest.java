@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.security.SecureRandom;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -26,7 +27,7 @@ public class SecurityConfigTest {
     public void testPasswordEncoder() {
         PasswordEncoder passwordEncoder = securityConfig.passwordEncoder();
 
-        assertTrue(passwordEncoder instanceof PasswordEncoder);
+        assertNotNull(passwordEncoder);
 
         // You can add more test cases here to check the behavior of the passwordEncoder.
         // For example, you can test password encoding and matching.

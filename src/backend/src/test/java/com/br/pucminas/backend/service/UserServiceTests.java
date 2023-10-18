@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-public class UserServiceTest {
+public class UserServiceTests {
 
     @InjectMocks
     private UserService userService;
