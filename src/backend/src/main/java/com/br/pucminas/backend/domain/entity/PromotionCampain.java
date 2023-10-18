@@ -1,6 +1,5 @@
 package com.br.pucminas.backend.domain.entity;
 
-
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -14,34 +13,26 @@ import java.util.Objects;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "product")
-public class Product {
+@Table(name = "promotion_campain")
+public class PromotionCampain {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "image_link")
+    private String imageLink;
 
-    @Column(name = "quantity")
-    private Integer quantity;
-
-    @Column(name = "price")
-    private Float price;
-
-    @Column(name = "link")
-    private String link;
-
-    public Product (String name, String category){
-        this.name = name;
-        this.category = category;
+    public PromotionCampain(String title){
+        this.title = title;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,4 +45,5 @@ public class Product {
     public int hashCode() {
         return getClass().hashCode();
     }
+
 }
