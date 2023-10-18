@@ -39,6 +39,6 @@ public class ProductController {
     @PostMapping("/v1/product")
     public ResponseEntity<Product> postUser(@RequestBody ProductForm form) {
         Product newProduct = productService.createProduct(form);
-        return ResponseEntity.created(URI.create("/v1/profile" + newProduct.getId())).body(newProduct);
+        return ResponseEntity.created(URI.create("/v1/product" + newProduct.getId())).body(newProduct);
     }
 }
