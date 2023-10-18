@@ -29,6 +29,10 @@ public class PromotionCampain {
     @Column(name = "image_link")
     private String imageLink;
 
+    public PromotionCampain(String title){
+        this.title = title;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
