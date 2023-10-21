@@ -1,12 +1,11 @@
 package com.br.pucminas.backend.domain.entity;
 
-
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+
 import java.util.Objects;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -15,47 +14,45 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "product")
-public class Product {
+@Table(name = "orderproduct")
+public class OrderProduct {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name")
-    private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pedidoId", referencedColumnName = "id")
+    private Order order;
 
-    @Column(name = "description")
-    private String description;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "productId", referencedColumnName = "id")
+    private Product produto;
+    
+    @Column(name = "productName")
+    private String productName; 
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "imageLink")
+    private String imageLink; 
+
 
     @Column(name = "quantity")
     private Integer quantity;
 
     @Column(name = "price")
     private Float price;
-
-    @Column(name = "link")
-    private String link;
-
-    @OneToMany(mappedBy="produto",fetch = FetchType.LAZY)
-    private Set<OrderProduct> orderProducts;
-
-    public Product (String name, String category){
-        this.name = name;
-        this.category = category;
-    }
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Product user = (Product) o;
-        return getId() != null && Objects.equals(getId(), user.getId());
+        OrderProduct orderProduct = (OrderProduct) o;
+        return getId() != null && Objects.equals(getId(), orderProduct.getId());
     }
 
     @Override
     public int hashCode() {
         return getClass().hashCode();
     }
+    
 }
