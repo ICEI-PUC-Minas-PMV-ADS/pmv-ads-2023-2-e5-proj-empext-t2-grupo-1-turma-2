@@ -3,6 +3,8 @@ import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
 import Logo from '../../Components/Logo';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'
+
 
 const Sobre = () => {
 
@@ -46,9 +48,20 @@ Desde então sua vida e de sua família estão engajadas nesse projeto e, em 202
         {'\n'}
       Entre em contato
 <p></p>
-      <MaterialCommunityIcons name="instagram" size={24} color="#c05c63" />
+      <MaterialCommunityIcons name="instagram" size={24} color="#c05c63" 
+      
+      onPress={() =>
+          Linking.openURL("https://www.instagram.com/anadinizdoceria")
+       }
+     />
 
-      <Ionicons name="logo-whatsapp" size={24} color="#c05c63" />
+      <Ionicons name="logo-whatsapp" size={24} color="#c05c63" 
+           onPress={() =>
+            Linking.openURL(
+                  "https://api.whatsapp.com/send?phone=5531998325314&text=Oi"
+                )
+             }
+          />
        {'\n'}     
      
       Copyright 2023 ©Ana Diniz Doceira
