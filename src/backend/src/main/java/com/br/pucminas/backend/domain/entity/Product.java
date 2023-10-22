@@ -6,6 +6,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -37,6 +38,9 @@ public class Product {
 
     @Column(name = "link")
     private String link;
+
+    @OneToMany(mappedBy="produto",fetch = FetchType.LAZY)
+    private Set<OrderProduct> orderProducts;
 
     public Product (String name, String category){
         this.name = name;

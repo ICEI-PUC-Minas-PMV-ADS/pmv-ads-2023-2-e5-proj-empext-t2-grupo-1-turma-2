@@ -1,0 +1,116 @@
+Busca pedido:
+Request:<GET> http://localhost:8080/api/v1/order
+
+Json request : não precisa
+
+Json-response:
+[
+    {
+        "operacao": null,
+        "serverResponseMessage": null,
+        "id": 1,
+        "dataHoraPedido": "2023-10-22T22:03:27.365+00:00",
+        "formaPagamento": "Pagar na Entrega",
+        "statusPedido": "Em Preparação",
+        "valorTotalPedido": 275.5,
+        "clientMail": "sys_root@gmail.com",
+        "itensDoPedido": [
+            {
+                "productId": 1,
+                "orderItenId": 1,
+                "productDesc": "Brownie Recheado",
+                "imageLink": "https://i.imgur.com/faluOcj.png",
+                "productPrice": 25.5,
+                "quantity": 3
+            },
+            {
+                "productId": 2,
+                "orderItenId": 2,
+                "productDesc": "Dadinhos de Brownie",
+                "imageLink": "https://i.imgur.com/cZNSTMJ.png",
+                "productPrice": 15.5,
+                "quantity": 5
+            },
+            {
+                "productId": 3,
+                "orderItenId": 3,
+                "productDesc": "Mousse de MaracujÃ¡",
+                "imageLink": "https://i.imgur.com/ieOgH8W.png",
+                "productPrice": 40.5,
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "operacao": null,
+        "serverResponseMessage": null,
+        "id": 2,
+        "dataHoraPedido": "2023-10-22T22:03:28.317+00:00",
+        "formaPagamento": "Pagar na Entrega",
+        "statusPedido": "Pedido recebido. Agaurdando preparação.",
+        "valorTotalPedido": 122.5,
+        "clientMail": "sys_root@gmail.com",
+        "itensDoPedido": [
+            {
+                "productId": 1,
+                "orderItenId": 4,
+                "productDesc": "Brownie Recheado",
+                "imageLink": "https://i.imgur.com/faluOcj.png",
+                "productPrice": 25.5,
+                "quantity": 2
+            },
+            {
+                "productId": 2,
+                "orderItenId": 5,
+                "productDesc": "Dadinhos de Brownie",
+                "imageLink": "https://i.imgur.com/cZNSTMJ.png",
+                "productPrice": 15.5,
+                "quantity": 2
+            },
+            {
+                "productId": 3,
+                "orderItenId": 6,
+                "productDesc": "Mousse de MaracujÃ¡",
+                "imageLink": "https://i.imgur.com/ieOgH8W.png",
+                "productPrice": 40.5,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "operacao": null,
+        "serverResponseMessage": null,
+        "id": 3,
+        "dataHoraPedido": "2023-10-22T22:03:28.789+00:00",
+        "formaPagamento": "Pagar na Entrega",
+        "statusPedido": "Pedido recebido. Agaurdando preparação.",
+        "valorTotalPedido": 122.5,
+        "clientMail": "sys_root@gmail.com",
+        "itensDoPedido": [
+            {
+                "productId": 1,
+                "orderItenId": 7,
+                "productDesc": "Brownie Recheado",
+                "imageLink": "https://i.imgur.com/faluOcj.png",
+                "productPrice": 25.5,
+                "quantity": 2
+            },
+            {
+                "productId": 2,
+                "orderItenId": 8,
+                "productDesc": "Dadinhos de Brownie",
+                "imageLink": "https://i.imgur.com/cZNSTMJ.png",
+                "productPrice": 15.5,
+                "quantity": 2
+            },
+            {
+                "productId": 3,
+                "orderItenId": 9,
+                "productDesc": "Mousse de MaracujÃ¡",
+                "imageLink": "https://i.imgur.com/ieOgH8W.png",
+                "productPrice": 40.5,
+                "quantity": 1
+            }
+        ]
+    }
+]
