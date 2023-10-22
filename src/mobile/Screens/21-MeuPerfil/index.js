@@ -20,7 +20,7 @@ const MeuPerfil = () => {
 return (
      <ScrollView style={{backgroundColor:'white'}}>
          <View style={styles.container}>
-          <Logo />
+          <Logo onPress={() => {navigation.navigate('Sobre')}}/>
         
         <Text style={styles.paragraph}>
         {'\n'}

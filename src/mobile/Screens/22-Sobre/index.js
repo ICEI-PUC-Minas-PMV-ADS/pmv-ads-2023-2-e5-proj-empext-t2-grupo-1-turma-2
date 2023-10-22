@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
 import Logo from '../../Components/Logo';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 
 
 const Sobre = () => {
@@ -29,17 +29,17 @@ const Sobre = () => {
          <Text>
         {'\n'}
 A Ana Diniz Doceria surgiu no ano de 2016 com a Ana Diniz, que também é professora de inglês, fazendo brownies e doces para presentear seus alunos. Desde então, começou a receber encomendas e conquistou todos com suas experiências e gostosuras.
-<p></p>
+{'\n'} {'\n'}
 Ana Diniz não tinha conhecimento de confeitaria mas tinha persistência, dedicação e vontade de aprender. Seguiu fazendo cursos e aperfeiçoando suas técnicas. Durante 4 anos utilizou a área gourmet do seu pai como sua cozinha.
-<p></p>
+{'\n'} {'\n'}
 Desde então sua vida e de sua família estão engajadas nesse projeto e, em 2020, abriu sua loja física, alterou o nome de Ana Diniz Brownies para Ana Diniz Doceria e especializou-se em adoçar vidas através de momentos e experiências únicas.
-<p></p>
+{'\n'} {'\n'}
         Política de privacidade
-        <p></p>
+        {'\n'}
         Política de termos e condições
-        <p></p>
+        {'\n'}
         Política de entrega
-        <p></p>
+        {'\n'}
         Política de trocas e devoluções
         
         </Text>
@@ -47,7 +47,7 @@ Desde então sua vida e de sua família estão engajadas nesse projeto e, em 202
        <Text style={styles.footer}>
         {'\n'}
       Entre em contato
-<p></p>
+      {'\n'}{'\n'}
       <MaterialCommunityIcons name="instagram" size={24} color="#c05c63" 
       
       onPress={() =>
@@ -62,7 +62,7 @@ Desde então sua vida e de sua família estão engajadas nesse projeto e, em 202
                 )
              }
           />
-       {'\n'}     
+       {'\n'} {'\n'}   
      
       Copyright 2023 ©Ana Diniz Doceira
      
@@ -106,7 +106,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#C05C63",
     fontWeight: "bold",
-  }
+  },
+  footer:{textAlign: 'center'},
 });
 
 export default Sobre;

@@ -26,6 +26,10 @@ import Pedidos from "../Screens/13-Pedidos/index";
 import Clientes from "../Screens/15-ListaClientes/index";
 import EditarCliente from "../Screens/16-EditarCliente/index";
 
+//Telas Cliente
+import Sobre from "../Screens/22-Sobre/index";
+import MenuInferior from "../Components/MenuInferior/index";
+
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
@@ -173,6 +177,22 @@ const Main = () => {
 <Stack.Screen
         name="EditarCliente"
         component={EditarCliente}
+        options={{
+          header: () => null,
+        }}
+      />
+
+<Stack.Screen
+        name="MenuInferior"
+        component={MenuInferior}
+        options={{
+          header: () => null,
+        }}
+      />
+
+<Stack.Screen
+        name="Sobre"
+        component={Sobre}
         options={{
           header: () => null,
         }}

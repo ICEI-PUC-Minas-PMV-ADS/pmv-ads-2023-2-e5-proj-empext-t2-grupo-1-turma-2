@@ -49,7 +49,7 @@ const PedidosCliente = () => {
     <ScrollView style={styles.background}>
       <View style={styles.container}>
         
-      <Logo/>
+      <Logo onPress={() => {navigation.navigate('Sobre')}}/>
         <Statusbar />
 
     <EspacoPedido/>
