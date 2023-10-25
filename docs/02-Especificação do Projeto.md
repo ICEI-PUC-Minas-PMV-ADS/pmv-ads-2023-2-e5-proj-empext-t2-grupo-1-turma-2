@@ -11,16 +11,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RF-001 | A aplicação deverá permitir a criação de um perfil de usuário.                                                  | ALTA       |
 | RF-002 | A aplicação deverá permitir que o administrador gerencie o relatório de compras.                                | ALTA       |
 | RF-003 | A aplicação deverá permitir a alteração dos dados de usuários.                                                  | ALTA       |
-| RF-004 | A aplicação deverá permitir que os pedidos sejam ordenados por ordem de chegada, local de entrega e prioridade. | ALTA       |
+| RF-004 | A aplicação deverá permitir que os pedidos sejam ordenados por ordem de chegada.                                | MÉDIA      |
 | RF-005 | A aplicação deverá permitir a criação, edição, e a exclusão dos produtos.                                       | MÉDIA      |
 | RF-006 | A aplicação deverá permitir a busca de produtos com a opção de filtrar sua pesquisa.                            | ALTA       |
 | RF-007 | A aplicação deverá permitir a opção de salvar o produto escolhido.                                              | BAIXA      |
-| RF-008 | A aplicação deverá permitir a chegada de uma notificação a cada pedido efetuado.                                | ALTA       |
+| RF-008 | A aplicação deverá permitir a chegada de uma mensagem via whatsapp a cada pedido efetuado.                      | ALTA       |
 | RF-009 | A aplicação deverá permitir a visualização da quantidade e produtos em estoque.                                 | MÉDIA      |
 | RF-010 | A aplicação deverá permitir que os usuários possam fazer pedidos.                                               | ALTA       |
-| RF-011 | A aplicação deverá possibilitar aos usuários varias formas de pagamento ( Cartão, Dinheiro, Pix ).              | ALTA       |
-| RF-012 | A aplicação deverá informar aos usuários os valores das taxas de entrega de acordo com sua localidade.          | ALTA       |
-| RF-013 | A aplicação devera fidelizar os clientes mais frequente oferecendo benefícios e vantagens.                      | MÉDIA      |
+| RF-011 | A aplicação deverá informar aos usuários varias formas de pagamento ( Cartão, Dinheiro, Pix ).                  | ALTA       |
+| RF-012 | A aplicação deverá informar aos usuários os valores das taxas de entrega de acordo com sua localidade.          | BAIXA      |
+| RF-013 | A aplicação deverá fidelizar os clientes mais frequente oferecendo benefícios e vantagens.                      | MÉDIA      |
 | RF-014 | A aplicação deverá permitir que o administrador visualize a lista de clientes.                                  | MÉDIA      |
 | RF-015 | A aplicação deverá permitir a exclusão de sua conta pelo usuário.                                               | ALTA       |
 
