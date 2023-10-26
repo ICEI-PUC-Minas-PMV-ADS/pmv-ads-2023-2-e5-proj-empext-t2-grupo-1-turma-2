@@ -17,5 +17,37 @@ export const styles = StyleSheet.create({
     fontSize:15,
 
   },
+  containerbutton: {
+    flexDirection: "row", // Define o layout da "View" como uma linha horizontal
+    justifyContent: "space-between", // Distribui os botões igualmente no espaço disponível
+    marginTop: 10,
+  },
+
+  button: {
+    backgroundColor: "#eddacf",
+    padding: 5,
+    borderRadius: 8,
+    flex: 0.2, // Para que ambos os botões ocupem a mesma largura
+    marginHorizontal: 8, // Espaçamento horizontal entre os botões
+  },
+  button1: {
+    backgroundColor: "#c05c63",
+    padding: 20,
+    borderRadius: 8,
+    flex: 1, // Para que ambos os botões ocupem a mesma largura
+    marginHorizontal: 8, // Espaçamento horizontal entre os botões
+  },
+  
+  buttonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontWeight:"bold",
+  },
+
+  buttonText2: {
+    color: "#c05c63",
+    textAlign: "center",
+    fontWeight:"bold",
+  },
 
 });

@@ -88,6 +88,7 @@ const Main = () => {
     <Stack.Screen
         name="FidelidadeEditar"
         component={FidelidadeEditar}
+        initialParams={{itemId: 1}}
         options={{
           header: () => null,
         }}
