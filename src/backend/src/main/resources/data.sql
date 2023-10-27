@@ -1,15 +1,3 @@
-CREATE TABLE countries (
-    id INT,
-  name VARCHAR(50),
-  PRIMARY KEY (id)
-);
-
-INSERT INTO countries (id, name) VALUES (1, 'USA');
-INSERT INTO countries (id, name) VALUES (2, 'France');
-INSERT INTO countries (id, name) VALUES (3, 'Brazil');
-INSERT INTO countries (id, name) VALUES (4, 'Italy');
-INSERT INTO countries (id, name) VALUES (5, 'Canada');
-
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');
 
 
@@ -26,3 +14,11 @@ INSERT INTO product (name, description, category, quantity, price, link ) VALUES
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Enrolado Assado', 'Com recheio de presunto e mussarela.', 'Tortinhas', 100, 5.50, 'https://i.imgur.com/qjjR73R.png');
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Refrigerante Lata', 'Lata de refrigerante 350ml gelado.', 'Bebidas', 100, 4.50, 'https://i.imgur.com/hQZjPXK.png');
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Refrigerante Garrafa', 'Garrafinha de refrigerante 200ml', 'Bebidas', 100, 2.50, 'https://i.imgur.com/hxu6kyl.png');
+
+
+INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da sobremesa', '10% em todas sobremesas', 'https://i.imgur.com/0SjPZDm.png');
+INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da coxinha', '2% em todas coxinhas', 'https://i.imgur.com/w2hzOEi.png');
+INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia do copao', '15% em todos copoes', 'https://i.imgur.com/sFqtI8v.png');
+
+
+INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');

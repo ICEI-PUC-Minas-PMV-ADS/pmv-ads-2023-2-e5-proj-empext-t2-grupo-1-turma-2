@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from "react";
 import { TextInput, Button } from "react-native-paper";
 import { View, TouchableOpacity, Text, StyleSheet, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
@@ -7,52 +6,102 @@ import Logo from '../../Components/Logo';
 import Statusbar from "../../Components/StatusBar";
 import { useNavigation } from '@react-navigation/native'
 import Nav from "../../Components/NavBar/index";
+import { useState, useEffect } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-function FidelidadeEditar() {
-  const navigation = useNavigation();
+function FidelidadeEditar({ route, navigation }) {
+  const { itemId, otherParam } = route.params;
 
+  const [id, setId] = useState(itemId); //id do programa de fidelidade
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [linkFoto, setLinkFoto] = useState("");
   const [listaParticipantes, setListaParticipantes] = useState("");
 
+  useEffect(async () => {
+    console.log(otherParam)
+    const list = JSON.parse(await AsyncStorage.getItem('programaFidelidade'));
+    setId(list.id)
+    setDescricao(list.description)
+    setTitulo(list.name)  
+    setLinkFoto(list.link)
+  }, []); 
 
-  const deleteProgramaFidelidade =  async () => {
-      console.log("Excluindo programa de fidelidade.")
-      
-      console.log("Chama API no backend.")
+  const deleteProgramaFidelidade = async () => {
+    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
+    const host = 'http://192.168.0.32'
 
-      navigation.navigate("FidelidadeList");
+    const port = '8080'
+
+    const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
+
+    // await fetch(endpoint,{
+    //   method: 'DELETE',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   }
+    //   }
+    // ).then((response) => 
+    //   response.json()
+    // ).then(async (responseData) => {
+    //   navigation.navigate("MainFidelidade");
+    // })
+    // .catch( async (error) => {
+    //   console.error(error);
+    // });
+
   }
-  
+
   const editProgramaFidelidade = async () => {
     console.log("Editanto programa de fidelidade.")
-    
+
     let prodprogramaFidelidade = {
-      id:123,
+      id: id,
       name: titulo,
       description: descricao,
-      link: linkFoto,
-      listaParticipantes: listaParticipantes
+      imageLink: linkFoto,
     };
 
     let encoderFidelidade = JSON.stringify(prodprogramaFidelidade);
     console.log(encoderFidelidade)
-    console.log("Chama API do Backend")
 
-    navigation.navigate("FidelidadeList");
+    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
+    const host = 'http://192.168.0.32'
+
+    const port = '8080'
+
+    const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
+
+    console.log(endpoint);
+    console.log(encoderFidelidade);
+
+    await fetch(endpoint,{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: encoderFidelidade
+      }
+    ).then((response) => 
+      response.json()
+    ).then(async (responseData) => {
+      navigation.navigate("MainFidelidade");
+    })
+    .catch( async (error) => {
+      console.error(error);
+    });
 
   }
-  
+
 
   return (
     <ScrollView>
       <Nav onPress={() => navigation.navigate("MainFidelidade")} />
       <View style={styles.container}>
         <Statusbar />
-        <Logo />        
-        <Text style={styles.texttop}>Editar Programa de Fidelidade</Text>      
+        <Logo />
+        <Text style={styles.texttop}>Editar Programa de Fidelidade de ID {JSON.stringify(itemId)}</Text>
 
         <TextInput
           style={styles.input}
@@ -62,7 +111,7 @@ function FidelidadeEditar() {
           onChangeText={(text) => setTitulo(text)}
           mode="outlined"
           activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          outlineColor="#FFFFFF"
         />
 
         <TextInput
@@ -75,7 +124,7 @@ function FidelidadeEditar() {
           multiline
           mode="outlined"
           activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          outlineColor="#FFFFFF"
         />
 
 
@@ -87,37 +136,29 @@ function FidelidadeEditar() {
           onChangeText={(text) => setLinkFoto(text)}
           mode="outlined"
           activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
-        />  
-
-      <TextInput
-          style={styles.inputtextarea}
-          label="Lista de participantes"
-          value={descricao}
-          autoCorrect={false}
-          onChangeText={(text) => setListaParticipantes(text)}
-          numberOfLines={4}
-          multiline
-          mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          outlineColor="#FFFFFF"
         />
-      
-        {/* Botão Salvvar */}
-        <TouchableOpacity style={styles.button} onPress={editProgramaFidelidade}>          
-          <Text style={styles.textbutton}>                  Salvar                  </Text>
-        </TouchableOpacity>  
 
-        {/* Botão excluir */}
-        <TouchableOpacity style={styles.button} onPress={deleteProgramaFidelidade}>          
-          <Text style={styles.textbutton}>                  Excluir              </Text>
-        </TouchableOpacity>      
-      
+
+        <View style={styles.row}>
+
+          {/* Botão Criar novo Programa */}
+          <TouchableOpacity style={styles.button} onPress={editProgramaFidelidade}>
+            <Text style={styles.text}>Salvar</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.row}>
+          {/* Botão Proglamas Disponiveis */}
+          <TouchableOpacity style={styles.button} onPress={deleteProgramaFidelidade}>
+            <Text style={styles.text}>Excluir</Text>
+          </TouchableOpacity>
+        </View>
 
       </View>
-                  
-      </ScrollView>
-    
+
+    </ScrollView>
+
   );
 }
 
@@ -126,7 +167,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'white',
+    backgroundColor: 'white',
   },
   row: {
     flexDirection: 'row',
@@ -136,36 +177,36 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor:'#c05c63',
+    backgroundColor: '#c05c63',
     margin: 30,
     padding: 30,
     marginBottom: 30,
-    borderRadius:20,    
+    borderRadius: 20,
   },
-  buttonanexaimg: {    
-    backgroundColor:'#f2e8e3',    
+  buttonanexaimg: {
+    backgroundColor: '#f2e8e3',
     margin: 10,
     padding: 10,
     marginBottom: 15,
-    borderRadius:20,    
+    borderRadius: 20,
   },
-  text:{
-    marginTop:5,
-    color:'#000000',    
-    fontSize:15,
+  text: {
+    marginTop: 5,
+    color: '#000000',
+    fontSize: 15,
   },
-  texttop:{
-    marginTop:5,
-    color:'#c05c63',
-    fontWeight:'bold',
-    fontSize:15,
+  texttop: {
+    marginTop: 5,
+    color: '#c05c63',
+    fontWeight: 'bold',
+    fontSize: 15,
 
   },
-  textbutton:{
-    marginTop:5,
-    color:'#ffffff',    
-    fontSize:15,
-    fontWeight:'bold',
+  textbutton: {
+    marginTop: 5,
+    color: '#ffffff',
+    fontSize: 15,
+    fontWeight: 'bold',
 
   },
   input: {

@@ -39,15 +39,30 @@ public class PromotionCampainController {
 
     // ROTA DE GET - /v1/profile
     @GetMapping("/v1/promotion-campain")
-    public ResponseEntity<List<PromotionCampain>> getProfile() {
+    public ResponseEntity<List<PromotionCampain>> getPromotion() {
         return ResponseEntity.ok(service.findAll());
     }
 
 
     // ROTA DE POST - /v1/profile
     @PostMapping("/v1/promotion-campain")
-    public ResponseEntity<PromotionCampain> postUser(@RequestBody PromotionCampainForm form) {
+    public ResponseEntity<PromotionCampain> insertPromotion(@RequestBody PromotionCampainForm form) {
         PromotionCampain newCampain = service.createProduct(form);
         return ResponseEntity.created(URI.create("/v1/promotion-campain" + newCampain.getId())).body(newCampain);
     }
+
+    // ROTA DE POST - /v1/profile
+    @PutMapping("/v1/promotion-campain/{id}")
+    public ResponseEntity<PromotionCampain> updatePromotion(@PathVariable String id, @RequestBody PromotionCampainForm form) {
+        PromotionCampain newCampain = service.updatePromotion(form, Integer.parseInt(id));
+        return ResponseEntity.ok().body(newCampain);
+    }
+    // ROTA DE POST - /v1/profile
+    @DeleteMapping("/v1/promotion-campain/{id}")
+    public ResponseEntity<PromotionCampain> deletePromotion(@PathVariable String id) {
+        service.deletePromotion(Integer.parseInt(id));
+        return ResponseEntity.noContent().build();
+    }
+
+
 }
