@@ -20,5 +20,3 @@ INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da 
 INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da coxinha', '2% em todas coxinhas', 'https://i.imgur.com/w2hzOEi.png');
 INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia do copao', '15% em todos copoes', 'https://i.imgur.com/sFqtI8v.png');
 
-
-INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');

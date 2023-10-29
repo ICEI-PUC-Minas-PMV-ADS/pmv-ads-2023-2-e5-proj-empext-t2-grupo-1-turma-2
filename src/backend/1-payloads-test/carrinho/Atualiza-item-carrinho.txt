@@ -1,0 +1,22 @@
+Atualiza ítem associado a um determinado carrinho
+
+Request: <PUT> : http://172.17.0.1:8080/api/v1/cart
+Do seguinte Json contendo o "id do ítem" e a "quantidade" que se deseja atualizar
+
+{ 
+    "cartItenId": 2,
+    "quantity":1
+}
+
+Response:
+Json com informações atualizadas referente ao ítem
+
+{
+    "cartId": 1,
+    "cartItenId": 1,
+    "productId": 5,
+    "descProduct": "Deliciosa coxinha de morango com cobertura de nutella.",
+    "quantity": 1,
+    "valorTotal": 10.5,
+    "serverResponseMessage": "Sucesso no processamento"
+}

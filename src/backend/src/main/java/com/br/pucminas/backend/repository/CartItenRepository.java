@@ -1,0 +1,18 @@
+package com.br.pucminas.backend.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.br.pucminas.backend.domain.entity.CartItens;
+
+
+@Repository
+public interface CartItenRepository  extends JpaRepository<CartItens, Integer> {
+
+    @Query(value = "select itens.* from cartiten itens where itens.cart_id = ?1", nativeQuery = true)
+    List<CartItens> findCartItensByCartId(Integer id);
+    
+}
