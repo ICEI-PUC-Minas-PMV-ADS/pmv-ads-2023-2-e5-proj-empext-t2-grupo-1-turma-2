@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, ScrollView, TouchableOpacity, Text } from "react-native";
+import { View, ScrollView, TouchableOpacity, Text, Alert } from "react-native";
 import { TextInput } from "react-native-paper";
 import Logo from "../../Components/Logo/index";
 import Statusbar from "../../Components/StatusBar";
@@ -24,10 +24,10 @@ const Login = () => {
     console.log(encoderUser)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
+    const host = 'http://192.168.0.132'
     const port = '8080' 
     
-    const endpoint = `${host}/api/v1/user/login`;
+    const endpoint = `${host}:${port}/api/v1/user/login`;
 
     console.log(endpoint);
 
@@ -38,8 +38,6 @@ const Login = () => {
       },
       body: encoderUser
       }
-    ).then((response) => 
-      response.json()
     ).then(async (responseData) => {
       console.log(JSON.stringify(responseData))
 
@@ -56,7 +54,9 @@ const Login = () => {
       }
     })
     .catch((error) => {
-      console.error(error);
+      console.log(error)
+      Alert.alert("Erro", "Usuário ou senha incorretos");
+      navigation.navigate("ChooseSweet");
     });
 
   }

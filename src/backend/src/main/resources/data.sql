@@ -1,6 +1,3 @@
-INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');
-
-
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Brownie Recheado', 'Saboroso quadrado de brownie recheado', 'Indispensáveis', 100, 6.50, 'https://i.imgur.com/faluOcj.png');
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Dadinhos de Brownie', '140g de pedaços de brownie cobertos com chocolate', 'Indispensáveis', 100, 8.00, 'https://i.imgur.com/cZNSTMJ.png');
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Mousse de Maracujá', 'Coberto com geléia caseira de maracujá.', 'Indispensáveis', 100, 8.50, 'https://i.imgur.com/ieOgH8W.png');
@@ -22,3 +19,6 @@ INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia do 
 
 
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');
+INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('Lavínia Helena Nascimento', 'laviniahelenanascimento@tigertimoveis.com', 'root@123!', '(88)98332-0577', 'Rua Governador Plácido Castelo, 478, Cocobó, Iguatu-CE ', '63504-148');
+INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('Nicole Aparecida Eduarda Nascimento', 'nicole-nascimento71@cincoentretenimentos.com.br', 'root@123!', '(21)98435-6789', 'Rua Goiás, Vila Brasil (Manilha), Itaboraí, Rio de Janeiro', '24859-108');
+INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('Iago Marcos Fogaça', 'iagomarcosfogaca@universo3d.com.br', 'root@123!', '(11) 98743-3958', 'Rua Frei São Galvão, Loteamento Santa Edwiges, Salto, São Paulo', '13327-487');

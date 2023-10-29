@@ -17,6 +17,27 @@ const EditarCliente = () => {
   const [placeholder, setPlaceholder] = useState("");
   const [cell, setCell] = useState("");
 
+
+
+  const atualizaPerfil = async () => {
+
+    let user = {
+      name: name,
+      email: email,
+      adress: placeholder,
+      password: confirmedPassword,
+      zipCode: zipCode,
+      cell: cell
+    };
+
+    let encoderUser = JSON.stringify(user);
+    console.log(encoderUser)
+    
+    
+
+    
+  }
+
    
 return (
      <ScrollView  style={styles.fundo}>

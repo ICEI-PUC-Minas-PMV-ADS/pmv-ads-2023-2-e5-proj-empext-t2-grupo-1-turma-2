@@ -13,6 +13,8 @@ import com.br.pucminas.backend.service.OrderService;
 import com.br.pucminas.backend.utils.enums.SystemErrors;
 
 import java.net.URI;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class OrderController {
         
         OrderForm newOrder= new OrderForm();
         log.info("Chamando Controler <POST>/v1/order/, método criaPedido()");
-
+        form.setDataHoraPedido(Timestamp.from(Instant.now()));
         try{
              
             newOrder = pedidoService.creatNewOrder(form);                         
@@ -94,7 +96,7 @@ public class OrderController {
             }
         }
     
-        return ResponseEntity.created(URI.create("/v1/order/" + order.getId())).body(order);
+        return ResponseEntity.created(URI.create("/v1/order/")).body(order);
 
     }
 
@@ -116,12 +118,6 @@ public class OrderController {
         return ResponseEntity.ok().body(listaPedidos);        
     }
 
-    /**
-     * Busca pedido de acordo com o id indicado
-     * @param id : Id do pedido
-     * @param form : Objeto do tipo OrderForm
-     * @return
-     */
     @GetMapping("/v1/order/{id}")
     public ResponseEntity<OrderForm> findOrderById(@PathVariable("id") Integer id) {
         
