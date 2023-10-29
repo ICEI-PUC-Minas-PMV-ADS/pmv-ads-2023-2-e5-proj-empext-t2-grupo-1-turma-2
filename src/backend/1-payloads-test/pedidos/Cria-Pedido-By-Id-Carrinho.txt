@@ -1,0 +1,8 @@
+Criar pedido a partir de um carrinho de usuário
+
+Request:<POST> http://localhost:8080/api/v1/order/2?formaPagamento=PagarEntrega   --  2 é o id do carrinho associado ao usuário 
+e a variável "formaPagamento" é a forma de pagamento selecionada para a geração do pedido
+
+
+Response:
+Json contendo informações do pedido gerado

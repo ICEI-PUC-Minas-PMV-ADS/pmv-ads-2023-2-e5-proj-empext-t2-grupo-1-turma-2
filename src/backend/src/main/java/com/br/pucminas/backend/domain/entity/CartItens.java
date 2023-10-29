@@ -1,12 +1,11 @@
 package com.br.pucminas.backend.domain.entity;
 
-
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+
 import java.util.Objects;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -15,41 +14,36 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user_profile")
-public class User {
+@Table(name = "cartiten")
+public class CartItens {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name")
-    private String name;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cartId", referencedColumnName = "id")
+    private Cart cart;
 
-    @Column(name = "email")
-    private String email;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "productId", referencedColumnName = "id")
+    private Product produto;
 
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "phone")
-    private String phone;
-
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "zip_code")
-    private String zipCode;
+    @Column(name = "quantity")
+    private Integer quantity;
 
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        User user = (User) o;
-        return getId() != null && Objects.equals(getId(), user.getId());
+        CartItens cartItens = (CartItens) o;
+        return getId() != null && Objects.equals(getId(), cartItens.getId());
     }
 
     @Override
     public int hashCode() {
         return getClass().hashCode();
     }
+    
 }

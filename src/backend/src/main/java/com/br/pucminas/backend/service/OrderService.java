@@ -2,12 +2,15 @@ package com.br.pucminas.backend.service;
 
 import org.springframework.stereotype.Service;
 
+import com.br.pucminas.backend.domain.entity.Cart;
+import com.br.pucminas.backend.domain.entity.CartItens;
 import com.br.pucminas.backend.domain.entity.Order;
 import com.br.pucminas.backend.domain.entity.OrderProduct;
 import com.br.pucminas.backend.domain.entity.Product;
 import com.br.pucminas.backend.domain.entity.User;
 import com.br.pucminas.backend.model.usercase.OrderForm;
 import com.br.pucminas.backend.model.usercase.OrderItenForm;
+import com.br.pucminas.backend.repository.CartRepository;
 import com.br.pucminas.backend.repository.OrderProductRepository;
 import com.br.pucminas.backend.repository.OrderRepository;
 import com.br.pucminas.backend.repository.ProductRepository;
@@ -20,6 +23,7 @@ import com.br.pucminas.backend.utils.enums.SystemErrors;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -41,6 +45,12 @@ public class OrderService extends OrderUtils{
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    CartService cartService;
+
+    @Autowired
+    CartRepository cartRepository;
 
     /**
      * Lista todos os ppedidos cadastrados no sistema
@@ -281,4 +291,60 @@ public class OrderService extends OrderUtils{
         }
         return listaItensPedido;
     }
+
+    
+    /**
+     * Gera um pedido com base em um carrinho do usuário
+     
+     * @param idCarrinho : Identificador do carrinho do usuário
+     * @return
+     * @throws Exception
+     */
+    public OrderForm creatNewOrderByIdCarrinho(Integer idCarrinho,String formaPagamento) throws Exception{
+        
+        log.info("#########  creatNewOrderByIdCarrinho()  ##########");
+        log.info("Buscando dados do pedido a partir do carrinho do usuário.");
+
+        Optional<Cart> carrinho;
+        OrderForm formFront = new OrderForm();
+        try {
+            if(idCarrinho != null){
+                carrinho  = cartRepository.findById(idCarrinho);
+                if(!carrinho.isPresent()) throw new Exception(SystemErrors.ERRO_INCONSISTENCIA_CAMPOS_FRONT.getValor());
+
+                //Montando Objeto OrderForm a partir do carrinho para só então gerar o pedido
+                formFront.setClientMail(carrinho.get().getCliente().getEmail());
+                formFront.setDataHoraPedido(new Timestamp(System.currentTimeMillis()));
+                formFront.setFormaPagamento(formaPagamento);
+                formFront.setStatusPedido(StatusPedido.RECEBIDO.getValor());
+                                
+                ArrayList<CartItens> listaCarrinho = new ArrayList<CartItens>(carrinho.get().getItensCarrinho());
+                ArrayList<OrderItenForm> listaItensPedido =  new ArrayList<OrderItenForm>();
+                for (CartItens cartItens : listaCarrinho) {
+                    OrderItenForm orderItens = new OrderItenForm();
+                    orderItens.setProductId(cartItens.getProduto().getId());
+                    orderItens.setProductDesc(cartItens.getProduto().getName());
+                    orderItens.setProductPrice(cartItens.getProduto().getPrice());
+                    orderItens.setImageLink(cartItens.getProduto().getLink());
+                    orderItens.setQuantity(cartItens.getQuantity());
+
+                    listaItensPedido.add(orderItens);
+                }
+                formFront.setItensDoPedido(listaItensPedido);                
+
+                log.info("Gerando pedido a partir dos dados extraidos do carrinho");
+                formFront = this.creatNewOrder(formFront);
+
+                log.info("Excluindo carrinho.");
+                cartService.deleteCartByUser(carrinho.get().getCliente().getId());
+            
+            }                        
+            
+        } catch (Exception e) {
+            log.error("Erro ao gerar pedido a partir do carrinho", e);
+            throw e;
+        }
+        return formFront;
+    }
+
 }
