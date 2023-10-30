@@ -31,33 +31,30 @@ const Login = () => {
 
     console.log(endpoint);
 
-    await fetch(endpoint,{
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: encoderUser
-      }
-    ).then(async (responseData) => {
-      console.log(JSON.stringify(responseData))
 
-      let response = responseData
-      console.log(`Response: ${JSON.stringify(responseData)}`)
+    try{
 
+      let result = await fetch(endpoint, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: encoderUser
+      });
+      result = await result.json();
+      console.log(result);
 
-      await AsyncStorage.setItem('userData', JSON.stringify(responseData));
+      await AsyncStorage.setItem('userData', JSON.stringify(result));
       
-      if(response.isRootUser){
+      if(result.isRootUser){
         navigation.navigate("Gerencial");
       }else{
         navigation.navigate("ChooseSweet");
       }
-    })
-    .catch((error) => {
+    }catch(error){
       console.log(error)
       Alert.alert("Erro", "Usuário ou senha incorretos");
-      navigation.navigate("ChooseSweet");
-    });
+    }r
 
   }
 
