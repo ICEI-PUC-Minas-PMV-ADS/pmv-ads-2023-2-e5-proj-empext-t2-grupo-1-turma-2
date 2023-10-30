@@ -59,10 +59,10 @@ const ExibeProdutos = () => {
 
   const getParams = async () => {
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "https://backend-vq7d276ypa-uc.a.run.app";
+    const host = "http://192.168.0.132";
     const port = "8080";
 
-    const endpoint = `${host}/api/v1/product`;
+    const endpoint = `${host}:${port}/api/v1/product`;
 
     let result = await fetch(endpoint, {
       method: "GET",
@@ -88,9 +88,9 @@ const ExibeProdutos = () => {
         {isLoading ? (
           <Text>Loading...</Text>
         ) : (
-          data.map((item) => (
+          data.map((item, index) => (
             <>
-              <View key={item.id} style={styles.box}>
+              <View key={item.index} style={styles.box}>
                 <Text style={styles.titulo}>{item.name}</Text>
                 <Text style={styles.text_recipe_secondary}>
                   {item.description}

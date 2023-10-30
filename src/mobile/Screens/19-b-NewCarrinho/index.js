@@ -36,7 +36,7 @@ const NewCarrinho = () => {
   };
 
   const closeOrder = async () => {
-    let orderId = uuid();
+    let orderId = Math.floor(Math.random() * 1000);
     let orderItems = [];
     for (const element of cart) {
       orderItems.push({
@@ -44,20 +44,19 @@ const NewCarrinho = () => {
         orderItenId: orderId,
         productDesc: element.description,
         imageLink: element.link,
-        productPrice: element.price,
+        price: element.price,
         productQuantity: element.quantity,
       });
     }
 
     let order = {
-      id: uuid(),
+      id: orderId,
       operacao: "Novo",
       serverResponseMessage: "202",
       userId: user.id,
       dataHoraPedido: null,
       formaPagamento: selectedPaymentMethod,
       statusPedido: "0",
-      formaPagamento: selectedPaymentMethod,
       valorTotalPedido: totalWithPercentage,
       clientMail: user.email,
       itensDoPedido: orderItems,
@@ -88,6 +87,8 @@ const NewCarrinho = () => {
       })
       .catch(async (error) => {
         console.error(error);
+        navigation.navigate("Pedidos");
+
       });
   };
 
@@ -141,9 +142,9 @@ const NewCarrinho = () => {
           {isLoading ? (
             <Text>Loading...</Text>
           ) : (
-            cart.map((item) => (
+            cart.map((item, index) => (
               <>
-                <Text style={styles.subtitulo}>{item.name}</Text>
+                <Text id={index} style={styles.subtitulo}>{item.name}</Text>
 
                 <Text style={styles.text_recipe_secondary}>
                   {" "}

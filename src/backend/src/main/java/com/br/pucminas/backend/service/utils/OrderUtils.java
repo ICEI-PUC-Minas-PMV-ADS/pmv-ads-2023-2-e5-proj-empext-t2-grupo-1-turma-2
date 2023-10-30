@@ -20,7 +20,7 @@ public abstract class OrderUtils {
             OrderForm order = new OrderForm();            
             
             order.setId(orderEntity.getId());
-            order.setClientMail(orderEntity.getCliente().getEmail());
+            order.setClientMail(null);
             order.setDataHoraPedido(orderEntity.getDataHoraPedido());
             order.setFormaPagamento(orderEntity.getFormaPagamento());            
             order.setStatusPedido(orderEntity.getStatusPedido());            
@@ -96,7 +96,7 @@ public abstract class OrderUtils {
         if(pedido != null){
             
             form.setId(pedido.getId());
-            form.setClientMail(pedido.getCliente().getEmail());
+            form.setClientMail(null);
             form.setFormaPagamento(pedido.getFormaPagamento());
             form.setStatusPedido(pedido.getStatusPedido());
             form.setDataHoraPedido(pedido.getDataHoraPedido());
