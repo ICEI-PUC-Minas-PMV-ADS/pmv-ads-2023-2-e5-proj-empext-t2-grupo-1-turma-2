@@ -1,0 +1,23 @@
+Adiciona ítem ao carrinho de um determinado usuário. 
+Se o usuário não possuir carrinho ativo, cria-se um novo carrinho e Adiciona o ítem.
+
+Request: <POST> : http://localhost:8080/api/v1/cart/1    -- 1 é o código identificador do usuário
+Json indicando  "id doproduto que se esta adicionando","quantidade do produto" .
+
+{    
+    "productId":5,
+    "quantity":5
+}
+
+Response:
+Json contendo  informações atualizadas referentes ao ítem adicionado ao carrinho
+
+{
+    "cartId": 1,
+    "cartItenId": 7,
+    "productId": 5,
+    "descProduct": "Deliciosa coxinha de morango com cobertura de nutella.",
+    "quantity": 5,
+    "valorTotal": 52.5,
+    "serverResponseMessage": "Sucesso no processamento"
+}

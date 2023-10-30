@@ -1,0 +1,35 @@
+Retorna um carrinho ativo associado  a um determinado usuário.
+Se não encontrar carrinho ativo, cria um novo carrinho.
+
+Esta opção pode ser usulizada sempre que o usuário precisa acessar o carrinho.
+
+Request <GET>  http://localhost:8080/api/v1/cart/1  {1 é o ID do usuário que deve ser passado na URL}
+
+Response: (JSon contendo informações gerais do carrinho recupedado)
+{
+    "serverResponseMessage": "Carrinho gerado/recupedado com sucesso!",
+    "id": 1,
+    "dataHoraAtualizacaoCarrinho": "2023-10-29T17:10:49.931+00:00",
+    "clientMail": "sys_root@gmail.com",
+    "valorTotalcarrinho": 105,
+    "itensCarrinho": [
+        {
+            "cartId": 1,
+            "cartItenId": 1,
+            "productId": 5,
+            "descProduct": "Deliciosa coxinha de morango com cobertura de nutella.",
+            "quantity": 5,
+            "valorTotal": 52.5,
+            "serverResponseMessage": null
+        },
+        {
+            "cartId": 1,
+            "cartItenId": 2,
+            "productId": 5,
+            "descProduct": "Deliciosa coxinha de morango com cobertura de nutella.",
+            "quantity": 5,
+            "valorTotal": 52.5,
+            "serverResponseMessage": null
+        }
+    ]
+}

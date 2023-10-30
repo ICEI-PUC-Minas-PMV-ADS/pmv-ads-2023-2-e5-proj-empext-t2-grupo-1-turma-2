@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.pucminas.backend.model.usercase.OrderForm;
@@ -32,6 +33,36 @@ public class OrderController {
     @Autowired
     OrderService pedidoService;
 
+    
+    @PostMapping("/v1/order/{idCarrinho}")
+    public ResponseEntity<OrderForm> criaPedidoByCarrinhoId(@PathVariable("idCarrinho") Integer idCarrinho,
+                                                            @RequestParam(value = "formaPagamento", required = true) String formaPagamento) {
+        OrderForm newOrder= new OrderForm();
+
+        try {
+            newOrder = pedidoService.creatNewOrderByIdCarrinho(idCarrinho,formaPagamento);
+            newOrder.setServerResponseMessage(SystemErrors.MSG_PEDIDO_PROCESSADO_COM_SUCESSO.getValor());
+        } catch (Exception e) {
+              log.error("Erro na criação do pedido!");
+            log.error(SystemErrors.MSG_ERRO_GERA_PEDIDO.getValor(), e);
+            e.getMessage();            
+            if(e.getMessage().contains(SystemErrors.ERRO_SEM_ESTOQUE.getValor())){
+                newOrder= new OrderForm();
+                newOrder.setServerResponseMessage(SystemErrors.MSG_SEM_ESTOQUE.getValor());
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(newOrder);                
+            }else if(e.getMessage().contains(SystemErrors.ERRO_INCONSISTENCIA_CAMPOS_FRONT.getValor())){
+                newOrder= new OrderForm();
+                newOrder.setServerResponseMessage(SystemErrors.MSG_ERRO_INCONSISTENCIA_CAMPOS_FRONT.getValor());
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(newOrder);                
+            }else {
+                return ResponseEntity.internalServerError().body(newOrder);
+            }
+        }
+
+        return ResponseEntity.created(URI.create("/v1/order")).body(newOrder);
+    
+    }
+    
     /**
      * Rota para POST de criação de pedido
      * @param form

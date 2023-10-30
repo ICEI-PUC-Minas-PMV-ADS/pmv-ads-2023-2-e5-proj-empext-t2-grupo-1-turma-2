@@ -17,7 +17,6 @@ INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da 
 INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da coxinha', '2% em todas coxinhas', 'https://i.imgur.com/w2hzOEi.png');
 INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia do copao', '15% em todos copoes', 'https://i.imgur.com/sFqtI8v.png');
 
-
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('Lavínia Helena Nascimento', 'laviniahelenanascimento@tigertimoveis.com', 'root@123!', '(88)98332-0577', 'Rua Governador Plácido Castelo, 478, Cocobó, Iguatu-CE ', '63504-148');
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('Nicole Aparecida Eduarda Nascimento', 'nicole-nascimento71@cincoentretenimentos.com.br', 'root@123!', '(21)98435-6789', 'Rua Goiás, Vila Brasil (Manilha), Itaboraí, Rio de Janeiro', '24859-108');

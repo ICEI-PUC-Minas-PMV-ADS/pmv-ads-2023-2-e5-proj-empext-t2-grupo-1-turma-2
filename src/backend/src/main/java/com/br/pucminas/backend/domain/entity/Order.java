@@ -16,7 +16,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "pedido")
+@Table(name = "orders")
 public class Order {
     
     @Id
@@ -32,11 +32,11 @@ public class Order {
     @Column(name = "statusPedido")
     private String statusPedido;    
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "id")
     private User cliente;
 
-    @OneToMany(mappedBy="order",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="order",fetch = FetchType.LAZY)
     private Set<OrderProduct> itensPedido;
     
     @Override
