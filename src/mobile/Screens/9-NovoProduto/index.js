@@ -78,8 +78,8 @@ function NovoProduto() {
           autoCorrect={false}
           onChangeText={(text) => setTitulo(text)}
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"          
         />
 
         <TextInput
@@ -88,11 +88,9 @@ function NovoProduto() {
           value={descricao}
           autoCorrect={false}
           onChangeText={(text) => setDescricao(text)}
-          numberOfLines={4}
-          multiline
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"          
         />
 
 
@@ -103,8 +101,8 @@ function NovoProduto() {
           autoCorrect={false}
           onChangeText={(text) => setLinkFoto(text)}
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"          
         />  
 
       <TextInput
@@ -114,8 +112,8 @@ function NovoProduto() {
           autoCorrect={false}
           onChangeText={(text) => setCategoria(text)}
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"          
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"          
         />        
 
         <TextInput
@@ -125,8 +123,8 @@ function NovoProduto() {
           autoCorrect={false}
           onChangeText={(text) => setQuantidade(text)}                    
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"                    
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"                    
         />
 
         <TextInput
@@ -136,8 +134,8 @@ function NovoProduto() {
           autoCorrect={false}
           onChangeText={(text) => setPreco(text)}                    
           mode="outlined"
-          activeOutlineColor="#FFFFFF"
-          outlineColor="#FFFFFF"                    
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"                    
         />
         
         {/* Botão Produtos Disponiveis */}
@@ -215,7 +213,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "#f2e8e3",
     marginBottom: 14,
-    padding: 30,
+    paddingBottom: 30,
   },
 });
 
