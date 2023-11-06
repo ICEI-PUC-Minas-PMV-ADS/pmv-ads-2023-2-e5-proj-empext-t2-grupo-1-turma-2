@@ -36,20 +36,20 @@ function FidelidadeEditar({ route, navigation }) {
 
     const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
 
-    // await fetch(endpoint,{
-    //   method: 'DELETE',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    //   }
-    // ).then((response) => 
-    //   response.json()
-    // ).then(async (responseData) => {
-    //   navigation.navigate("MainFidelidade");
-    // })
-    // .catch( async (error) => {
-    //   console.error(error);
-    // });
+    await fetch(endpoint,{
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+      }
+    ).then((response) => 
+      response.json()
+    ).then(async (responseData) => {
+      navigation.navigate("MainFidelidade");
+    })
+    .catch( async (error) => {
+      console.error(error);
+    });
 
   }
 
