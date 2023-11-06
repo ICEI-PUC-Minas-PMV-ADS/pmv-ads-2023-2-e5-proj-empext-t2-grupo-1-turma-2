@@ -19,8 +19,8 @@ const ListaProdutos = () => {
   const navigation = useNavigation();
 
 
-  const categoryClick = async () => {
-    // console.log(category)
+  const categoryClick = async (categoria) => {
+    console.log(categoria)
 
     // let params = ""
     // params.concat(`&categoria=${category}`)
@@ -44,7 +44,7 @@ const ListaProdutos = () => {
 
        <View style={styles.row}>
         {/* Botão 1 */}
-        <TouchableOpacity style={styles.button} onPress={ categoryClick}>
+        <TouchableOpacity style={styles.button} onPress={ () => this.categoryClick("Indispensáveis")}>
           <Image source={Doces1} style={styles.image}/>
           <Text style={styles.text}>Indispensáveis</Text>
         </TouchableOpacity>
@@ -84,6 +84,7 @@ const ListaProdutos = () => {
         </TouchableOpacity>
       </View>
     </View>
+    
   );
 }
 

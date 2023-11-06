@@ -30,7 +30,7 @@ function FidelidadeEditar({ route, navigation }) {
 
   const deleteProgramaFidelidade = async () => {
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.32'
+    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
 
     const port = '8080'
 
@@ -67,7 +67,7 @@ function FidelidadeEditar({ route, navigation }) {
     console.log(encoderFidelidade)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.32'
+    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
 
     const port = '8080'
 

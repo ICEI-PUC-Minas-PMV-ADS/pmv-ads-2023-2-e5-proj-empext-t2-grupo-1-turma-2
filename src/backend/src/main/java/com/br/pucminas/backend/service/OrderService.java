@@ -203,8 +203,10 @@ public class OrderService extends OrderUtils{
                     
         try{
             //Novo Pedido, Seta DataHora pedido e Status do pedido para recebido
-            if(formFront.getOperacao().equals(Operacao.CRIAR_PEDIDO.getValor())){        
+            if(formFront.getOperacao().equals(Operacao.CRIAR_PEDIDO.getValor())){
+
                 log.info(formFront.getOperacao());        
+                orderEntity.setId(formFront.getId());
                 orderEntity.setDataHoraPedido(new Timestamp(System.currentTimeMillis()));
                 orderEntity.setStatusPedido(StatusPedido.RECEBIDO.getValor());
                 orderEntity.setFormaPagamento(formFront.getFormaPagamento());
@@ -260,14 +262,15 @@ public class OrderService extends OrderUtils{
                             item = null;
                             //Busca ítem de pedido
                             log.info("Busncando ítem de pedido a ser atualizado");
-                            item = orderProductRepository.getById(orderItenForm.getOrderItenId());                        
+                            item = orderProductRepository.getById(orderItenForm.getOrderItenId());
                             //Atualiza Quandidade e Preço
                             item.setPrice(orderItenForm.getProductPrice());
                             item.setQuantity(orderItenForm.getQuantity());                
                         }
                      }
                     //Busca produtos a partir da lista de Ids de Produtos que vieram do front
-                    Product produto = productRepository.getById(orderItenForm.getProductId());                    
+                    Optional<Product> optionalProduct = productRepository.findByProductId(orderItenForm.getProductId());
+                    Product produto = optionalProduct.get();
                     if(produto.getQuantity().intValue() < orderItenForm.getQuantity().intValue()){                        
                         log.error("Produto " + produto.getDescription()+ " não disponivel em estoque. Solicitados " + orderItenForm.getQuantity() + " e temos disponíveis apenas " +  produto.getQuantity() + " !");
                         throw new Exception(SystemErrors.ERRO_SEM_ESTOQUE.getValor());

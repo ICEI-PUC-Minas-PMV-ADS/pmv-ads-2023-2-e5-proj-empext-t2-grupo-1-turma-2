@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, Image, FlatList } from "react-native";
+import { ScrollView, View, Text, Image, FlatList,TouchableOpacity } from "react-native";
 import Nav from "../../Components/NavBar/index";
 import DefaultButton from "../../Components/Buttons/Default";
 import { useState, useEffect } from "react";

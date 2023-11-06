@@ -23,4 +23,8 @@ export const styles = StyleSheet.create({
     color: "#f58426",
     fontWeight: "bold",
   },
+  footer: {
+    flex: 1,
+    justifyContent: "flex-end",
+  },
 });

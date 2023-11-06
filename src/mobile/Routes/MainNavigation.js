@@ -30,12 +30,22 @@ import EditarCliente from "../Screens/16-EditarCliente/index";
 import Sobre from "../Screens/22-Sobre/index";
 import MenuInferior from "../Components/MenuInferior/index";
 
+import ListaProdutoCliente from "../Screens/18-ListaProdutosCliente/index";
+import Carrinho from "../Screens/19-b-NewCarrinho/index";
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
     <Stack.Navigator initialRouteName="Login">
-  
+      
+      <Stack.Screen
+        name="Carrinho"
+        component={Carrinho}
+        options={{
+          header: () => null,
+        }}
+      />
+
       <Stack.Screen
         name="Login"
         component={Login}
@@ -198,8 +208,18 @@ const Main = () => {
           header: () => null,
         }}
       />
+<Stack.Screen
+        name="ListaProdutoCliente"
+        component={ListaProdutoCliente}
+        options={{
+          header: () => null,
+        }}
+      />
+
 
     </Stack.Navigator>
+ 
+
   );
 };
 
