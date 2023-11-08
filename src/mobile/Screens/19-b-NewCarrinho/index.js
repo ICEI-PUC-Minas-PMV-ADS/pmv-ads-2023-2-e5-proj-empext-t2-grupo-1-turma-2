@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, Image, FlatList } from "react-native";
+import { ScrollView, View, Text, Image, FlatList, Linking } from "react-native";
 import Nav from "../../Components/NavBar/index";
 import DefaultButton from "../../Components/Buttons/Default";
 import { useState, useEffect } from "react";
@@ -83,6 +83,11 @@ const NewCarrinho = () => {
       .then((response) => response.json())
       .then(async (responseData) => {
         console.log(`Response: ${JSON.stringify(responseData)}`);
+        
+        const cell = '5531994543201'
+        Linking.openURL(`https://api.whatsapp.com/send?phone=${cell}&text=${encoderOrder}`)
+
+
         navigation.navigate("Pedidos");
       })
       .catch(async (error) => {
@@ -144,7 +149,7 @@ const NewCarrinho = () => {
           ) : (
             cart.map((item, index) => (
               <>
-                <Text id={index} style={styles.subtitulo}>{item.name}</Text>
+                <Text style={styles.subtitulo}>{item.name}</Text>
 
                 <Text style={styles.text_recipe_secondary}>
                   {" "}
@@ -184,7 +189,7 @@ const NewCarrinho = () => {
             <>
               <Text style={styles.titulo}> Endereço de Entrega</Text>
 
-              <Text style={styles.text_recipe_secondary}>user.address</Text>
+              <Text style={styles.text_recipe_secondary}>{user.adress}</Text>
 
               <Text style={styles.paragraph}> </Text>
             </>

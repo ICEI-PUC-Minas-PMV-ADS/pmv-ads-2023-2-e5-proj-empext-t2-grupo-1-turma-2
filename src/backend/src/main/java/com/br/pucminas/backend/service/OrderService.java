@@ -24,6 +24,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -70,30 +71,10 @@ public class OrderService extends OrderUtils{
      * @return : Objeto do tipo OrderForm
      * @throws Exception
      */
-    public OrderForm findOrdeById(Integer id) throws Exception{
+    public List<Order> findOrderByUserId(Integer id) throws Exception{
         
         log.info("findOrderById " + id);
-        OrderForm order = new OrderForm();
-        
-        try {                    
-            //Busca Pedido de acordo com o id
-            List<Order> listaPedidos = new ArrayList<Order>();
-            Order pedido = orderRepository.getById(id);
-            if(pedido!=null) {
-                listaPedidos.add(pedido);
-                order = this.prepareOrderFormFromEntity(listaPedidos).get(0);
-                order.setServerResponseMessage(SystemErrors.MSG_PEDIDO_ENCOTRADO.getValor());
-            }            
-        } catch (Exception e) {            
-            if(e.getClass().getName().contains("EntityNotFoundException")){
-                order = new OrderForm();
-                order.setServerResponseMessage(SystemErrors.MSG_PEDIDO_NAO_ENCOTRADO.getValor());
-            }else{
-                log.error(SystemErrors.ERRO_AO_BUSCAR_PEDIDO.getValor(),e);
-                throw new Exception(SystemErrors.ERRO_AO_BUSCAR_PEDIDO.getValor(), e);
-            }
-        }
-        return order;
+        return orderRepository.findAll().stream().filter(fr -> fr.getCliente().getId().equals(id)).collect(Collectors.toList());
     }
 
     /**
@@ -271,16 +252,6 @@ public class OrderService extends OrderUtils{
                     //Busca produtos a partir da lista de Ids de Produtos que vieram do front
                     Optional<Product> optionalProduct = productRepository.findByProductId(orderItenForm.getProductId());
                     Product produto = optionalProduct.get();
-                    if(produto.getQuantity().intValue() < orderItenForm.getQuantity().intValue()){                        
-                        log.error("Produto " + produto.getDescription()+ " não disponivel em estoque. Solicitados " + orderItenForm.getQuantity() + " e temos disponíveis apenas " +  produto.getQuantity() + " !");
-                        throw new Exception(SystemErrors.ERRO_SEM_ESTOQUE.getValor());
-                    }else{
-                        //Atualiza estoque do produto que foi vendido
-                        log.info("Atualizando estoque do produto " + produto.getName());
-                        produto.setQuantity(produto.getQuantity().intValue() - orderItenForm.getQuantity().intValue());
-                        productRepository.save(produto);
-                        log.info("Estoque do produto " + produto.getName() + " foi atualizado com sucesso!");
-                    }
 
                     item.setProduto(produto);
                     item.setProductName(produto.getName());

@@ -102,14 +102,12 @@ public abstract class OrderUtils {
             form.setDataHoraPedido(pedido.getDataHoraPedido());
             form.setValorTotalPedido(null);
                       
-            float valorTotalPedido=0.0f;
             ArrayList<OrderItenForm> listaOrderItenForm = new ArrayList<OrderItenForm>();
             
             for (OrderProduct orderProduct : itensPedido) {
                 
                 //Calcula valor total do pedido
-                valorTotalPedido+=orderProduct.getQuantity()*orderProduct.getPrice();
-                
+
                 OrderItenForm itemForm = new OrderItenForm();
                 itemForm.setProductId(orderProduct.getProduto().getId());                                       
                 itemForm.setOrderItenId(orderProduct.getId());
@@ -121,7 +119,6 @@ public abstract class OrderUtils {
                 listaOrderItenForm.add(itemForm);
             }
 
-            form.setValorTotalPedido(valorTotalPedido);
             form.setItensDoPedido(listaOrderItenForm);
         }
 
