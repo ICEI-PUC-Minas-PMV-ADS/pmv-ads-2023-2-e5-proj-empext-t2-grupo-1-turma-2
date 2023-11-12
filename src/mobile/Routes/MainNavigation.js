@@ -39,7 +39,7 @@ const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
-    <Stack.Navigator initialRouteName="Gerencial">
+    <Stack.Navigator initialRouteName="Login">
       
       <Stack.Screen
         name="Carrinho"
