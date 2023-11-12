@@ -1,50 +1,53 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { View, Text, StyleSheet } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import MeuPerfil from '../../Screens/21-MeuPerfil';
-import PedidosCliente from '../../Screens/20-AcompanharPedido';
-import ChooseSweet from '../../Screens/17-ChooseSweet';
-import { styles } from "./styles";
+import { useNavigation } from '@react-navigation/native';
 
+const MenuInferior = () => {
 
-const Tab = createBottomTabNavigator();
-
-function MenuInferior() {
+  const navigation = useNavigation();
+  
   return (
-    
-    <Tab.Navigator screenOptions={{
-      tabBarStyle: { backgroundColor: '#C05C63'}, // Define a cor de fundo da barra de navegação
-      tabBarLabelStyle: {color: 'white'}, // Cor do ícone da guia ativa
+    <View style={styles.bottomBar}>
+      <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("MeuPerfil")}}>
+      <Ionicons name="person-circle-outline" color={'white'} size={20} />
       
-    }}>
-      <Tab.Screen name="Tela1" component={MeuPerfil} options={{
-    tabBarLabel: 'Usuário',
-    headerShown: false, // Ocultar o nome da guia na tela
-    tabBarIcon: ({ color, size }) => (
-    <Ionicons name="person-circle-outline" color={'white'} size={size} />
-    ),
-  }}/>
-      
-      <Tab.Screen name="Tela2" component={ChooseSweet} options={{
-    tabBarLabel: 'Cardápio',
-    headerShown: false, // Ocultar o nome da guia na tela
-    tabBarIcon: ({ color, size }) => (
-      <Ionicons name="grid-outline" color={'white'} size={size} />
-    ),
-  }}/>
+        <Text style={styles.label}>Perfil</Text>
+      </TouchableOpacity>
 
-      <Tab.Screen name="Tela3" component={PedidosCliente} options={{
-    tabBarLabel: 'Carrinho',
-    headerShown: false, // Ocultar o nome da guia na tela
-    tabBarIcon: ({ color, size }) => (
-      <Ionicons name="cart-outline" color={'white'} size={size} />
-    ),
-  }}/>
-    </Tab.Navigator>
-      
+      <TouchableOpacity style={styles.button}  onPress={() => {navigation.navigate("ChooseSweet")}}>
+      <Ionicons name="grid-outline" color={'white'} size={20} />
+        <Text style={styles.label}>Produtos</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button}>
+      <Ionicons name="cart-outline" color={'white'} size={20}  onPress={() => {navigation.navigate("NewCarrinho")}}/>
+        <Text style={styles.label}>Carrinho</Text>
+      </TouchableOpacity>
+    </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  bottomBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#C05C63',
+    padding: 5,
+  },
+  button: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  icon: {
+    width: 30,
+    height: 30,
+  },
+  label: {
+    color: 'white',
+    fontSize: 12,
+    marginTop: 5,
+  },
+});
 
 export default MenuInferior;

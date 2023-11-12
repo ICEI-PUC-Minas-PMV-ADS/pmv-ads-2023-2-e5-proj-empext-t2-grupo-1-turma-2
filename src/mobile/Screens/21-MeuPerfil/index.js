@@ -6,6 +6,7 @@ import SaveButton from "../../Components/Buttons/Save";
 import DeleteButton from "../../Components/Buttons/Delete";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native';
+import MenuInferior from "../../Components/MenuInferior";
 
 
 const MeuPerfil = () => {
@@ -18,15 +19,16 @@ const MeuPerfil = () => {
 
    
 return (
-     <ScrollView style={{backgroundColor:'white'}}>
-         <View style={styles.container}>
+  <View style={styles.container}>
+     <ScrollView style={{backgroundColor:'white', flex: 1 }}>
+         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',}}>
           <Logo onPress={() => {navigation.navigate('Sobre')}}/>
-        
+          
         <Text style={styles.paragraph}>
         {'\n'}
        Meu Perfil
         </Text>
-        
+        </View>
 
      <TextInput
           style={styles.input}
@@ -34,8 +36,8 @@ return (
           value={name}
           onChangeText={(name) =>setName(name)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#C05C63"
+          outlineColor="#C05C63"
           right={<TextInput.Icon icon="square-edit-outline" />}
         />
 
@@ -45,8 +47,8 @@ return (
           value={email}
           onChangeText={(email) => setEmail(email)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#C05C63"
+          outlineColor="#C05C63"
           right={<TextInput.Icon icon="square-edit-outline" />}
         />
 
@@ -56,8 +58,8 @@ return (
           value={placeholder}
           onChangeText={(placeholder) =>setPlaceholder(placeholder)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#C05C63"
+          outlineColor="#C05C63"
           right={<TextInput.Icon icon="square-edit-outline" />}
         />
 
@@ -68,8 +70,8 @@ return (
           autoCorrect={false}
           onChangeText={(cell) => setCell(cell)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#C05C63"
+          outlineColor="#C05C63"
           right={<TextInput.Icon icon="square-edit-outline" />}
         />
 
@@ -81,8 +83,8 @@ return (
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#C05C63"
+          outlineColor="#C05C63"
           backGroundColor="#f2e8e3"
           right={<TextInput.Icon name="key" />}
         />
@@ -98,10 +100,15 @@ return (
           text={"Excluir Conta"}
           onPress={MeuPerfil}
         />
-        
-        
-      </View>
-    </ScrollView>
+         
+         </ScrollView>        
+      
+      
+    
+        <MenuInferior />
+        </View>
+
+   
   );
 };
 

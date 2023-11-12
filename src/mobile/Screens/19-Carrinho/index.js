@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { View, ScrollView, Text, CheckBox } from "react-native";
+import { View, ScrollView, Text } from "react-native";
+import CheckBox from '@react-native-community/checkbox';
 import Logo from "../../Components/Logo";
 import { TextInput } from "react-native-paper";
 import SaveButton from "../../Components/Buttons/Save";

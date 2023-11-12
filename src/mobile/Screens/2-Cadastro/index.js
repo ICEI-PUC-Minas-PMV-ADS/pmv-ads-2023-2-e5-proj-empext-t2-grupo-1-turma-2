@@ -72,8 +72,8 @@ const Cadastrar = () => {
           value={name}
           onChangeText={(name) =>setName(name)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
         <TextInput
@@ -82,8 +82,8 @@ const Cadastrar = () => {
           value={email}
           onChangeText={(email) => setEmail(email)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
           <TextInput
@@ -92,8 +92,8 @@ const Cadastrar = () => {
           value={placeholder}
           onChangeText={(placeholder) =>setPlaceholder(placeholder)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
         <TextInput
@@ -102,8 +102,8 @@ const Cadastrar = () => {
           value={zipCode}
           onChangeText={(zipCode) => setZipCode(zipCode)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
         <TextInput
@@ -113,8 +113,8 @@ const Cadastrar = () => {
           autoCorrect={false}
           onChangeText={(cell) => setCell(cell)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
          <TextInput
@@ -125,8 +125,8 @@ const Cadastrar = () => {
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
         <TextInput
@@ -139,8 +139,8 @@ const Cadastrar = () => {
             setConfirmedPassword(confirmedPassword)
           }
           mode="outlined"
-          activeOutlineColor="#eaeaea"
-          outlineColor="#eaeaea"
+          activeOutlineColor="#c05c63"
+          outlineColor="#c05c63"
         />
 
         <DefaultButton text={"Cadastrar"}  onPress={cadastraUsuario} />

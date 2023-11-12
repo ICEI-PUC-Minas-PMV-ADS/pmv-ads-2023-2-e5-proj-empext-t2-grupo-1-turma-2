@@ -4,6 +4,8 @@ import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja 
 import Logo from '../../Components/Logo';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import MenuInferior from '../../Components/MenuInferior';
+
 
 
 const Sobre = () => {
@@ -67,8 +69,9 @@ Desde então sua vida e de sua família estão engajadas nesse projeto e, em 202
       Copyright 2023 ©Ana Diniz Doceira
      
         </Text>
-
+        <MenuInferior/>
         </View>
+        
   );
 }
 
@@ -80,6 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
   },
   row: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -88,7 +92,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor:'#f2e8e3',
     margin: 5,
-    padding: 15,
+    padding: 30,
     borderRadius:20,
   },
   image: {

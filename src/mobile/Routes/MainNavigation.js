@@ -28,15 +28,18 @@ import EditarCliente from "../Screens/16-EditarCliente/index";
 
 //Telas Cliente
 import Sobre from "../Screens/22-Sobre/index";
+import MeuPerfil from "../Screens/21-MeuPerfil/index";
 import MenuInferior from "../Components/MenuInferior/index";
 
 import ListaProdutoCliente from "../Screens/18-ListaProdutosCliente/index";
-import Carrinho from "../Screens/19-b-NewCarrinho/index";
+import NewCarrinho from "../Screens/19-b-NewCarrinho/index";
+import Carrinho from "../Screens/19-Carrinho/index"
+
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Gerencial">
       
       <Stack.Screen
         name="Carrinho"
@@ -215,8 +218,20 @@ const Main = () => {
           header: () => null,
         }}
       />
-
-
+<Stack.Screen
+        name="MeuPerfil"
+        component={MeuPerfil}
+        options={{
+          header: () => null,
+        }}
+      />
+<Stack.Screen
+        name="NewCarrinho"
+        component={NewCarrinho}
+        options={{
+          header: () => null,
+        }}
+      />
     </Stack.Navigator>
  
 

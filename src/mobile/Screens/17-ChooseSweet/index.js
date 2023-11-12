@@ -10,6 +10,7 @@ import Doces4 from '../../assets/icons/tortinhas.png';
 import Doces5 from '../../assets/icons/salgados.png';
 import Doces6 from '../../assets/icons/bebidas.png';
 import { useNavigation } from '@react-navigation/native';
+import MenuInferior from '../../Components/MenuInferior';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function ChooseSweet() {
@@ -28,8 +29,10 @@ function ChooseSweet() {
 
 
   return (
+    <View style={{flex: 1}}>
     <ScrollView style={{backgroundColor:'white'}}>
     <View style={styles.container}>
+      
       <Logo onPress={() => navigation.navigate('Sobre')}/>
       <View style={styles.row}>
         {/* Botão 1 */}
@@ -71,10 +74,18 @@ function ChooseSweet() {
         <Image source={Doces6} style={styles.image}/>
           <Text style={styles.text}>Bebidas</Text>
         </TouchableOpacity>
+      
+        
       </View>
+      
+      
+      
+      
     </View>
-
     </ScrollView>
+    <MenuInferior/>
+    </View>
+    
   );
 }
 
@@ -86,6 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
   },
   row: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
