@@ -46,7 +46,7 @@ const NewCarrinho = () => {
         imageLink: element.link,
         price: element.price,
         productQuantity: element.quantity,
-      });
+        });
     }
 
     let order = {
@@ -148,7 +148,10 @@ const NewCarrinho = () => {
 
                 <Text style={styles.text_recipe_secondary}>
                   {" "}
-                  Quantidade Selecionada: {item.quantity}
+                  Quantidade Selecionada: <button onClick={() => decreaseQuantity(index)}>-</button>
+                  {item.quantity}
+                  <button onClick={() => increaseQuantity(index)}>+</button>
+                  <button onClick={() => removeFromCart(index)}>X</button>
                 </Text>
                 <Text style={styles.text_recipe_secondary}>
                   {" "}
