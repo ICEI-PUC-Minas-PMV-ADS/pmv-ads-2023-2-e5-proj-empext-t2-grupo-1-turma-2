@@ -12,6 +12,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Pedidos = () => {
   const navigation = useNavigation();
 
+  const retorno = async () => {
+    const user = await AsyncStorage.getItem('userData');
+    console.log(user)
+    if(JSON.parse(user).isRootUser){
+      navigation.navigate("Gerencial");
+    }else{
+      navigation.navigate("ChooseSweet");
+    }
+
+  }
   const EspacoPedido = () => {
     const numeroPedido = 1;
     const nomeCliente = 'Nome do Cliente';

@@ -8,7 +8,7 @@ import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native';
 
 
-const MeuPerfil = () => {
+const Carrinho = () => {
   const navigation = useNavigation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -115,4 +115,4 @@ return (
   );
 };
 
-export default MeuPerfil;
+export default Carrinho;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, ScrollView, TouchableOpacity, Text } from "react-native";
+import { View, ScrollView, TouchableOpacity, Text, Alert } from "react-native";
 import { TextInput } from "react-native-paper";
 import Logo from "../../Components/Logo/index";
 import Statusbar from "../../Components/StatusBar";
@@ -24,40 +24,37 @@ const Login = () => {
     console.log(encoderUser)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
+    const host = 'http://192.168.0.132'
     const port = '8080' 
     
-    const endpoint = `${host}/api/v1/user/login`;
+    const endpoint = `${host}:${port}/api/v1/user/login`;
 
     console.log(endpoint);
 
-    await fetch(endpoint,{
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: encoderUser
-      }
-    ).then((response) => 
-      response.json()
-    ).then(async (responseData) => {
-      console.log(JSON.stringify(responseData))
 
-      let response = responseData
-      console.log(`Response: ${JSON.stringify(responseData)}`)
+    try{
 
+      let result = await fetch(endpoint, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: encoderUser
+      });
+      result = await result.json();
+      console.log(result);
 
-      await AsyncStorage.setItem('userData', JSON.stringify(responseData));
+      await AsyncStorage.setItem('userData', JSON.stringify(result));
       
-      if(response.isRootUser){
+      if(result.isRootUser){
         navigation.navigate("Gerencial");
       }else{
         navigation.navigate("ChooseSweet");
       }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+    }catch(error){
+      console.log(error)
+      Alert.alert("Erro", "Usuário ou senha incorretos");
+    }r
 
   }
 

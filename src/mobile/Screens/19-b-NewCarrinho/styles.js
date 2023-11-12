@@ -25,9 +25,26 @@ export const styles = StyleSheet.create({
     //height:200,
     borderRadius: 20,
   },
+  tituloPrincipal: {
+    fontWeight: "bold",
+    color: "#c05c63",
+    fontSize: 20,
+  },
   titulo: {
     fontWeight: "bold",
     color: "#c05c63",
     fontSize: 16,
+  },
+  input:{
+    height: 50,
+    fontSize: 16,
+    borderRadius: 4,
+    backgroundColor: "#fff",
+    marginBottom: 14,
+  },
+  subtitulo: {
+    fontWeight: "bold",
+    color: "#c05c63",
+    fontSize: 11,
   },
 });

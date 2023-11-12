@@ -30,26 +30,26 @@ function FidelidadeEditar({ route, navigation }) {
 
   const deleteProgramaFidelidade = async () => {
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.32'
+    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
 
     const port = '8080'
 
     const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
 
-    // await fetch(endpoint,{
-    //   method: 'DELETE',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    //   }
-    // ).then((response) => 
-    //   response.json()
-    // ).then(async (responseData) => {
-    //   navigation.navigate("MainFidelidade");
-    // })
-    // .catch( async (error) => {
-    //   console.error(error);
-    // });
+    await fetch(endpoint,{
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+      }
+    ).then((response) => 
+      response.json()
+    ).then(async (responseData) => {
+      navigation.navigate("MainFidelidade");
+    })
+    .catch( async (error) => {
+      console.error(error);
+    });
 
   }
 
@@ -67,7 +67,7 @@ function FidelidadeEditar({ route, navigation }) {
     console.log(encoderFidelidade)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.32'
+    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
 
     const port = '8080'
 

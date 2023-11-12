@@ -28,4 +28,5 @@ export const styles = StyleSheet.create({
     color: "#f58426",
     fontWeight: "bold",
   },
+  footer 
  });
