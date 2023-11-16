@@ -14,8 +14,10 @@ export const styles = StyleSheet.create({
     fontWeight: "bold" 
   },
   text_recipe_secondary: {
-    fontSize: 11,
+    fontSize: 14,
     marginTop: 10,
+    marginLeft: 11,
+    marginRight: 11
   },
   box: {
     alignItems: "center",
@@ -37,7 +39,7 @@ export const styles = StyleSheet.create({
   },
   input:{
     height: 50,
-    fontSize: 16,
+    fontSize: 14,
     borderRadius: 4,
     backgroundColor: "#fff",
     marginBottom: 14,
@@ -47,4 +49,26 @@ export const styles = StyleSheet.create({
     color: "#c05c63",
     fontSize: 11,
   },
+  dropdown1BtnStyle: {
+    width: '30%',
+    height: 50,
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#c05c63',
+  },
+  dropdown1BtnTxtStyle: {color: '#444', textAlign: 'center', fontSize: 13},
+  dropdown1DropdownStyle: {backgroundColor: '#FFF'},
+  dropdown1RowStyle: {backgroundColor: '#FFF', borderBottomColor: '#C5C5C5'},
+  dropdown1RowTxtStyle: {color: '#444', textAlign: 'center', fontSize: 13},
+
+
+  dropdown1BtnStyle2: {
+    width: '80%',
+    height: 50,
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#c05c63',
+  }
 });

@@ -26,8 +26,9 @@ const ExibeProdutos = () => {
   };
 
   const closeOrder = async () => {
-    console.log(cart)
     await AsyncStorage.setItem("cart", JSON.stringify(cart));
+    console.log(cart)
+
     navigation.navigate("NewCarrinho")
   }
 
@@ -151,11 +152,8 @@ const ExibeProdutos = () => {
         )}
 
         <Text style={styles.paragraph}> </Text>
-      </View>
-
-      {/* <View>
-        <MenuInferior />
-      </View> */}
+        <MenuInferior/>
+    </View>
     </ScrollView>
   );
 };

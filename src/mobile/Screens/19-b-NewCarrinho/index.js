@@ -23,12 +23,26 @@ const NewCarrinho = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [totalWithPercentage, setTotalWithPercentage] = useState(0);
   const [tax, setTax] = useState(0);
-
+  const [totalPricePerItem, setTotalPricePerItem] = useState([]);
   const paymentMethods = [
     "Cartão de crédito",
     "Cartão de débito",
     "PIX",
     "Dinheiro",
+  ];
+
+  const quantityLimit = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
   ];
 
   const retorno = async () => {
@@ -46,7 +60,7 @@ const NewCarrinho = () => {
         imageLink: element.link,
         price: element.price,
         productQuantity: element.quantity,
-        });
+      });
     }
 
     let order = {
@@ -83,17 +97,17 @@ const NewCarrinho = () => {
       .then((response) => response.json())
       .then(async (responseData) => {
         console.log(`Response: ${JSON.stringify(responseData)}`);
-        
-        const cell = '5531994543201'
-        Linking.openURL(`https://api.whatsapp.com/send?phone=${cell}&text=${encoderOrder}`)
 
+        const cell = "5531994543201";
+        Linking.openURL(
+          `https://api.whatsapp.com/send?phone=${cell}&text=${encoderOrder}`
+        );
 
         navigation.navigate("Pedidos");
       })
       .catch(async (error) => {
         console.error(error);
         navigation.navigate("Pedidos");
-
       });
   };
 
@@ -108,9 +122,45 @@ const NewCarrinho = () => {
     let totalValue = 0;
     let totalItems = 0;
 
+
+    let newPriceList = [];
     console.log(cart);
 
-    JSON.parse(cart).forEach((element) => {
+    cart.forEach((element) => {
+      totalValue += element.price * element.quantity;
+      totalItems += element.quantity;
+    });
+
+    
+    let tax = (totalValue * 20) / 100;
+    let totalWithPercentage = totalValue + (totalValue * 20) / 100;
+
+    setTotalItems(totalItems);
+    setTotalValue(totalValue);
+    setTotalPricePerItem(newPriceList);
+    setTotalWithPercentage(totalWithPercentage);
+    setTax(tax);
+  };
+
+
+  const editCart = async (item, newValue) => {
+    console.log(item, newValue)
+
+
+    let value = Number(newValue);
+    console.log(value);
+    if(value == 0){
+      removeFromCart(item);
+    }else{
+      cart[item].quantity = value;
+    }
+
+    let totalValue = 0;
+    let totalItems = 0;
+
+    totalPricePerItem = [];
+    cart.forEach((element) => {
+      totalPricePerItem.push(element.price * element.quantity);
       totalValue += element.price * element.quantity;
       totalItems += element.quantity;
     });
@@ -118,15 +168,25 @@ const NewCarrinho = () => {
     let tax = (totalValue * 20) / 100;
     let totalWithPercentage = totalValue + (totalValue * 20) / 100;
 
+    
     setTotalItems(totalItems);
     setTotalValue(totalValue);
+    setTotalPricePerItem(newPriceList);
     setTotalWithPercentage(totalWithPercentage);
     setTax(tax);
+
+    await AsyncStorage.setItem("cart", JSON.stringify(cart));
+    this.forceUpdate();
+  }
+
+
+  const removeFromCart = (index) => {
+    cart.pop(index);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     setLoading(true);
-    getParams();
+    await getParams();
   }, []);
 
   return (
@@ -147,17 +207,37 @@ const NewCarrinho = () => {
           {isLoading ? (
             <Text>Loading...</Text>
           ) : (
-            cart.map((item, index) => (
+            cart.map((item, cartIndex) => (
               <>
                 <Text style={styles.subtitulo}>{item.name}</Text>
 
-                <Text style={styles.text_recipe_secondary}>
-                  {" "}
-                  Quantidade Selecionada: <button onClick={() => decreaseQuantity(index)}>-</button>
-                  {item.quantity}
-                  <button onClick={() => increaseQuantity(index)}>+</button>
-                  <button onClick={() => removeFromCart(index)}>X</button>
-                </Text>
+                  <Text style={styles.text_recipe_secondary}>
+                    Quantidade Selecionada:
+                  </Text>
+                  <Text style={styles.paragraph}> </Text>
+
+                  <SelectDropdown
+                    data={quantityLimit}
+                    style={styles.dropdown}
+                    buttonStyle={styles.dropdown1BtnStyle}
+                    defaultButtonText={item.quantity}
+                    buttonTextStyle={styles.dropdown1BtnTxtStyle}
+                    dropdownIconPosition={'right'}
+                    dropdownStyle={styles.dropdown1DropdownStyle}
+                    rowStyle={styles.dropdown1RowStyle}
+                    rowTextStyle={styles.dropdown1RowTxtStyle}
+                    onSelect={(selectedItem, index) => {
+                      console.log(selectedItem, index);
+                    }}
+                    buttonTextAfterSelection={async (selectedItem, index) => {
+                      await editCart(selectedItem, cartIndex);
+                      return selectedItem;
+                    }}
+                    rowTextForSelection={(item, inderx) => {
+                      return item;
+                    }}
+                  />
+
                 <Text style={styles.text_recipe_secondary}>
                   {" "}
                   Valor:{" "}
@@ -246,10 +326,19 @@ const NewCarrinho = () => {
             <>
               <Text style={styles.titulo}> Metodo de pagamento</Text>
 
+              <Text style={styles.paragraph}> </Text>
+
               <SelectDropdown
                 data={paymentMethods}
-                style={styles.input}
+                style={styles.dropdown}
+                buttonStyle={styles.dropdown1BtnStyle2}
+                buttonTextStyle={styles.dropdown1BtnTxtStyle}
+                dropdownIconPosition={'right'}
+                dropdownStyle={styles.dropdown1DropdownStyle}
+                rowStyle={styles.dropdown1RowStyle}
+                rowTextStyle={styles.dropdown1RowTxtStyle}
                 defaultButtonText={"Selecione o método de pagamento"}
+                
                 onSelect={(selectedItem, index) => {
                   console.log(selectedItem, index);
                 }}
@@ -275,10 +364,8 @@ const NewCarrinho = () => {
         <DefaultButton text={"Confirmar o Pedido"} onPress={closeOrder} />
 
         <Text style={styles.paragraph}> </Text>
-      </View>
-      {/* <View>
         <MenuInferior />
-      </View> */}
+      </View>
     </ScrollView>
   );
 };
