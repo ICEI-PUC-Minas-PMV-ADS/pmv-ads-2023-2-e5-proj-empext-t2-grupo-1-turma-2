@@ -40,7 +40,7 @@ public class UserController {
         return ResponseEntity.ok().body(userService.loginUser(loginDto));
     }
 
-    // ROTA DE PUT - /v1/profile
+    // ROTA DE PUT - /v1/profile Testenovo@123.com
     @PutMapping("/v1/user/{id}")
     public ResponseEntity<User> updateUser( @PathVariable("id") Integer id, @RequestBody UserForm form) {
         return ResponseEntity.ok().body(userService.updateUser(form, id));

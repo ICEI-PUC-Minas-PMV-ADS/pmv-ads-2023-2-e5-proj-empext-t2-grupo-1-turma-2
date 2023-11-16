@@ -1,5 +1,6 @@
 package com.br.pucminas.backend.controller;
 
+import com.br.pucminas.backend.domain.entity.Order;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -150,18 +151,12 @@ public class OrderController {
     }
 
     @GetMapping("/v1/order/{id}")
-    public ResponseEntity<OrderForm> findOrderById(@PathVariable("id") Integer id) {
-        
-        OrderForm orderForm = new OrderForm();
-        log.info("Busca pedido: " + id + "/v1/order/{id}");
-
+    public ResponseEntity<List<Order>> findOrderById(@PathVariable("id") Integer id) {
         try {
-            orderForm = pedidoService.findOrdeById(id);
+            return ResponseEntity.ok().body(pedidoService.findOrderByUserId(id));
         } catch (Exception e) {
-            return ResponseEntity.internalServerError().body(orderForm);            
+            throw new RuntimeException(e);
         }
-
-        return ResponseEntity.ok().body(orderForm);        
     }
 
 }

@@ -57,7 +57,7 @@ const Pedidos = () => {
 
   return (
     <ScrollView style={styles.background}>
-      <Nav onPress={() => navigation.navigate("Gerencial")} />
+      <Nav onPress={retorno} />
       <View style={styles.container}>
         <Statusbar />
 
