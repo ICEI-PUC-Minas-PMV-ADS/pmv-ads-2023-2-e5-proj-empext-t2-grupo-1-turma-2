@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-    @Query(value = "SELECT pr.* FROM product pr WHERE pr.category = ?1", nativeQuery = true)
+    @Query(value = "SELECT pr.* FROM product pr WHERE pr.category LIKE CONCAT('%', ?1, '%')", nativeQuery = true)
     List<Product> findByCategory(String category);
 
     @Query(value = "SELECT * FROM product WHERE id =:id", nativeQuery = true)

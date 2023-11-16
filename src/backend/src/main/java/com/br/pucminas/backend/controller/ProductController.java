@@ -26,16 +26,11 @@ public class ProductController {
 
     // ROTA DE GET - /v1/profile
     @GetMapping("/v1/product")
-    public ResponseEntity<List<Product>> getProfile() {
-        return ResponseEntity.ok(productService.findAll());
+    public ResponseEntity<List<Product>> getProduct(@RequestParam(value = "category", required = true) String category) {
+        return ResponseEntity.ok(productService.findAll(category));
     }
 
-    @GetMapping("/v1/product/find-by-category")
-    public ResponseEntity<List<Product>> findProductsByCategory(@RequestParam(value = "category", required = true) String category) {
-        return ResponseEntity.ok(productService.findAll());
-    }
-
-    // ROTA DE POST - /v1/profile
+    // ROTA DE POST - /v1/profile Teste@123.com
     @PostMapping("/v1/product")
     public ResponseEntity<Product> postUser(@RequestBody ProductForm form) {
         Product newProduct = productService.createProduct(form);

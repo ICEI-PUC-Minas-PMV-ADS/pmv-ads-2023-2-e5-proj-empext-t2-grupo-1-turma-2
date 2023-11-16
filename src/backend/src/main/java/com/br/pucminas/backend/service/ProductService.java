@@ -24,9 +24,8 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
-    public List<Product> findAll(){
-        log.info("findAll");
-        return productRepository.findAll();
+    public List<Product> findAll(String category){
+        return productRepository.findByCategory(category);
     }
 
     public List<Product> findByCategory(String category){

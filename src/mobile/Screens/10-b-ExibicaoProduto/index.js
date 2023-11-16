@@ -28,7 +28,7 @@ const ExibeProdutos = () => {
   const closeOrder = async () => {
     console.log(cart)
     await AsyncStorage.setItem("cart", JSON.stringify(cart));
-    navigation.navigate("Carrinho")
+    navigation.navigate("NewCarrinho")
   }
 
   const addItemToCart = (item) => {
@@ -58,12 +58,18 @@ const ExibeProdutos = () => {
   };
 
   const getParams = async () => {
+
+    const category = await AsyncStorage.getItem('category');
+    console.log(category)
+
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
     const host = "http://192.168.0.132";
     const port = "8080";
 
-    const endpoint = `${host}:${port}/api/v1/product`;
+    const endpoint = `${host}:${port}/api/v1/product?category=${category}`;
 
+    console.log(endpoint);
+    
     let result = await fetch(endpoint, {
       method: "GET",
       headers: {
@@ -88,9 +94,9 @@ const ExibeProdutos = () => {
         {isLoading ? (
           <Text>Loading...</Text>
         ) : (
-          data.map((item, index) => (
+          data.map((item) => (
             <>
-              <View key={item.index} style={styles.box}>
+              <View key={item.name} style={styles.box}>
                 <Text style={styles.titulo}>{item.name}</Text>
                 <Text style={styles.text_recipe_secondary}>
                   {item.description}
