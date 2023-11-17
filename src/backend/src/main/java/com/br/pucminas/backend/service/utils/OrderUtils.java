@@ -29,17 +29,17 @@ public abstract class OrderUtils {
             //Seta ítens associados ao pedido
             Float totalPedido = 0.0f;
             List<OrderItenForm> listaItemPedidos = new ArrayList<OrderItenForm>();
-            for (OrderProduct itemPedido : orderEntity.getItensPedido()) {
-                 OrderItenForm itensForm = new OrderItenForm();
-                 itensForm.setOrderItenId(itemPedido.getId());
-                 itensForm.setProductId(itemPedido.getProduto().getId());
-                 itensForm.setImageLink(itemPedido.getImageLink());
-                 itensForm.setProductDesc(itemPedido.getProductName());                 
-                 itensForm.setProductPrice(itemPedido.getPrice());
-                 itensForm.setQuantity(itemPedido.getQuantity());
-                 totalPedido+=itemPedido.getPrice()*itemPedido.getQuantity();
-                 listaItemPedidos.add(itensForm);
-            }
+//            for (OrderProduct itemPedido : orderEntity.getItensPedido()) {
+//                 OrderItenForm itensForm = new OrderItenForm();
+//                 itensForm.setOrderItenId(itemPedido.getId());
+//                 itensForm.setProductId(itemPedido.getProduto().getId());
+//                 itensForm.setImageLink(itemPedido.getImageLink());
+//                 itensForm.setProductDesc(itemPedido.getProductName());
+//                 itensForm.setProductPrice(itemPedido.getPrice());
+//                 itensForm.setQuantity(itemPedido.getQuantity());
+//                 totalPedido+=itemPedido.getPrice()*itemPedido.getQuantity();
+//                 listaItemPedidos.add(itensForm);
+//            }
             order.setValorTotalPedido(totalPedido);
             order.setItensDoPedido(listaItemPedidos);
             
@@ -96,32 +96,25 @@ public abstract class OrderUtils {
         if(pedido != null){
             
             form.setId(pedido.getId());
-            form.setClientMail(null);
+            form.setClientMail(pedido.getEmailCliente());
             form.setFormaPagamento(pedido.getFormaPagamento());
             form.setStatusPedido(pedido.getStatusPedido());
             form.setDataHoraPedido(pedido.getDataHoraPedido());
-            form.setValorTotalPedido(null);
-                      
-            float valorTotalPedido=0.0f;
+            form.setValorTotalPedido(pedido.getValorTotalPedido());
+
             ArrayList<OrderItenForm> listaOrderItenForm = new ArrayList<OrderItenForm>();
             
             for (OrderProduct orderProduct : itensPedido) {
                 
                 //Calcula valor total do pedido
-                valorTotalPedido+=orderProduct.getQuantity()*orderProduct.getPrice();
-                
+
                 OrderItenForm itemForm = new OrderItenForm();
                 itemForm.setProductId(orderProduct.getProduto().getId());                                       
                 itemForm.setOrderItenId(orderProduct.getId());
-                itemForm.setProductDesc(orderProduct.getProductName());
-                itemForm.setProductPrice(orderProduct.getPrice());
-                itemForm.setQuantity(orderProduct.getQuantity());
-                itemForm.setImageLink(orderProduct.getImageLink());
 
                 listaOrderItenForm.add(itemForm);
             }
 
-            form.setValorTotalPedido(valorTotalPedido);
             form.setItensDoPedido(listaOrderItenForm);
         }
 

@@ -27,6 +27,36 @@ function ChooseSweet() {
 
   }
 
+  const selectIndispensaveis = async () => {
+    await AsyncStorage.setItem('category', "Indispensáveis");
+    navigation.navigate('ExibeProdutos')
+  }
+
+  const selectCoxinhasDoces = async () => {
+    await AsyncStorage.setItem('category', "Coxinhas Doces");
+    navigation.navigate('ExibeProdutos')
+  }
+
+  const selectCopoes = async () => {
+    await AsyncStorage.setItem('category', "Copões");
+    navigation.navigate('ExibeProdutos')
+  }
+
+  const selectTortinhas = async () => {
+    await AsyncStorage.setItem('category', "Tortinhas");
+    navigation.navigate('ExibeProdutos')
+  }
+
+  const selectSalgados = async () => {
+    await AsyncStorage.setItem('category', "Salgados");
+    navigation.navigate('ExibeProdutos')
+  }
+
+
+  const selectBebidas = async () => {
+    await AsyncStorage.setItem('category', "Bebidas");
+    navigation.navigate('ExibeProdutos')
+  }
 
   return (
     <View style={{flex: 1}}>
@@ -34,15 +64,24 @@ function ChooseSweet() {
     <View style={styles.container}>
       
       <Logo onPress={() => navigation.navigate('Sobre')}/>
+
+      <View  style={{flexDirection:"row"}}>
+          <Image source={Doces1} style={styles.image}/>
+          <View style={{ marginLeft: 10, flexDirection: 'column' }}>
+          <Text style={styles.text}>Título do programa</Text>
+          <Text style={styles.text}>Descrição</Text>
+          </View>
+        </View>
+      
       <View style={styles.row}>
         {/* Botão 1 */}
-        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
+        <TouchableOpacity style={styles.button}  onPress={selectIndispensaveis}>
           <Image source={Doces1} style={styles.image}/>
           <Text style={styles.text}>Indispensáveis</Text>
         </TouchableOpacity>
 
         {/* Botão 2 */}
-        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
+        <TouchableOpacity style={styles.button}  onPress={selectCoxinhasDoces}>
         <Image source={Doces2} style={styles.image}/>
           <Text style={styles.text}>Coxinhas Doces</Text>
         </TouchableOpacity>
@@ -50,13 +89,13 @@ function ChooseSweet() {
 
       <View style={styles.row}>
         {/* Botão 3 */}
-        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
+        <TouchableOpacity style={styles.button}  onPress={selectCopoes}>
         <Image source={Doces3} style={styles.image}/>
           <Text style={styles.text}>Copões</Text>
         </TouchableOpacity>
 
         {/* Botão 4 */}
-        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
+        <TouchableOpacity style={styles.button}  onPress={selectTortinhas}>
         <Image source={Doces4} style={styles.image}/>
           <Text style={styles.text}>Tortinhas</Text>
         </TouchableOpacity>
@@ -64,17 +103,16 @@ function ChooseSweet() {
 
       <View style={styles.row}>
         {/* Botão 5 */}
-        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
+        <TouchableOpacity style={styles.button}  onPress={selectSalgados}>
         <Image source={Doces5} style={styles.image}/>
           <Text style={styles.text}>Salgados</Text>
         </TouchableOpacity>
 
         {/* Botão 6 */}
-        <TouchableOpacity style={styles.button}  onPress={() => navigation.navigate('ExibeProdutos')}>
+        <TouchableOpacity style={styles.button}  onPress={selectBebidas}>
         <Image source={Doces6} style={styles.image}/>
           <Text style={styles.text}>Bebidas</Text>
         </TouchableOpacity>
-      
         
       </View>
       

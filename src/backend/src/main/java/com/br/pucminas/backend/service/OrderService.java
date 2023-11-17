@@ -24,6 +24,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -70,30 +71,10 @@ public class OrderService extends OrderUtils{
      * @return : Objeto do tipo OrderForm
      * @throws Exception
      */
-    public OrderForm findOrdeById(Integer id) throws Exception{
+    public List<Order> findOrderByUserId(Integer id) throws Exception{
         
         log.info("findOrderById " + id);
-        OrderForm order = new OrderForm();
-        
-        try {                    
-            //Busca Pedido de acordo com o id
-            List<Order> listaPedidos = new ArrayList<Order>();
-            Order pedido = orderRepository.getById(id);
-            if(pedido!=null) {
-                listaPedidos.add(pedido);
-                order = this.prepareOrderFormFromEntity(listaPedidos).get(0);
-                order.setServerResponseMessage(SystemErrors.MSG_PEDIDO_ENCOTRADO.getValor());
-            }            
-        } catch (Exception e) {            
-            if(e.getClass().getName().contains("EntityNotFoundException")){
-                order = new OrderForm();
-                order.setServerResponseMessage(SystemErrors.MSG_PEDIDO_NAO_ENCOTRADO.getValor());
-            }else{
-                log.error(SystemErrors.ERRO_AO_BUSCAR_PEDIDO.getValor(),e);
-                throw new Exception(SystemErrors.ERRO_AO_BUSCAR_PEDIDO.getValor(), e);
-            }
-        }
-        return order;
+        return orderRepository.findAll(); //.stream().filter(fr -> fr.getCliente().getId().equals(id)).collect(Collectors.toList());
     }
 
     /**
@@ -198,8 +179,7 @@ public class OrderService extends OrderUtils{
     private Order getOrderEntityFromOrderForm(OrderForm formFront) throws Exception{
 
         
-        User clienteEntity = null;    
-        Order orderEntity = new Order();    
+        Order orderEntity = new Order();
                     
         try{
             //Novo Pedido, Seta DataHora pedido e Status do pedido para recebido
@@ -210,6 +190,8 @@ public class OrderService extends OrderUtils{
                 orderEntity.setDataHoraPedido(new Timestamp(System.currentTimeMillis()));
                 orderEntity.setStatusPedido(StatusPedido.RECEBIDO.getValor());
                 orderEntity.setFormaPagamento(formFront.getFormaPagamento());
+                orderEntity.setEmailCliente(formFront.getClientMail());
+                orderEntity.setValorTotalPedido(formFront.getValorTotalPedido());
             }else if(formFront.getOperacao().equals(Operacao.ATUALIZAR_PEDIDO.getValor())){   
                 log.info("Atualizar dados do pedido " + formFront.getId() + formFront.getOperacao());
                 orderEntity = null;
@@ -218,15 +200,7 @@ public class OrderService extends OrderUtils{
                 orderEntity.setFormaPagamento(formFront.getFormaPagamento());
                 orderEntity.setStatusPedido(formFront.getStatusPedido());                
             }
-            
-            //Busca dados do cliente que esta efetuando o pedido. Somente na criação do prdido
-            if(formFront.getClientMail() != null && formFront.getOperacao().equals(Operacao.CRIAR_PEDIDO.getValor())){                
-                clienteEntity = userRepository.findByEmail(formFront.getClientMail()); 
-                if(clienteEntity != null){
-                    log.info("Cliente associado ao pedido : " + clienteEntity.getEmail());
-                    orderEntity.setCliente(clienteEntity);           
-                }
-            }
+
         } catch (Exception e) {
             log.error("Erro ao criar pedido!", e);
             throw new Exception(e);
@@ -255,8 +229,8 @@ public class OrderService extends OrderUtils{
                     //Inserir ítens a novo pedido
                     if(formFront.getOperacao().equals(Operacao.CRIAR_PEDIDO.getValor())){        
                         item.setOrder(orderEntity);
-                        item.setPrice(orderItenForm.getProductPrice());
-                        item.setQuantity(orderItenForm.getQuantity());                
+//                        item.setPrice(orderItenForm.getProductPrice());
+//                        item.setQuantity(orderItenForm.getQuantity());
                      }else { //Atualizar pedido já existente
                         if(formFront.getOperacao().equals(Operacao.ATUALIZAR_PEDIDO.getValor())){   
                             item = null;
@@ -264,27 +238,17 @@ public class OrderService extends OrderUtils{
                             log.info("Busncando ítem de pedido a ser atualizado");
                             item = orderProductRepository.getById(orderItenForm.getOrderItenId());
                             //Atualiza Quandidade e Preço
-                            item.setPrice(orderItenForm.getProductPrice());
-                            item.setQuantity(orderItenForm.getQuantity());                
+//                            item.setPrice(orderItenForm.getProductPrice());
+//                            item.setQuantity(orderItenForm.getQuantity());
                         }
                      }
                     //Busca produtos a partir da lista de Ids de Produtos que vieram do front
                     Optional<Product> optionalProduct = productRepository.findByProductId(orderItenForm.getProductId());
                     Product produto = optionalProduct.get();
-                    if(produto.getQuantity().intValue() < orderItenForm.getQuantity().intValue()){                        
-                        log.error("Produto " + produto.getDescription()+ " não disponivel em estoque. Solicitados " + orderItenForm.getQuantity() + " e temos disponíveis apenas " +  produto.getQuantity() + " !");
-                        throw new Exception(SystemErrors.ERRO_SEM_ESTOQUE.getValor());
-                    }else{
-                        //Atualiza estoque do produto que foi vendido
-                        log.info("Atualizando estoque do produto " + produto.getName());
-                        produto.setQuantity(produto.getQuantity().intValue() - orderItenForm.getQuantity().intValue());
-                        productRepository.save(produto);
-                        log.info("Estoque do produto " + produto.getName() + " foi atualizado com sucesso!");
-                    }
 
                     item.setProduto(produto);
-                    item.setProductName(produto.getName());
-                    item.setImageLink(produto.getLink());
+//                    item.setProductName(produto.getName());
+//                    item.setImageLink(produto.getLink());
                     listaItensPedido.add(item);
                 }
             }
@@ -326,11 +290,6 @@ public class OrderService extends OrderUtils{
                 for (CartItens cartItens : listaCarrinho) {
                     OrderItenForm orderItens = new OrderItenForm();
                     orderItens.setProductId(cartItens.getProduto().getId());
-                    orderItens.setProductDesc(cartItens.getProduto().getName());
-                    orderItens.setProductPrice(cartItens.getProduto().getPrice());
-                    orderItens.setImageLink(cartItens.getProduto().getLink());
-                    orderItens.setQuantity(cartItens.getQuantity());
-
                     listaItensPedido.add(orderItens);
                 }
                 formFront.setItensDoPedido(listaItensPedido);                

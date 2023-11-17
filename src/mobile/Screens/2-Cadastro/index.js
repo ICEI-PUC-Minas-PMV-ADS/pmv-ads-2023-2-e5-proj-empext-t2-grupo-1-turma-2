@@ -24,7 +24,7 @@ const Cadastrar = () => {
     let user = {
       name: name,
       email: email,
-      adress: placeholder,
+      address: placeholder,
       password: confirmedPassword,
       zipCode: zipCode,
       cell: cell
