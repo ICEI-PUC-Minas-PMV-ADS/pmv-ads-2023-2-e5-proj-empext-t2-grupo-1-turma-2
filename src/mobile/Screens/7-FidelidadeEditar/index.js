@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import Nav from "../../Components/NavBar/index";
 import { useState, useEffect } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import GoBack from '../../Components/Buttons/GoBack';
 
 
 function FidelidadeEditar({ route, navigation }) {
@@ -97,7 +98,7 @@ function FidelidadeEditar({ route, navigation }) {
 
   return (
     <ScrollView>
-      <Nav onPress={() => navigation.navigate("MainFidelidade")} />
+      <GoBack onPress={() => navigation.navigate("MainFidelidade")} />
       <View style={styles.container}>
         <Statusbar />
         <Logo />

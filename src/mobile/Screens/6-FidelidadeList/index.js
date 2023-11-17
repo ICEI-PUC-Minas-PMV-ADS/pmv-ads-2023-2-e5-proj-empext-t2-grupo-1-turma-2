@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import Logo from '../../Components/Logo';
 import Statusbar from "../../Components/StatusBar";
+import GoBack from "../../Components/Buttons/GoBack";
 
 
 const FidelidadeList = () => {
@@ -61,7 +62,7 @@ const FidelidadeList = () => {
 
   return (
     <ScrollView>
-      <Nav onPress={() => navigation.navigate("MainFidelidade")} />
+      <GoBack onPress={() => navigation.navigate("MainFidelidade")} />
       <View style={styles.container}>
 
         <Statusbar />

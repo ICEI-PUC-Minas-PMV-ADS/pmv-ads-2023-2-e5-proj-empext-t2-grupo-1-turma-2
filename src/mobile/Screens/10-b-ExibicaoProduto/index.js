@@ -89,7 +89,7 @@ const ExibeProdutos = () => {
 
   return (
     <ScrollView>
-      <Nav onPress={retorno} />
+     
 
       <View style={styles.container}>
         {isLoading ? (

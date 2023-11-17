@@ -1,11 +1,11 @@
-import { Image, SafeAreaView, TouchableOpacity } from "react-native";
+import { Image, SafeAreaView, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
-import goback from "../../../../assets/icons/Arrow.png";
+import goback from "../../../assets/icons/Arrow.png";
 
-const GoBack = () => {
+const GoBack = ({ onPress }) => {
   return (
     <SafeAreaView>
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
         <Image source={goback} style={styles.goback} />
       </TouchableOpacity>
     </SafeAreaView>

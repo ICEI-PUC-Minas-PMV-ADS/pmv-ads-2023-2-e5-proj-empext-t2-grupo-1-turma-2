@@ -5,7 +5,8 @@ import Logo from "../../Components/Logo/index";
 import Statusbar from "../../Components/StatusBar";
 import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+import GoBack from "../../Components/Buttons/GoBack";
 
 
 const Cadastrar = () => {
@@ -62,6 +63,7 @@ const Cadastrar = () => {
 
   return (
     <ScrollView>
+      <GoBack onPress={() => {navigation.navigate('Login')}} />
       <View style={styles.container}>
         <Statusbar />
         <Logo />

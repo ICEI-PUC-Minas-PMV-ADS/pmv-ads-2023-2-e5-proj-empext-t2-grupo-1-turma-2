@@ -8,6 +8,7 @@ import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import MenuInferior from "../../Components/MenuInferior";
 
 const PedidosCliente = () => {
   const navigation = useNavigation();
@@ -46,17 +47,23 @@ const PedidosCliente = () => {
   
 
   return (
+    <View style={styles.container}>
     <ScrollView style={styles.background}>
-      <View style={styles.container}>
-        
+      
+       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Logo onPress={() => {navigation.navigate('Sobre')}}/>
+      </View>
         <Statusbar />
 
     <EspacoPedido/>
 
 
-      </View>
+   
+      
+         
     </ScrollView>
+    <MenuInferior/>
+    </View>
 
 
   );

@@ -20,6 +20,11 @@ const MenuInferior = () => {
         <Text style={styles.label}>Produtos</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity style={styles.button}  onPress={() => {navigation.navigate("PedidosCliente")}}>
+      <Ionicons name="receipt-outline" color={'white'} size={20} />
+        <Text style={styles.label}>Pedidos</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.button}>
       <Ionicons name="cart-outline" color={'white'} size={20}  onPress={() => {navigation.navigate("NewCarrinho")}}/>
         <Text style={styles.label}>Carrinho</Text>

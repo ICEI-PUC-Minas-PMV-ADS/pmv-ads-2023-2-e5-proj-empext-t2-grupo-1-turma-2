@@ -32,6 +32,7 @@ import MeuPerfil from "../Screens/21-MeuPerfil/index";
 import MenuInferior from "../Components/MenuInferior/index";
 
 import ListaProdutoCliente from "../Screens/18-ListaProdutosCliente/index";
+import PedidosCliente from "../Screens/20-AcompanharPedido/index";
 import NewCarrinho from "../Screens/19-b-NewCarrinho/index";
 import Carrinho from "../Screens/19-Carrinho/index"
 
@@ -228,6 +229,13 @@ const Main = () => {
 <Stack.Screen
         name="NewCarrinho"
         component={NewCarrinho}
+        options={{
+          header: () => null,
+        }}
+      />
+      <Stack.Screen
+        name="PedidosCliente"
+        component={PedidosCliente}
         options={{
           header: () => null,
         }}

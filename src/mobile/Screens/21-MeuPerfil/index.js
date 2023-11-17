@@ -95,12 +95,17 @@ return (
           onPress={MeuPerfil}
         />
         <Text></Text>
+<View style={{flex:1,flexDirection:"row"}}>
+        <DeleteButton 
+          text={"Sair da Conta"}
+          onPress={() => {navigation.navigate("Login")}}
+        />
 
         <DeleteButton
           text={"Excluir Conta"}
           onPress={MeuPerfil}
         />
-         
+         </View>
          </ScrollView>        
       
       

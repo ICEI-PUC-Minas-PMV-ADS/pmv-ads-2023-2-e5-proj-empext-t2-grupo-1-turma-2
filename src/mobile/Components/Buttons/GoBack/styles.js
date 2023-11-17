@@ -4,8 +4,9 @@ export const styles = StyleSheet.create({
     container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    margin: 100
+    alignItems: "left",
+    marginTop: 50,
+    marginLeft: 20,
     },
     goback: {
         width: 25,

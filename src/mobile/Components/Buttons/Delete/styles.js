@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   },
   buttonArea: {
     justifyContent: "center",
-    width: 263,
+    width:130,
     height: 50,
     backgroundColor: "#f2e8e3",
     alignItems: "center",

@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   background:{
     backgroundColor:"#ffffff",
+    flex:1,
   },
   
   container: {
@@ -10,7 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
-    marginVertical:10,
+    
   },
 
   quadrado: {
