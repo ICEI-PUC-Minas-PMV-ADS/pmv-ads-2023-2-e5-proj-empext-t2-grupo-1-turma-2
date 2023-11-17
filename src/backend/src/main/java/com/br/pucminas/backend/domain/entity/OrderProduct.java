@@ -28,19 +28,7 @@ public class OrderProduct {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId", referencedColumnName = "id")
     private Product produto;
-    
-    @Column(name = "productName")
-    private String productName; 
 
-    @Column(name = "imageLink")
-    private String imageLink; 
-
-
-    @Column(name = "quantity")
-    private Integer quantity;
-
-    @Column(name = "price")
-    private Float price;
     
     @Override
     public boolean equals(Object o) {

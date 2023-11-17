@@ -39,12 +39,6 @@ public class Product {
     @Column(name = "link")
     private String link;
 
-    @OneToMany(mappedBy="produto",fetch = FetchType.LAZY)
-    private Set<OrderProduct> orderProducts;
-
-    @OneToMany(mappedBy="produto",fetch = FetchType.LAZY)
-    private Set<CartItens> cartItens;
-
     public Product (String name, String category){
         this.name = name;
         this.category = category;

@@ -24,6 +24,7 @@ const NewCarrinho = () => {
   const [totalWithPercentage, setTotalWithPercentage] = useState(0);
   const [tax, setTax] = useState(0);
   const [totalPricePerItem, setTotalPricePerItem] = useState([]);
+
   const paymentMethods = [
     "Cartão de crédito",
     "Cartão de débito",
@@ -112,11 +113,11 @@ const NewCarrinho = () => {
   };
 
   const getParams = async () => {
-    const user = await AsyncStorage.getItem("userData");
-    const cart = await AsyncStorage.getItem("cart");
-    console.log(JSON.parse(user));
-    setUser(JSON.parse(user));
-    setCart(JSON.parse(cart));
+    const user = JSON.parse(await AsyncStorage.getItem("userData"));
+    const cart = JSON.parse(await AsyncStorage.getItem("cart"));
+    console.log(user);
+    setUser(user);
+    setCart(cart);
     setLoading(false);
 
     let totalValue = 0;
@@ -143,24 +144,28 @@ const NewCarrinho = () => {
   };
 
 
-  const editCart = async (item, newValue) => {
-    console.log(item, newValue)
+  const editCart = async (selectedItem, cartIndex) => {
 
+    console.log('editCard', selectedItem, cartIndex)
 
-    let value = Number(newValue);
-    console.log(value);
+    // teste_usuario@email.com
+    let value = Number(selectedItem);
+    
+
+    console.log("cart after edit", cart)
+
     if(value == 0){
       removeFromCart(item);
     }else{
-      cart[item].quantity = value;
+      cart[cartIndex].quantity = value;
     }
+
+    console.log("cart before edit", cart)
 
     let totalValue = 0;
     let totalItems = 0;
 
-    totalPricePerItem = [];
     cart.forEach((element) => {
-      totalPricePerItem.push(element.price * element.quantity);
       totalValue += element.price * element.quantity;
       totalItems += element.quantity;
     });
@@ -171,12 +176,10 @@ const NewCarrinho = () => {
     
     setTotalItems(totalItems);
     setTotalValue(totalValue);
-    setTotalPricePerItem(newPriceList);
     setTotalWithPercentage(totalWithPercentage);
     setTax(tax);
 
     await AsyncStorage.setItem("cart", JSON.stringify(cart));
-    this.forceUpdate();
   }
 
 
@@ -229,8 +232,9 @@ const NewCarrinho = () => {
                     onSelect={(selectedItem, index) => {
                       console.log(selectedItem, index);
                     }}
-                    buttonTextAfterSelection={async (selectedItem, index) => {
-                      await editCart(selectedItem, cartIndex);
+                    buttonTextAfterSelection={(selectedItem, index) => {
+                      console.log(selectedItem)
+                      editCart(selectedItem, cartIndex);
                       return selectedItem;
                     }}
                     rowTextForSelection={(item, inderx) => {

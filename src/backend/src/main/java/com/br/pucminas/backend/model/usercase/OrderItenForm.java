@@ -19,24 +19,5 @@ public class OrderItenForm {
      * Identificador do produto dentro do  pedido
      */
     private Integer orderItenId;
-    
-    /**
-     * Descrição do pdoduto no dia da compra
-     */
-    private String productDesc;
-    
-    /**
-     * Imagem do produto no dia da compra
-     */
-    private String imageLink;
-    
-    /**
-     * Preco do produto no dia da compra
-     */
-    private Float productPrice;
-    
-    /**
-     * Quantidade comprada
-     */
-    private Integer quantity;
+
 }

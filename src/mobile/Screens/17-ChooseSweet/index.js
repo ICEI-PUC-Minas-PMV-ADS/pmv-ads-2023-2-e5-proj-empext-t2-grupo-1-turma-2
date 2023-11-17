@@ -64,6 +64,15 @@ function ChooseSweet() {
     <View style={styles.container}>
       
       <Logo onPress={() => navigation.navigate('Sobre')}/>
+
+      <View  style={{flexDirection:"row"}}>
+          <Image source={Doces1} style={styles.image}/>
+          <View style={{ marginLeft: 10, flexDirection: 'column' }}>
+          <Text style={styles.text}>Título do programa</Text>
+          <Text style={styles.text}>Descrição</Text>
+          </View>
+        </View>
+      
       <View style={styles.row}>
         {/* Botão 1 */}
         <TouchableOpacity style={styles.button}  onPress={selectIndispensaveis}>

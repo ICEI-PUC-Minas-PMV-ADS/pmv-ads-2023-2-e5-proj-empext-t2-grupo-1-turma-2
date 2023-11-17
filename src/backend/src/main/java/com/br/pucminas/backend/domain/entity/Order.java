@@ -1,11 +1,14 @@
 package com.br.pucminas.backend.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -30,14 +33,17 @@ public class Order {
     private String formaPagamento;
 
     @Column(name = "statusPedido")
-    private String statusPedido;    
+    private String statusPedido;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId", referencedColumnName = "id")
-    private User cliente;
+    @Column(name = "emailCliente")
+    private String emailCliente;
 
-    @OneToMany(mappedBy="order",fetch = FetchType.LAZY)
-    private Set<OrderProduct> itensPedido;
+    @Column(name = "valorTotalPedido")
+    private Float valorTotalPedido;
+
+    @OneToMany(mappedBy="order",fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<OrderProduct> orderProductList = new ArrayList<>();
     
     @Override
     public boolean equals(Object o) {

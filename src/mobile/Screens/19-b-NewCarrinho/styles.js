@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold" 
   },
   text_recipe_secondary: {
-    fontSize: 14,
+    fontSize: 11,
     marginTop: 10,
     marginLeft: 11,
     marginRight: 11
