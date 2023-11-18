@@ -29,9 +29,6 @@ const Gerencial = () => {
         <DefaultButton text={"Clientes"}  onPress={() => {navigation.navigate('Clientes')}} />
         <Text style={styles.paragraph}> </Text>
 
-        <DefaultButton text={"Teste visão cliente"}  onPress={() => {navigation.navigate('ChooseSweet')}} />
-        <Text style={styles.paragraph}> </Text>
-
       </View>
     </ScrollView>
   );
