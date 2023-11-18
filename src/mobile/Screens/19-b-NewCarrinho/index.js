@@ -90,9 +90,9 @@ const NewCarrinho = () => {
       .then((response) => response.json())
       .then(async (responseData) => {
         const msg = `Novo pedido criado com sucesso! `;
-
+        
         console.log(`Response: ${JSON.stringify(responseData)}`);
-
+        await AsyncStorage.setItem("cart", JSON.stringify([]));
         const cell = "5531994543201";
         // Linking.openURL(
         //   `https://api.whatsapp.com/send?phone=${cell}&text=${encoderOrder}`
@@ -105,6 +105,11 @@ const NewCarrinho = () => {
         navigation.navigate("PedidosCliente");
       });
   };
+
+  const cleanCart = async () => {
+    await AsyncStorage.setItem("cart", JSON.stringify([]));
+    navigation.navigate("ExibeProdutos");
+  }
 
   const getParams = async () => {
     const user = JSON.parse(await AsyncStorage.getItem("userData"));
@@ -352,6 +357,9 @@ const NewCarrinho = () => {
         <Text style={styles.paragraph}> </Text>
 
         <DefaultButton text={"Confirmar o Pedido"} onPress={closeOrder} />
+        <Text style={styles.paragraph}> </Text>
+
+        <DefaultButton text={"Limpar Carrinho"} onPress={cleanCart} />
 
         <Text style={styles.paragraph}> </Text>
         <MenuInferior />

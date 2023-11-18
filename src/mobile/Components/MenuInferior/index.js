@@ -24,6 +24,12 @@ const MenuInferior = () => {
       <Ionicons name="cart-outline" color={'white'} size={20}  onPress={() => {navigation.navigate("NewCarrinho")}}/>
         <Text style={styles.label}>Carrinho</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button}>
+      <Ionicons name="mail" color={'white'} size={20}  onPress={() => {navigation.navigate("PedidosCliente")}}/>
+        <Text style={styles.label}>Pedidos</Text>
+      </TouchableOpacity>
+    
     </View>
   );
 };

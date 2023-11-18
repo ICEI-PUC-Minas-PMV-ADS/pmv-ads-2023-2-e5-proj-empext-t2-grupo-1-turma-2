@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class UserFlat {
     private String name;
     private String phone;
+    private String email;
     private String address;
     private String zipCode;
 }

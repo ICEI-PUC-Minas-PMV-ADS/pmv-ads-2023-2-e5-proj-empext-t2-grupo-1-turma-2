@@ -52,7 +52,7 @@ public class OrderController {
      * @return
      */
     @GetMapping("/v1/order")
-    public ResponseEntity<List<OrderResponse>> findAllOrders(){
+    public ResponseEntity<List<OrderResponse>> findAllOrders(@RequestParam(value = "email", required = true) String email){
         
         List<OrderResponse> listaPedidos = new ArrayList<>();
         log.info("Busca todos os pedidos - /v1/order");
@@ -61,7 +61,12 @@ public class OrderController {
             listaPedidos = pedidoService.findAllOrders();
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(listaPedidos);            
-        }        
+        }
+
+        if(!email.equalsIgnoreCase("sys_root@gmail.com")){
+            listaPedidos.removeIf(p -> !p.getUser().getEmail().equalsIgnoreCase(email));
+        }
+
         return ResponseEntity.ok().body(listaPedidos);        
     }
 

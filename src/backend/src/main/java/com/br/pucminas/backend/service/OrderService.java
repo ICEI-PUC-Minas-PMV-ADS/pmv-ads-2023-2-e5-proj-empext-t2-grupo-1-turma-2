@@ -67,7 +67,7 @@ public class OrderService {
 
             User user = userRepository.findByEmail(orderEntity.getEmailUser());
 
-            order.setUser(UserFlat.builder().name(user.getName()).phone(user.getPhone()).address(user.getAddress()).zipCode(user.getZipCode()).build());
+            order.setUser(UserFlat.builder().name(user.getName()).email(user.getEmail()).phone(user.getPhone()).address(user.getAddress()).zipCode(user.getZipCode()).build());
             order.setOrderStatus(orderEntity.getOrderStatus());
             order.setTotalValueOrder(orderEntity.getTotalValueOrder());
             order.setPaymentMethod(orderEntity.getPaymentMethod());

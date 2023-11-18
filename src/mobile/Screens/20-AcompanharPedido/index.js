@@ -8,6 +8,7 @@ import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MenuInferior from "../../Components/MenuInferior";
 
 const PedidosCliente = () => {
   const navigation = useNavigation();
@@ -24,7 +25,7 @@ const PedidosCliente = () => {
     const host = "http://192.168.0.132";
     const port = "8080";
 
-    const endpoint = `${host}:${port}/api/v1/order`;
+    const endpoint = `${host}:${port}/api/v1/order?email=${JSON.parse(user).email}`;
 
     console.log(endpoint);
 
@@ -93,30 +94,38 @@ const PedidosCliente = () => {
             <View style={styles.quadrado}>
               <Text style={styles.paragraph}> </Text>
 
-              <Text style={styles.titulo}>Pedido Número:{item.id}</Text>
+              <Text style={styles.titulo}>Pedido Número: {item.id}</Text>
               <Text style={styles.detalhes}>
                 Nome do Cliente: {item.user.name}
               </Text>
               <Text style={styles.detalhes}>
-                Ultima atualizacao do Pedido: {moment(item.updatedAt).format("dd.mm.yyyy hh:MM:ss") }
+                Ultima atualização: { 
+                (moment(new Date( Date.parse(item.updatedAt) )).format("DD/MM/YYYY HH:mm:ss"))
+                }
               </Text>
               <Text style={styles.detalhes}>Endereço: {item.user.address}</Text>
               <Text style={styles.detalhes}>
                 Forma de Pagamento: {item.paymentMethod}
+              </Text>
+              <Text style={styles.detalhes}>
+                Valor Total do Pedido: {item.totalValueOrder.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
               </Text>
               <Text style={styles.detalhes}>{item.productInfo}</Text>
               <Text style={styles.detalhes2}>
                 Status: {parseStatus(item.orderStatus)}
               </Text>
 
-              <View style={styles.containerbutton}>
+              {/* <View style={styles.containerbutton}>
                 <TouchableOpacity style={styles.button1}>
                   <Text style={styles.buttonText}>Contato Loja</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
                   <Text style={styles.buttonText2}>Editar</Text>
                 </TouchableOpacity>
-              </View>
+              </View> */}
               <Text style={styles.paragraph}> </Text>
 
             </View>
@@ -126,6 +135,8 @@ const PedidosCliente = () => {
         )}
       <Text style={styles.paragraph}> </Text>
 
+      <MenuInferior/>
+      
       </View>
     </ScrollView>
   );
