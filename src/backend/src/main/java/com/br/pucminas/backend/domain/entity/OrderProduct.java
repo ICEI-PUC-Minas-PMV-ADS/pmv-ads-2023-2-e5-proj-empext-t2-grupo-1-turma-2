@@ -25,7 +25,10 @@ public class OrderProduct {
     @JoinColumn(name = "pedidoId", referencedColumnName = "id")
     private Order order;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "productId", referencedColumnName = "id")
     private Product produto;
 

@@ -112,7 +112,7 @@ return (
           text={"Salvar"}
           //onPress={MeuPerfil}
         />
-<Text></Text>
+        <Text></Text>
         <DeleteButton
           text={"Excluir Conta"}
           

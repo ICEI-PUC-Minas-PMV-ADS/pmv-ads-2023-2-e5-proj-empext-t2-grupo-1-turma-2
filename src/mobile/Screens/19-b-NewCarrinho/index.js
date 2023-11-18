@@ -51,29 +51,21 @@ const NewCarrinho = () => {
   };
 
   const closeOrder = async () => {
-    let orderId = Math.floor(Math.random() * 1000);
     let orderItems = [];
     for (const element of cart) {
       orderItems.push({
         productId: element.id,
-        orderItenId: orderId,
-        productDesc: element.description,
-        imageLink: element.link,
-        price: element.price,
-        productQuantity: element.quantity,
+        quantity: element.quantity,
       });
     }
 
     let order = {
-      id: orderId,
-      operacao: "Novo",
-      serverResponseMessage: "202",
-      userId: user.id,
-      dataHoraPedido: null,
-      formaPagamento: selectedPaymentMethod,
-      statusPedido: "0",
-      valorTotalPedido: totalWithPercentage,
-      clientMail: user.email,
+      emailUser: user.email,
+      operation: "CRIACAO",
+      createdAt: null,
+      updatedAt: null,
+      paymentMethod: selectedPaymentMethod,
+      totalValueOrder: totalWithPercentage,
       itensDoPedido: orderItems,
     };
 
@@ -97,18 +89,20 @@ const NewCarrinho = () => {
     })
       .then((response) => response.json())
       .then(async (responseData) => {
+        const msg = `Novo pedido criado com sucesso! `;
+
         console.log(`Response: ${JSON.stringify(responseData)}`);
 
         const cell = "5531994543201";
-        Linking.openURL(
-          `https://api.whatsapp.com/send?phone=${cell}&text=${encoderOrder}`
-        );
+        // Linking.openURL(
+        //   `https://api.whatsapp.com/send?phone=${cell}&text=${encoderOrder}`
+        // );
 
-        navigation.navigate("Pedidos");
+        navigation.navigate("PedidosCliente");
       })
       .catch(async (error) => {
         console.error(error);
-        navigation.navigate("Pedidos");
+        navigation.navigate("PedidosCliente");
       });
   };
 
@@ -123,7 +117,6 @@ const NewCarrinho = () => {
     let totalValue = 0;
     let totalItems = 0;
 
-
     let newPriceList = [];
     console.log(cart);
 
@@ -132,7 +125,6 @@ const NewCarrinho = () => {
       totalItems += element.quantity;
     });
 
-    
     let tax = (totalValue * 20) / 100;
     let totalWithPercentage = totalValue + (totalValue * 20) / 100;
 
@@ -143,24 +135,21 @@ const NewCarrinho = () => {
     setTax(tax);
   };
 
-
   const editCart = async (selectedItem, cartIndex) => {
-
-    console.log('editCard', selectedItem, cartIndex)
+    console.log("editCard", selectedItem, cartIndex);
 
     // teste_usuario@email.com
     let value = Number(selectedItem);
-    
 
-    console.log("cart after edit", cart)
+    console.log("cart after edit", cart);
 
-    if(value == 0){
+    if (value == 0) {
       removeFromCart(item);
-    }else{
+    } else {
       cart[cartIndex].quantity = value;
     }
 
-    console.log("cart before edit", cart)
+    console.log("cart before edit", cart);
 
     let totalValue = 0;
     let totalItems = 0;
@@ -173,15 +162,13 @@ const NewCarrinho = () => {
     let tax = (totalValue * 20) / 100;
     let totalWithPercentage = totalValue + (totalValue * 20) / 100;
 
-    
     setTotalItems(totalItems);
     setTotalValue(totalValue);
     setTotalWithPercentage(totalWithPercentage);
     setTax(tax);
 
     await AsyncStorage.setItem("cart", JSON.stringify(cart));
-  }
-
+  };
 
   const removeFromCart = (index) => {
     cart.pop(index);
@@ -214,33 +201,33 @@ const NewCarrinho = () => {
               <>
                 <Text style={styles.subtitulo}>{item.name}</Text>
 
-                  <Text style={styles.text_recipe_secondary}>
-                    Quantidade Selecionada:
-                  </Text>
-                  <Text style={styles.paragraph}> </Text>
+                <Text style={styles.text_recipe_secondary}>
+                  Quantidade Selecionada:
+                </Text>
+                <Text style={styles.paragraph}> </Text>
 
-                  <SelectDropdown
-                    data={quantityLimit}
-                    style={styles.dropdown}
-                    buttonStyle={styles.dropdown1BtnStyle}
-                    defaultButtonText={item.quantity}
-                    buttonTextStyle={styles.dropdown1BtnTxtStyle}
-                    dropdownIconPosition={'right'}
-                    dropdownStyle={styles.dropdown1DropdownStyle}
-                    rowStyle={styles.dropdown1RowStyle}
-                    rowTextStyle={styles.dropdown1RowTxtStyle}
-                    onSelect={(selectedItem, index) => {
-                      console.log(selectedItem, index);
-                    }}
-                    buttonTextAfterSelection={(selectedItem, index) => {
-                      console.log(selectedItem)
-                      editCart(selectedItem, cartIndex);
-                      return selectedItem;
-                    }}
-                    rowTextForSelection={(item, inderx) => {
-                      return item;
-                    }}
-                  />
+                <SelectDropdown
+                  data={quantityLimit}
+                  style={styles.dropdown}
+                  buttonStyle={styles.dropdown1BtnStyle}
+                  defaultButtonText={item.quantity}
+                  buttonTextStyle={styles.dropdown1BtnTxtStyle}
+                  dropdownIconPosition={"right"}
+                  dropdownStyle={styles.dropdown1DropdownStyle}
+                  rowStyle={styles.dropdown1RowStyle}
+                  rowTextStyle={styles.dropdown1RowTxtStyle}
+                  onSelect={(selectedItem, index) => {
+                    console.log(selectedItem, index);
+                  }}
+                  buttonTextAfterSelection={(selectedItem, index) => {
+                    console.log(selectedItem);
+                    editCart(selectedItem, cartIndex);
+                    return selectedItem;
+                  }}
+                  rowTextForSelection={(item, inderx) => {
+                    return item;
+                  }}
+                />
 
                 <Text style={styles.text_recipe_secondary}>
                   {" "}
@@ -337,12 +324,11 @@ const NewCarrinho = () => {
                 style={styles.dropdown}
                 buttonStyle={styles.dropdown1BtnStyle2}
                 buttonTextStyle={styles.dropdown1BtnTxtStyle}
-                dropdownIconPosition={'right'}
+                dropdownIconPosition={"right"}
                 dropdownStyle={styles.dropdown1DropdownStyle}
                 rowStyle={styles.dropdown1RowStyle}
                 rowTextStyle={styles.dropdown1RowTxtStyle}
                 defaultButtonText={"Selecione o método de pagamento"}
-                
                 onSelect={(selectedItem, index) => {
                   console.log(selectedItem, index);
                 }}

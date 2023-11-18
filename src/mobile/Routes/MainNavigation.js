@@ -35,6 +35,8 @@ import ListaProdutoCliente from "../Screens/18-ListaProdutosCliente/index";
 import NewCarrinho from "../Screens/19-b-NewCarrinho/index";
 import Carrinho from "../Screens/19-Carrinho/index"
 
+import PedidosCliente from "../Screens/20-AcompanharPedido/index";
+
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
@@ -232,6 +234,15 @@ const Main = () => {
           header: () => null,
         }}
       />
+
+<Stack.Screen
+        name="PedidosCliente"
+        component={PedidosCliente}
+        options={{
+          header: () => null,
+        }}
+      /> 
+
     </Stack.Navigator>
  
 

@@ -26,20 +26,23 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "dataHoraPedido")
-    private Timestamp dataHoraPedido;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
 
-    @Column(name = "formaPagamento")
-    private String formaPagamento;
+    @Column(name = "updated_at")
+    private Timestamp updatedAt;
 
-    @Column(name = "statusPedido")
-    private String statusPedido;
+    @Column(name = "payment_method")
+    private String paymentMethod;
 
-    @Column(name = "emailCliente")
-    private String emailCliente;
+    @Column(name = "order_status")
+    private String orderStatus;
 
-    @Column(name = "valorTotalPedido")
-    private Float valorTotalPedido;
+    @Column(name = "email_user")
+    private String emailUser;
+
+    @Column(name = "total_value_order")
+    private Float totalValueOrder;
 
     @OneToMany(mappedBy="order",fetch = FetchType.EAGER)
     @JsonManagedReference

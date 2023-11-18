@@ -42,8 +42,6 @@ const Login = () => {
         body: encoderUser
       });
       result = await result.json();
-      console.log(result);
-
       await AsyncStorage.setItem('userData', JSON.stringify(result));
       
       if(result.isRootUser){
