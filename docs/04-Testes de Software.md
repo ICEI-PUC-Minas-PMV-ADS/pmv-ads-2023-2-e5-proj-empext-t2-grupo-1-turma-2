@@ -125,3 +125,4 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
 # Evidências de Testes de Software
 
 Vídeo do teste sendo executado e o resultado obtido disponível em https://youtu.be/6uhKPuJ4zO0
+Vídeo do segundo teste executado e o resultado obtido disponível em https://drive.google.com/file/d/1LjzG5YRUYHeaDZ008VdXbgsuNEI8Dvjt/view?usp=sharing
