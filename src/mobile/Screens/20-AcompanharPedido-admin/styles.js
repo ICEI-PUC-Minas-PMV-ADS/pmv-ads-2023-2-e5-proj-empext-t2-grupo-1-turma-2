@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
     width: 350,
     height:200,
     borderRadius:20,
+    marginBottom: 270
   },
 
 

@@ -107,7 +107,7 @@ const PedidosAdmin = () => {
       .then((response) => response.json())
       .then(async (responseData) => {
 
-        let phrase = `Olá ${item.user.name}, seu pedido de id 00${item.id} foi atualizado de ${parseStatus(item.orderStatus)} para o status ${parseStatus(statusPedidoSelecionado2)}.`;
+        let phrase = `Olá ${item.user.name}, seu pedido #00${item.id} no app foi atualizado de ${parseStatus(item.orderStatus)} para o status ${statusPedidoSelecionado2}!`;
         Linking.openURL(
           `https://api.whatsapp.com/send?phone=${item.user.cellphone}&text=${phrase}`
         );
@@ -159,8 +159,7 @@ const PedidosAdmin = () => {
         return "4";
       case "Cancelado":
         return "5";
-      default:
-        return "Erro";
+
     }
   };
 
@@ -178,8 +177,6 @@ const PedidosAdmin = () => {
         return "Finalizado";
       case "5":
         return "Cancelado";
-      default:
-        return "Erro";
     }
   };
 
