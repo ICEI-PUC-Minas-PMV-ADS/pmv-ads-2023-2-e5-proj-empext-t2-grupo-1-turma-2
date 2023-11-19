@@ -14,7 +14,6 @@ import Nav from "../../Components/NavBar/index";
 import DefaultButton from "../../Components/Buttons/Default";
 import SelectDropdown from "react-native-select-dropdown";
 import { styles } from "./styles";
-import { useState, useEffect } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import GoBack from '../../Components/Buttons/GoBack';
 

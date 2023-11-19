@@ -191,18 +191,12 @@ const MeuPerfil = () => {
 
         <SaveButton text={"Salvar"} onPress={updateUser} />
         <Text></Text>
-<View style={{flex:1,flexDirection:"row"}}>
-        <DeleteButton 
-          text={"Sair da Conta"}
-          onPress={() => {navigation.navigate("Login")}}
-        />
 
         <DeleteButton text={"Excluir Conta"} onPress={deleteUser} />
         <Text></Text>
 
         <SaveButton text={"Deslogar Usuario"} onPress={deslogaUser} />
       </ScrollView>
-
 
       <MenuInferior />
     </View>

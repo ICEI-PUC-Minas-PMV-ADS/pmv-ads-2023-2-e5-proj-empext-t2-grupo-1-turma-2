@@ -36,7 +36,6 @@ import PedidosCliente from "../Screens/20-AcompanharPedido/index";
 import NewCarrinho from "../Screens/19-b-NewCarrinho/index";
 import Carrinho from "../Screens/19-Carrinho/index";
 
-import PedidosCliente from "../Screens/20-AcompanharPedido/index";
 import PedidosAdmin from "../Screens/20-AcompanharPedido-admin/index";
 
 const Stack = createNativeStackNavigator();
