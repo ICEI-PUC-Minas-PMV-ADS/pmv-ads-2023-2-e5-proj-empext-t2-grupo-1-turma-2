@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const MenuInferior = () => {
 
@@ -29,6 +30,12 @@ const MenuInferior = () => {
       <Ionicons name="cart-outline" color={'white'} size={20}  onPress={() => {navigation.navigate("NewCarrinho")}}/>
         <Text style={styles.label}>Carrinho</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button}>
+      <Ionicons name="document-outline" color={'white'} size={20}  onPress={() => {navigation.navigate("PedidosCliente")}}/>
+        <Text style={styles.label}>Pedidos</Text>
+      </TouchableOpacity>
+    
     </View>
   );
 };

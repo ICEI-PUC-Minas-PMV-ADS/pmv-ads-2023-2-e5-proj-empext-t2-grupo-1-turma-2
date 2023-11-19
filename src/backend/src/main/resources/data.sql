@@ -13,9 +13,9 @@ INSERT INTO product (name, description, category, quantity, price, link ) VALUES
 INSERT INTO product (name, description, category, quantity, price, link ) VALUES ('Refrigerante Garrafa', 'Garrafinha de refrigerante 200ml', 'Bebidas', 100, 2.50, 'https://i.imgur.com/hxu6kyl.png');
 
 
-INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da sobremesa', '10% em todas sobremesas', 'https://i.imgur.com/0SjPZDm.png');
-INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia da coxinha', '2% em todas coxinhas', 'https://i.imgur.com/w2hzOEi.png');
-INSERT INTO promotion_campain (title, description, image_link ) VALUES ('Dia do copao', '15% em todos copoes', 'https://i.imgur.com/sFqtI8v.png');
+INSERT INTO promotion_campain (title, description, image_link, active ) VALUES ('Dia da sobremesa', '10% em todas sobremesas', 'https://i.imgur.com/0SjPZDm.png', true);
+INSERT INTO promotion_campain (title, description, image_link, active ) VALUES ('Dia da coxinha', '2% em todas coxinhas', 'https://i.imgur.com/w2hzOEi.png', false);
+INSERT INTO promotion_campain (title, description, image_link, active ) VALUES ('Dia do copao', '15% em todos copoes', 'https://i.imgur.com/sFqtI8v.png', false);
 
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('admin', 'sys_root@gmail.com', 'root@123!', 'teste', 'teste', 'teste');
 INSERT INTO user_profile (name, email, password, phone, address, zip_code ) VALUES ('Lavínia Helena Nascimento', 'laviniahelenanascimento@tigertimoveis.com', 'root@123!', '(88)98332-0577', 'Rua Governador Plácido Castelo, 478, Cocobó, Iguatu-CE ', '63504-148');

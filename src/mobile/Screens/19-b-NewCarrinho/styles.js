@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
     fontSize: 11,
     marginTop: 10,
     marginLeft: 11,
-    marginRight: 11
+    marginRight: 11,
+    alignItem: "center",
   },
   box: {
     alignItems: "center",

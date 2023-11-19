@@ -18,6 +18,12 @@ const ExibeProdutos = () => {
   const retorno = async () => {
     const user = await AsyncStorage.getItem("userData");
 
+    if(cart != null){
+      await AsyncStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+
+
     if (JSON.parse(user).isRootUser) {
       navigation.navigate("GerenciaProdutos");
     } else {
@@ -32,7 +38,7 @@ const ExibeProdutos = () => {
     navigation.navigate("NewCarrinho")
   }
 
-  const addItemToCart = (item) => {
+  const addItemToCart = async (item) => {
     console.log(item);
     let repeated = false;
 
@@ -54,6 +60,8 @@ const ExibeProdutos = () => {
     if (!repeated) {
       cart.push(product);
     }
+
+    await AsyncStorage.setItem("cart", JSON.stringify(cart));
     Alert.alert("Sucesso", "Produto adicionado ao carrinho");
     console.log(cart);
   };
@@ -61,6 +69,8 @@ const ExibeProdutos = () => {
   const getParams = async () => {
 
     const category = await AsyncStorage.getItem('category');
+    setCart(JSON.parse(await AsyncStorage.getItem("cart")));
+
     console.log(category)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend

@@ -16,8 +16,8 @@ import ExibeProdutosCategoria from "../Screens/10-c-ExibicaoProdutoCategoria/ind
 //Telas Administrativas do programa de fidelidade
 import MainFidelidade from "../Screens/4-FidelidadeMain/index";
 import FidelidadeNovo from "../Screens/5-FidelidadeNovo/index";
-import FidelidadeList  from "../Screens/6-FidelidadeList/index";
-import FidelidadeEditar  from "../Screens/7-FidelidadeEditar/index";
+import FidelidadeList from "../Screens/6-FidelidadeList/index";
+import FidelidadeEditar from "../Screens/7-FidelidadeEditar/index";
 
 //Telas Administrativas de Pedidos
 import Pedidos from "../Screens/13-Pedidos/index";
@@ -34,14 +34,16 @@ import MenuInferior from "../Components/MenuInferior/index";
 import ListaProdutoCliente from "../Screens/18-ListaProdutosCliente/index";
 import PedidosCliente from "../Screens/20-AcompanharPedido/index";
 import NewCarrinho from "../Screens/19-b-NewCarrinho/index";
-import Carrinho from "../Screens/19-Carrinho/index"
+import Carrinho from "../Screens/19-Carrinho/index";
+
+import PedidosCliente from "../Screens/20-AcompanharPedido/index";
+import PedidosAdmin from "../Screens/20-AcompanharPedido-admin/index";
 
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
     <Stack.Navigator initialRouteName="Login">
-      
       <Stack.Screen
         name="Carrinho"
         component={Carrinho}
@@ -66,7 +68,6 @@ const Main = () => {
         }}
       />
 
-
       <Stack.Screen
         name="Gerencial"
         component={Gerencial}
@@ -83,7 +84,7 @@ const Main = () => {
         }}
       />
 
-    <Stack.Screen
+      <Stack.Screen
         name="FidelidadeNovo"
         component={FidelidadeNovo}
         options={{
@@ -91,23 +92,22 @@ const Main = () => {
         }}
       />
 
-    <Stack.Screen
+      <Stack.Screen
         name="FidelidadeList"
         component={FidelidadeList}
         options={{
           header: () => null,
         }}
       />
-    
-    <Stack.Screen
+
+      <Stack.Screen
         name="FidelidadeEditar"
         component={FidelidadeEditar}
-        initialParams={{itemId: 1}}
+        initialParams={{ itemId: 1 }}
         options={{
           header: () => null,
         }}
       />
-
 
       <Stack.Screen
         name="ChooseSweet"
@@ -140,7 +140,7 @@ const Main = () => {
           header: () => null,
         }}
       />
-      
+
       <Stack.Screen
         name="ListaProdutos"
         component={ListaProdutos}
@@ -173,7 +173,7 @@ const Main = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Pedidos"
         component={Pedidos}
         options={{
@@ -181,7 +181,7 @@ const Main = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Clientes"
         component={Clientes}
         options={{
@@ -189,7 +189,7 @@ const Main = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="EditarCliente"
         component={EditarCliente}
         options={{
@@ -197,7 +197,7 @@ const Main = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="MenuInferior"
         component={MenuInferior}
         options={{
@@ -205,34 +205,35 @@ const Main = () => {
         }}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Sobre"
         component={Sobre}
         options={{
           header: () => null,
         }}
       />
-<Stack.Screen
+      <Stack.Screen
         name="ListaProdutoCliente"
         component={ListaProdutoCliente}
         options={{
           header: () => null,
         }}
       />
-<Stack.Screen
+      <Stack.Screen
         name="MeuPerfil"
         component={MeuPerfil}
         options={{
           header: () => null,
         }}
       />
-<Stack.Screen
+      <Stack.Screen
         name="NewCarrinho"
         component={NewCarrinho}
         options={{
           header: () => null,
         }}
       />
+
       <Stack.Screen
         name="PedidosCliente"
         component={PedidosCliente}
@@ -240,9 +241,15 @@ const Main = () => {
           header: () => null,
         }}
       />
-    </Stack.Navigator>
- 
 
+      <Stack.Screen
+        name="PedidosAdmin"
+        component={PedidosAdmin}
+        options={{
+          header: () => null,
+        }}
+        />
+    </Stack.Navigator>
   );
 };
 

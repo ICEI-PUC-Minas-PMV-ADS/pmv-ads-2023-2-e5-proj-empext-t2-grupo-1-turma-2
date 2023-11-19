@@ -1,11 +1,11 @@
 package com.br.pucminas.backend.utils.enums;
 
 public enum StatusPedido {
-    RECEBIDO("Pedido recebido. Agaurdando preparação."), 
-    EM_PREPARACAO("Em preparação"), 
-	EM_ROTA_DE_ENVIO("Em rota de entrega"),
-    ENTREGUE("Entregue"),
-    FINALIZADO("Finalizado")
+    RECEBIDO("0"),
+    EM_PREPARACAO("1"),
+	EM_ROTA_DE_ENVIO("2"),
+    ENTREGUE("3"),
+    FINALIZADO("4")
     ;
 
 		private final String valor;

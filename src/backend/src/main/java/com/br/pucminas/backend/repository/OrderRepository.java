@@ -12,4 +12,8 @@ import java.util.List;
 @Repository
 public interface OrderRepository  extends JpaRepository<Order, Integer> {
 
+    @Query("SELECT o FROM Order o WHERE o.orderStatus = ?1 ORDER BY o.updatedAt DESC")
+    List<Order> findAllOrdersByStatus(String status);
+
+
 }

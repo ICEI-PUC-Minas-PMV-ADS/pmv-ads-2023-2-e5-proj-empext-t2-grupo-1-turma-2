@@ -43,12 +43,19 @@ public class UserController {
     // ROTA DE PUT - /v1/profile Testenovo@123.com
     @PutMapping("/v1/user/{id}")
     public ResponseEntity<User> updateUser( @PathVariable("id") Integer id, @RequestBody UserForm form) {
-        return ResponseEntity.ok().body(userService.updateUser(form, id));
+        return ResponseEntity.accepted().body(userService.updateUser(form, id));
     }
 
+    @DeleteMapping("/v1/user/{id}")
+    public ResponseEntity<?> deleteUser( @PathVariable("id") Integer id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
 
-
-
-
+    @PutMapping("/v1/user/recovery-password/{email}")
+    public ResponseEntity<?> recoveryPassword( @PathVariable("email") String email) {
+        userService.recoveryPassword(email);
+        return ResponseEntity.noContent().build();
+    }
 
 }
