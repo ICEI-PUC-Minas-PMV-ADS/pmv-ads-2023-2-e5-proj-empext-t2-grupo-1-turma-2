@@ -46,29 +46,42 @@ public class OrderController {
         return ResponseEntity.created(URI.create("/v1/order")).body(pedidoService.creatNewOrder(form));
     }
 
-
-    /**Pedro.jardim@test.com
-     * Lista todos os pedidos
-     * @return
-     */
     @GetMapping("/v1/order")
-    public ResponseEntity<List<OrderResponse>> findAllOrders(@RequestParam(value = "email", required = true) String email){
+    public ResponseEntity<List<OrderResponse>> findAllOrders(@RequestParam(value = "email", required = true) String email,
+                                                             @RequestParam(value = "status", required = false) String status
+                                                             ){
         
         List<OrderResponse> listaPedidos = new ArrayList<>();
         log.info("Busca todos os pedidos - /v1/order");
 
-        try {
-            listaPedidos = pedidoService.findAllOrders();
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body(listaPedidos);            
+        if(status == null) {
+            try {
+                listaPedidos = pedidoService.findAllOrders();
+            } catch (Exception e) {
+                return ResponseEntity.internalServerError().body(listaPedidos);
+            }
+
+        }else{
+            try {
+                listaPedidos = pedidoService.findAllOrdersByStatus(status);
+            } catch (Exception e) {
+                return ResponseEntity.internalServerError().body(listaPedidos);
+            }
         }
 
-        if(!email.equalsIgnoreCase("sys_root@gmail.com")){
+        if (!email.equalsIgnoreCase("sys_root@gmail.com")) {
             listaPedidos.removeIf(p -> !p.getUser().getEmail().equalsIgnoreCase(email));
         }
 
         return ResponseEntity.ok().body(listaPedidos);        
     }
+
+    @PutMapping("/v1/order/{id}/status/{status}")
+    public ResponseEntity<OrderResponse> updateOrder(@PathVariable("id") Integer id, @PathVariable("status") String status) {
+        return ResponseEntity.ok().body(pedidoService.updateStatusOrder(id, status));
+    }
+
+
 
     @GetMapping("/v1/order/{id}")
     public ResponseEntity<List<Order>> findOrderById(@PathVariable("id") Integer id) {

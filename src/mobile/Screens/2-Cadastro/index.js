@@ -6,6 +6,7 @@ import Statusbar from "../../Components/StatusBar";
 import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native'
+import Nav from "../../Components/NavBar/index";
 
 
 const Cadastrar = () => {
@@ -27,7 +28,7 @@ const Cadastrar = () => {
       address: placeholder,
       password: confirmedPassword,
       zipCode: zipCode,
-      cell: cell
+      phone: cell
     };
 
     let encoderUser = JSON.stringify(user);
@@ -60,11 +61,14 @@ const Cadastrar = () => {
 
   }
 
+  const retorno = async () => {
+    navigation.navigate("Login");
+  };
+
   return (
     <ScrollView>
+      <Nav onPress={retorno} />
       <View style={styles.container}>
-        <Statusbar />
-        <Logo />
 
         <TextInput
           style={styles.input}
@@ -79,6 +83,11 @@ const Cadastrar = () => {
         <TextInput
           style={styles.input}
           label="E-mail"
+          textContentType='emailAddress'
+          keyboardType='email-address'
+          autoCapitalize='none'
+          autoCorrect={false}
+          autoCompleteType='email'
           value={email}
           onChangeText={(email) => setEmail(email)}
           mode="outlined"

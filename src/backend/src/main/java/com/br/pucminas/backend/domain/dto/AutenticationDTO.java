@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AutenticationDTO {
     private Integer id;
+    private String name;
     private String email;
     private String token;
     private Boolean isRootUser;

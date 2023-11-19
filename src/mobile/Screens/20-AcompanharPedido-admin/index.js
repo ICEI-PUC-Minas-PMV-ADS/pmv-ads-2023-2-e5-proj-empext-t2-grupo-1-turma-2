@@ -5,8 +5,8 @@ import {
   SafeAreaView,
   ScrollView,
   TouchableOpacity,
-  Linking,
   Text,
+  Linking,
 } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import Logo from "../../Components/Logo/index";
@@ -18,7 +18,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MenuInferior from "../../Components/MenuInferior";
 import SelectDropdown from "react-native-select-dropdown";
 
-const PedidosCliente = () => {
+const PedidosAdmin = () => {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -105,17 +105,16 @@ const PedidosCliente = () => {
       },
     })
       .then((response) => response.json())
-      .then(async (responseData) => {})
+      .then(async (responseData) => {
+
+        let phrase = `Olá ${item.user.name}, seu pedido de id 00${item.id} foi atualizado de ${parseStatus(item.orderStatus)} para o status ${parseStatus(statusPedidoSelecionado2)}.`;
+        Linking.openURL(
+          `https://api.whatsapp.com/send?phone=${item.user.cellphone}&text=${phrase}`
+        );
+      })
       .catch(async (error) => {
         console.error(error);
       });
-  };
-
-  const contatoLoja = async () => {
-    const cell = "5531994543201";
-    Linking.openURL(
-      `https://api.whatsapp.com/send?phone=${cell}&text=Ola, gostaria de entrar em contato com a loja para falar sobre os meus pedidos!"`
-    );
   };
 
   const buscaPedidos = async () => {
@@ -260,9 +259,51 @@ const PedidosCliente = () => {
                 </Text>
                 <Text style={styles.detalhes}>{item.productInfo}</Text>
 
-                <Text style={styles.detalhes2}>
-                  Status: {parseStatus(item.orderStatus)}
-                </Text>
+                {isRoot ? (
+                  <>
+                    <Text style={styles.detalhes2}>
+                      Atual Status: {parseStatus(item.orderStatus)}
+                    </Text>
+
+                    <View
+                      style={{ alignContent: "center", alignItems: "center" }}
+                    >
+                      <SelectDropdown
+                        data={statusPedido}
+                        style={styles.dropdown}
+                        buttonStyle={styles.dropdown1BtnStyle2}
+                        buttonTextStyle={styles.dropdown1BtnTxtStyle}
+                        dropdownIconPosition={"right"}
+                        dropdownStyle={styles.dropdown1DropdownStyle}
+                        rowStyle={styles.dropdown1RowStyle}
+                        rowTextStyle={styles.dropdown1RowTxtStyle}
+                        defaultButtonText={"Edite o novo status do Pedido"}
+                        onSelect={(selectedItem, index) => {
+                          console.log(selectedItem, index);
+                        }}
+                        buttonTextAfterSelection={(selectedItem, index) => {
+                          setStatusPedidoSelecionado2(selectedItem);
+                          return selectedItem;
+                        }}
+                        rowTextForSelection={(item, index) => {
+                          return item;
+                        }}
+                      />
+
+                      <Text style={styles.paragraph}> </Text>
+
+                      <DefaultButton
+                        text={"Editar Pedido"}
+                        onPress={() => editaPedido(item)}
+                      />
+                      <Text style={styles.paragraph}> </Text>
+                    </View>
+                  </>
+                ) : (
+                  <Text style={styles.detalhes2}>
+                    Status: {parseStatus(item.orderStatus)}
+                  </Text>
+                )}
 
                 <Text style={styles.paragraph}> </Text>
               </View>
@@ -291,20 +332,9 @@ const PedidosCliente = () => {
         <Text style={styles.paragraph}> </Text>
       </View>
 
-      <Text style={styles.paragraph}> </Text>
-
-      <View style={{ alignContent: "center", alignItems: "center" }}>
-        <Text style={styles.paragraph}> </Text>
-
-        <DefaultButton text={"Entrar em Contato com a Loja"} onPress={() => contatoLoja()} />
-        <Text style={styles.paragraph}> </Text>
-      </View>
-
-      <Text style={styles.paragraph}> </Text>
-
       <MenuInferior />
     </ScrollView>
   );
 };
 
-export default PedidosCliente;
+export default PedidosAdmin;

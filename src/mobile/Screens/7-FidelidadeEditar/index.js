@@ -1,14 +1,20 @@
-import React from 'react';
-import { TextInput, Button } from "react-native-paper";
-import { View, TouchableOpacity, Text, StyleSheet, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // Importe os ícones que deseja usar
-import Logo from '../../Components/Logo';
-import Statusbar from "../../Components/StatusBar";
-import { useNavigation } from '@react-navigation/native'
-import Nav from "../../Components/NavBar/index";
 import { useState, useEffect } from "react";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { TextInput, Button } from "react-native-paper";
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
+import Logo from "../../Components/Logo";
+import Statusbar from "../../Components/StatusBar";
+import Nav from "../../Components/NavBar/index";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import DefaultButton from "../../Components/Buttons/Default";
+import SelectDropdown from "react-native-select-dropdown";
+import { styles } from "./styles";
 
 function FidelidadeEditar({ route, navigation }) {
   const { itemId, otherParam } = route.params;
@@ -18,82 +24,60 @@ function FidelidadeEditar({ route, navigation }) {
   const [descricao, setDescricao] = useState("");
   const [linkFoto, setLinkFoto] = useState("");
   const [listaParticipantes, setListaParticipantes] = useState("");
+  const [isActive, setisActive] = useState("");
+
+  const activeMethods = ["ATIVO", "INATIVO"];
 
   useEffect(async () => {
-    console.log(otherParam)
-    const list = JSON.parse(await AsyncStorage.getItem('programaFidelidade'));
-    setId(list.id)
-    setDescricao(list.description)
-    setTitulo(list.name)  
-    setLinkFoto(list.link)
-  }, []); 
-
-  const deleteProgramaFidelidade = async () => {
-    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
-
-    const port = '8080'
-
-    const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
-
-    await fetch(endpoint,{
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-      }
-    ).then((response) => 
-      response.json()
-    ).then(async (responseData) => {
-      navigation.navigate("MainFidelidade");
-    })
-    .catch( async (error) => {
-      console.error(error);
-    });
-
-  }
+    console.log(otherParam);
+    const list = JSON.parse(await AsyncStorage.getItem("programaFidelidade"));
+    setId(list.id);
+    setDescricao(list.description);
+    setTitulo(list.name);
+    setLinkFoto(list.link);
+    setisActive(list.active ? "ATIVO" : "INATIVO");
+  }, []);
 
   const editProgramaFidelidade = async () => {
-    console.log("Editanto programa de fidelidade.")
+    console.log("Editanto programa de fidelidade.");
 
     let prodprogramaFidelidade = {
       id: id,
       name: titulo,
       description: descricao,
       imageLink: linkFoto,
+      active: isActive === "ATIVO",
     };
 
     let encoderFidelidade = JSON.stringify(prodprogramaFidelidade);
-    console.log(encoderFidelidade)
+    console.log(encoderFidelidade);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'https://backend-vq7d276ypa-uc.a.run.app'
+    //const host = 'https://backend-vq7d276ypa-uc.a.run.app'
 
-    const port = '8080'
+    const host = "http://192.168.0.132";
+    const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
 
     console.log(endpoint);
     console.log(encoderFidelidade);
 
-    await fetch(endpoint,{
-      method: 'PUT',
+    await fetch(endpoint, {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: encoderFidelidade
-      }
-    ).then((response) => 
-      response.json()
-    ).then(async (responseData) => {
-      navigation.navigate("MainFidelidade");
+      body: encoderFidelidade,
     })
-    .catch( async (error) => {
-      console.error(error);
-    });
-
-  }
-
+      .then((response) => response.json())
+      .then(async (responseData) => {
+        navigation.navigate("MainFidelidade");
+      })
+      .catch(async (error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <ScrollView>
@@ -101,7 +85,12 @@ function FidelidadeEditar({ route, navigation }) {
       <View style={styles.container}>
         <Statusbar />
         <Logo />
-        <Text style={styles.texttop}>Editar Programa de Fidelidade de ID {JSON.stringify(itemId)}</Text>
+
+        <Text style={styles.texttop}>
+          Edição de Programa de Fidelidade
+        </Text>
+
+        <Text style={styles.paragraph}> </Text>
 
         <TextInput
           style={styles.input}
@@ -127,7 +116,6 @@ function FidelidadeEditar({ route, navigation }) {
           outlineColor="#FFFFFF"
         />
 
-
         <TextInput
           style={styles.input}
           label="linkFoto"
@@ -139,93 +127,53 @@ function FidelidadeEditar({ route, navigation }) {
           outlineColor="#FFFFFF"
         />
 
+        <Text style={styles.paragraph}> </Text>
 
-        <View style={styles.row}>
+        <Text style={styles.detalhes2}>
+          Status da campanha
+        </Text>
 
-          {/* Botão Criar novo Programa */}
-          <TouchableOpacity style={styles.button} onPress={editProgramaFidelidade}>
-            <Text style={styles.text}>Salvar</Text>
-          </TouchableOpacity>
-        </View>
+        <SelectDropdown
+          data={activeMethods}
+          style={{
+            width: "30%",
+            height: 50,
+            backgroundColor: "#FFF",
+            borderRadius: 8,
+            borderWidth: 1,
+            borderColor: "#c05c63",
+          }}
+          buttonStyle={styles.dropdown1BtnStyle2}
+          buttonTextStyle={styles.dropdown1BtnTxtStyle}
+          dropdownIconPosition={"right"}
+          dropdownStyle={styles.dropdown1DropdownStyle}
+          rowStyle={styles.dropdown1RowStyle}
+          rowTextStyle={styles.dropdown1RowTxtStyle}
+          defaultButtonText={isActive}
+          onSelect={(selectedItem, index) => {
+            console.log(selectedItem, index);
+          }}
+          buttonTextAfterSelection={(selectedItem, index) => {
+            setisActive(selectedItem);
+            // text represented after item is selected
+            // if data array is an array of objects then return selectedItem.property to render after item is selected
+            return selectedItem;
+          }}
+          rowTextForSelection={(item, index) => {
+            // text represented for each item in dropdown
+            // if data array is an array of objects then return item.property to represent item in dropdown
+            return item;
+          }}
+        />
+        <Text style={styles.paragraph}> </Text>
 
-        <View style={styles.row}>
-          {/* Botão Proglamas Disponiveis */}
-          <TouchableOpacity style={styles.button} onPress={deleteProgramaFidelidade}>
-            <Text style={styles.text}>Excluir</Text>
-          </TouchableOpacity>
-        </View>
-
+        <DefaultButton text={"Editar"} onPress={editProgramaFidelidade} />
+        <Text style={styles.paragraph}> </Text>
       </View>
-
     </ScrollView>
-
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
 
-  button: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#c05c63',
-    margin: 30,
-    padding: 30,
-    marginBottom: 30,
-    borderRadius: 20,
-  },
-  buttonanexaimg: {
-    backgroundColor: '#f2e8e3',
-    margin: 10,
-    padding: 10,
-    marginBottom: 15,
-    borderRadius: 20,
-  },
-  text: {
-    marginTop: 5,
-    color: '#000000',
-    fontSize: 15,
-  },
-  texttop: {
-    marginTop: 5,
-    color: '#c05c63',
-    fontWeight: 'bold',
-    fontSize: 15,
-
-  },
-  textbutton: {
-    marginTop: 5,
-    color: '#ffffff',
-    fontSize: 15,
-    fontWeight: 'bold',
-
-  },
-  input: {
-    width: 263,
-    height: 50,
-    fontSize: 16,
-    borderRadius: 20,
-    backgroundColor: "#f2e8e3",
-    marginBottom: 14,
-  },
-  inputtextarea: {
-    width: 263,
-    height: 50,
-    fontSize: 16,
-    borderRadius: 20,
-    backgroundColor: "#f2e8e3",
-    marginBottom: 14,
-    padding: 30,
-  },
-});
 
 export default FidelidadeEditar;

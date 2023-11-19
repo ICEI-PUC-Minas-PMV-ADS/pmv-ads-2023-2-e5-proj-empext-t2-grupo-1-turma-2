@@ -12,5 +12,6 @@ public class PromotionCampainForm {
     String name;
     String description;
     String imageLink;
+    Boolean active;
 
 }

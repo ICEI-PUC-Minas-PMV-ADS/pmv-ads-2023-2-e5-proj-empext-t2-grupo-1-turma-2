@@ -29,6 +29,9 @@ public class PromotionCampain {
     @Column(name = "image_link")
     private String imageLink;
 
+    @Column(name = "active")
+    private boolean active;
+
     public PromotionCampain(String title){
         this.title = title;
     }

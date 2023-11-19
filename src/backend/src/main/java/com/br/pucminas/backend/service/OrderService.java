@@ -14,6 +14,7 @@ import com.br.pucminas.backend.utils.enums.StatusPedido;
 import com.br.pucminas.backend.utils.enums.SystemErrors;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -56,6 +57,16 @@ public class OrderService {
         return pedidosEntity;
     }
 
+    public List<OrderResponse> findAllOrdersByStatus(String status){
+
+        log.info("findAll");
+        List<OrderResponse> pedidosEntity = new ArrayList<>();
+
+        orderRepository.findAllOrdersByStatus(status).forEach(fr -> pedidosEntity.add(this.prepareOrderFormFromEntity(fr)));
+
+        return pedidosEntity;
+    }
+
     public OrderResponse prepareOrderFormFromEntity(Order orderEntity){
 
 
@@ -82,6 +93,25 @@ public class OrderService {
 
 
         return order;
+    }
+
+
+    public OrderResponse updateStatusOrder(Integer id, String orderStatus){
+            Order orderEntity = null;
+
+            log.info("updateStatusOrder " + id);
+
+            try{
+                orderEntity = orderRepository.findById(id).orElse(null);
+                orderEntity.setOrderStatus(orderStatus);
+                orderEntity.setUpdatedAt(Timestamp.from(Instant.now()));
+                orderEntity = orderRepository.save(orderEntity);
+            }catch (Exception e) {
+                log.error("Erro ao atualizar status do pedido", e);
+            }
+
+
+            return this.prepareOrderFormFromEntity(orderEntity);
     }
 
 
@@ -129,38 +159,6 @@ public class OrderService {
         log.info("Pedido gerado com sucesso!");
 
         return this.prepareOrderFormFromEntity(orderEntity);
-    }
-
-
-    @Transactional
-    public OrderForm updateOrder(OrderForm formFront,Integer id) throws Exception{
-        OrderForm orderForm = new OrderForm();
-
-//        //Validar campos enviados do frontend
-//        this.validaFormAtualizaPedido(formFront);
-//        formFront.setOperacao(Operacao.ATUALIZAR_PEDIDO.getValor());
-//
-//        //Atualizar dados do pedido
-//        Order orderEntity = null;
-//        List<OrderProduct> itensPedido = null;
-//        ArrayList<OrderProduct> itensPedidoAtualizado = new ArrayList<OrderProduct>();
-//        orderEntity = this.getOrderEntityFromOrderForm(formFront);
-//        orderEntity = orderRepository.save(orderEntity);
-//
-//        //Atualiza ítens de pedido
-//        itensPedido = this.getOrderProducts(formFront, orderEntity);
-//        OrderProduct itemPedido = null;
-//        for (OrderProduct orderProduct : itensPedido) {
-//            itemPedido = orderProductRepository.save(orderProduct);
-//            log.info("Ítem " + orderProduct.getProduto().getName() + " atualizado  dentro do pedido " + orderEntity.getId() );
-//            itensPedidoAtualizado.add(itemPedido);
-//        }
-//
-//        //Gerar form que será retornado para o frontend
-//        orderForm = this.getOrderFormFromOrderEntity(orderEntity,itensPedidoAtualizado);
-//        orderForm.setServerResponseMessage(SystemErrors.MSG_PEDIDO_PROCESSADO_COM_SUCESSO.getValor());
-
-        return orderForm;
     }
 
 

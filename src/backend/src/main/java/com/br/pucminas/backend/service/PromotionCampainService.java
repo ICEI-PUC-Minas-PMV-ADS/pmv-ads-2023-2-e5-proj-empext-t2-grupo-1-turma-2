@@ -50,7 +50,7 @@ public class PromotionCampainService {
         load.setDescription(form.getDescription());
         load.setTitle(form.getName());
         load.setImageLink(form.getImageLink());
-
+        load.setActive(form.getActive());
         return repository.save(load);
     }
 

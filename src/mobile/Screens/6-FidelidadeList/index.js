@@ -25,6 +25,7 @@ const FidelidadeList = () => {
 
     const endpoint = `${host}:${port}/api/v1/promotion-campain`;
 
+    console.log(endpoint)
     let result = await fetch(endpoint, {
       method: 'GET',
       headers: {
@@ -36,6 +37,30 @@ const FidelidadeList = () => {
     console.log(result)
     setData(result);
     setLoading(false);
+  };
+
+  const deleteProgramaFidelidade = async (id) => {
+    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
+    //const host = 'https://backend-vq7d276ypa-uc.a.run.app'
+
+    const host = "http://192.168.0.132";
+    const port = "8080";
+
+    const endpoint = `${host}:${port}/api/v1/promotion-campain/${id}`;
+
+    await fetch(endpoint, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(async (responseData) => {
+        navigation.navigate("MainFidelidade");
+      })
+      .catch(async (error) => {
+        console.error(error);
+        navigation.navigate("MainFidelidade");
+      });
   };
 
   useEffect(() => {
@@ -56,7 +81,7 @@ const FidelidadeList = () => {
 
     await AsyncStorage.setItem('programaFidelidade', JSON.stringify(prodprogramaFidelidade));
 
-    navigation.navigate("FidelidadeEditar", { itemId: item.id, otherParam: 'anything you want here', });
+    navigation.navigate("FidelidadeEditar", { itemId: item.id });
   }
 
   return (
@@ -76,13 +101,21 @@ const FidelidadeList = () => {
               <Image resizeMode="stretch" source={{ uri: item.imageLink }} style={styles.img} />
               <Text style={styles.text_recipe}>{item.title}</Text>
               <Text style={styles.text_recipe_secondary}>{item.description}</Text>
-              <Text style={styles.paragraph}> </Text>
+              <Text style={styles.text_recipe_secondary}> Status: {item.active? "ATIVO": "INATIVO"}</Text>
 
               <View style={styles.containerbutton} >
                 <TouchableOpacity style={styles.button} onPress={() => editProgramaFidelidade(item)}>
                   <Text style={styles.buttonText2}>Editar</Text>
                 </TouchableOpacity>
               </View>
+
+              <View style={styles.containerbutton} >
+                <TouchableOpacity style={styles.button} onPress={() => deleteProgramaFidelidade(item.id)}>
+                  <Text style={styles.buttonText2}>Apagar</Text>
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.paragraph}> </Text>
+
             </View>
           )
         )}

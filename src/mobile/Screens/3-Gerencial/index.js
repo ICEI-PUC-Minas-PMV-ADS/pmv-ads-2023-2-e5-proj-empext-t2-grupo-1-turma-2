@@ -8,6 +8,7 @@ import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import MenuInferior from "../../Components/MenuInferior";
 
 const Gerencial = () => {
   const navigation = useNavigation();
@@ -23,7 +24,7 @@ const Gerencial = () => {
         <DefaultButton text={"Produtos"}  onPress={() => {navigation.navigate('GerenciaProdutos')}} />
         <Text style={styles.paragraph}> </Text>
 
-        <DefaultButton text={"Pedidos"}  onPress={() => {navigation.navigate('Pedidos')}} />
+        <DefaultButton text={"Pedidos"}  onPress={() => {navigation.navigate('PedidosAdmin')}} />
         <Text style={styles.paragraph}> </Text>
 
         <DefaultButton text={"Clientes"}  onPress={() => {navigation.navigate('Clientes')}} />
@@ -31,8 +32,10 @@ const Gerencial = () => {
 
         <DefaultButton text={"Teste visão cliente"}  onPress={() => {navigation.navigate('ChooseSweet')}} />
         <Text style={styles.paragraph}> </Text>
-
+      
       </View>
+      <MenuInferior />
+
     </ScrollView>
   );
 };

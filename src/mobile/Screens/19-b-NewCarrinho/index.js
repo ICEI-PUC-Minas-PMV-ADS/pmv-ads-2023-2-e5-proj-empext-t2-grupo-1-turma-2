@@ -47,8 +47,15 @@ const NewCarrinho = () => {
   ];
 
   const retorno = async () => {
-    navigation.navigate("ExibeProdutos");
-  };
+    const user = await AsyncStorage.getItem('userData');
+    if(JSON.parse(user).isRootUser){
+      navigation.navigate("Gerencial");
+    }else{
+      navigation.navigate("ChooseSweet");
+    }
+
+  }
+
 
   const closeOrder = async () => {
     let orderItems = [];
@@ -195,8 +202,10 @@ const NewCarrinho = () => {
       <Text style={styles.paragraph}> </Text>
 
       <View style={styles.container}>
+      <Text style={styles.paragraph}> </Text>
+
         <View style={styles.box}>
-          <Text style={styles.titulo}>Resumo de Itens</Text>
+          <Text style={styles.titulo}>Itens</Text>
           <Text style={styles.paragraph}> </Text>
 
           {isLoading ? (
@@ -204,6 +213,7 @@ const NewCarrinho = () => {
           ) : (
             cart.map((item, cartIndex) => (
               <>
+              
                 <Text style={styles.subtitulo}>{item.name}</Text>
 
                 <Text style={styles.text_recipe_secondary}>
@@ -320,7 +330,7 @@ const NewCarrinho = () => {
             <Text>Loading...</Text>
           ) : (
             <>
-              <Text style={styles.titulo}> Metodo de pagamento</Text>
+              <Text style={styles.titulo}> Forma de pagamento</Text>
 
               <Text style={styles.paragraph}> </Text>
 

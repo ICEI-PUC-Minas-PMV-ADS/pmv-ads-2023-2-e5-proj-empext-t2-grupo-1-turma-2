@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, ScrollView, TouchableOpacity, Text, Alert } from "react-native";
+import { View, ScrollView, TouchableOpacity, Text, Alert,  Linking} from "react-native";
 import { TextInput } from "react-native-paper";
 import Logo from "../../Components/Logo/index";
 import Statusbar from "../../Components/StatusBar";
@@ -13,6 +13,35 @@ const Login = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
+  const recuperaSenha = async () => {
+    console.log("Recuperando conta...");
+    
+    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
+    const host = "http://192.168.0.132";
+    const port = "8080";
+
+    if(email == "" || email == null){
+      Alert.alert("Erro", "Digite um e-mail válido");
+    }
+
+    const endpoint = `${host}:${port}/api/v1/user/recovery-password/${email}`;
+
+    console.log(endpoint);
+
+    await fetch(endpoint, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(async (responseData) => {
+        Alert.alert("Sucesso", "Um e-mail foi enviado para a sua conta com a nova senha!");
+      })
+      .catch(async (error) => {
+        console.error(error);
+      });
+  };
+
 
   const realizeLogin = async () => {
     let user = {
@@ -52,7 +81,7 @@ const Login = () => {
     }catch(error){
       console.log(error)
       Alert.alert("Erro", "Usuário ou senha incorretos");
-    }r
+    }
 
   }
 
@@ -73,7 +102,11 @@ const Login = () => {
     <TextInput style={styles.input}
       label="E-mail"
       value={email}
+      textContentType='emailAddress'
+      keyboardType='email-address'
+      autoCapitalize='none'
       autoCorrect={false}
+      autoCompleteType='email'
       onChangeText={(text) => setEmail(text)}
       mode="outlined"
       activeOutlineColor="#C05C63"
@@ -97,7 +130,7 @@ const Login = () => {
     <View>
     <TouchableOpacity>
       <Text style={styles.links}
-        onPress={() => navigation.navigate("RecuperarSenha")}
+        onPress={() => recuperaSenha()}
       >
       Esqueci minha senha</Text>
     </TouchableOpacity>

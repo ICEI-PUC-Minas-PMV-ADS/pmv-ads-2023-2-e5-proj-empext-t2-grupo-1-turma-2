@@ -38,7 +38,7 @@ const ExibeProdutos = () => {
     navigation.navigate("NewCarrinho")
   }
 
-  const addItemToCart = (item) => {
+  const addItemToCart = async (item) => {
     console.log(item);
     let repeated = false;
 
@@ -60,6 +60,8 @@ const ExibeProdutos = () => {
     if (!repeated) {
       cart.push(product);
     }
+
+    await AsyncStorage.setItem("cart", JSON.stringify(cart));
     Alert.alert("Sucesso", "Produto adicionado ao carrinho");
     console.log(cart);
   };
