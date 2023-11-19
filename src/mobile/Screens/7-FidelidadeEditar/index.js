@@ -11,10 +11,13 @@ import {
 import Logo from "../../Components/Logo";
 import Statusbar from "../../Components/StatusBar";
 import Nav from "../../Components/NavBar/index";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import DefaultButton from "../../Components/Buttons/Default";
 import SelectDropdown from "react-native-select-dropdown";
 import { styles } from "./styles";
+import { useState, useEffect } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import GoBack from '../../Components/Buttons/GoBack';
+
 
 function FidelidadeEditar({ route, navigation }) {
   const { itemId, otherParam } = route.params;
@@ -81,7 +84,7 @@ function FidelidadeEditar({ route, navigation }) {
 
   return (
     <ScrollView>
-      <Nav onPress={() => navigation.navigate("MainFidelidade")} />
+      <GoBack onPress={() => navigation.navigate("MainFidelidade")} />
       <View style={styles.container}>
         <Statusbar />
         <Logo />

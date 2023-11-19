@@ -18,6 +18,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import MenuInferior from "../../Components/MenuInferior";
 import SelectDropdown from "react-native-select-dropdown";
 
+
 const PedidosCliente = () => {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
@@ -190,6 +191,7 @@ const PedidosCliente = () => {
   }, []);
 
   return (
+    <View style={styles.container}>
     <ScrollView style={styles.background}>
       <Nav onPress={retorno} />
       <View style={styles.container}>

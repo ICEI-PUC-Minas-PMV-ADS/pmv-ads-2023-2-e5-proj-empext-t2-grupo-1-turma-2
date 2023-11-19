@@ -62,7 +62,6 @@ const Login = () => {
     let encoderUser = JSON.stringify(user);
     console.log(encoderUser);
 
-    // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
     const host = "http://192.168.0.132";
     const port = "8080";
 

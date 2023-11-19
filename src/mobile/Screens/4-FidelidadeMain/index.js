@@ -5,6 +5,7 @@ import Logo from '../../Components/Logo';
 import Statusbar from "../../Components/StatusBar";
 import { useNavigation } from '@react-navigation/native'
 import Nav from "../../Components/NavBar/index";
+import GoBack from '../../Components/Buttons/GoBack';
 
 function MainFidelidade() {
   const navigation = useNavigation();
@@ -22,7 +23,7 @@ function MainFidelidade() {
 
   return (
     <ScrollView style={{backgroundColor:'white'}}>
-      <Nav onPress={() => navigation.navigate("Gerencial")} />
+      <GoBack onPress={() => navigation.navigate("Gerencial")} />
       <View style={styles.container}>
         <Statusbar />
         <Logo />
@@ -63,12 +64,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor:'#c05c63',
     margin: 30,
-    padding: 30,
-    marginBottom: 30,
-    borderRadius:20,    
+    padding: 15,
+    marginBottom: 10,
+    borderRadius:30,    
   },
   text:{
-    marginTop:5,
+   
     color:'#ffffff',
     fontWeight:'bold',
     fontSize:15,

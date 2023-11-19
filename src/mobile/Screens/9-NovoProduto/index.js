@@ -168,9 +168,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor:'#c05c63',
     margin: 30,
-    padding: 30,
+    padding: 20,
     marginBottom: 30,
-    borderRadius:20,    
+    borderRadius:30,    
   },
   buttonanexaimg: {    
     backgroundColor:'#f2e8e3',    
@@ -192,7 +192,6 @@ const styles = StyleSheet.create({
 
   },
   textbutton:{
-    marginTop:5,
     color:'#ffffff',    
     fontSize:15,
     fontWeight:'bold',

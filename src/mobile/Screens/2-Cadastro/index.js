@@ -7,6 +7,7 @@ import DefaultButton from "../../Components/Buttons/Default";
 import { styles } from "./styles";
 import { useNavigation } from '@react-navigation/native'
 import Nav from "../../Components/NavBar/index";
+import GoBack from "../../Components/Buttons/GoBack";
 
 
 const Cadastrar = () => {
