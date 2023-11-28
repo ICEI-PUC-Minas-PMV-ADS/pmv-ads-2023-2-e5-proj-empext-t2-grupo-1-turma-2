@@ -122,9 +122,6 @@ const NewCarrinho = () => {
     const user = JSON.parse(await AsyncStorage.getItem("userData"));
     const cart = JSON.parse(await AsyncStorage.getItem("cart"));
     console.log(user);
-    setUser(user);
-    setCart(cart);
-    setLoading(false);
 
     let totalValue = 0;
     let totalItems = 0;
@@ -145,6 +142,9 @@ const NewCarrinho = () => {
     setTotalPricePerItem(newPriceList);
     setTotalWithPercentage(totalWithPercentage);
     setTax(tax);
+    setUser(user);
+    setCart(cart);
+    setLoading(false);
   };
 
   const editCart = async (selectedItem, cartIndex) => {

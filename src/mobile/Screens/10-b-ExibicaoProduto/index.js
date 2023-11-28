@@ -69,8 +69,7 @@ const ExibeProdutos = () => {
   const getParams = async () => {
 
     const category = await AsyncStorage.getItem('category');
-    setCart(JSON.parse(await AsyncStorage.getItem("cart")));
-
+    
     console.log(category)
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
