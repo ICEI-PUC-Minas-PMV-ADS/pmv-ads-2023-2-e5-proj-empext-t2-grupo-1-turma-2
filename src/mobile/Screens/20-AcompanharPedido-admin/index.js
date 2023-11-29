@@ -41,7 +41,7 @@ const PedidosAdmin = () => {
     console.log(user);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order?email=${
@@ -89,7 +89,7 @@ const PedidosAdmin = () => {
     console.log("Editando pedido.");
     console.log(item);
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order/${
@@ -122,7 +122,7 @@ const PedidosAdmin = () => {
     console.log(user);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order?email=${
