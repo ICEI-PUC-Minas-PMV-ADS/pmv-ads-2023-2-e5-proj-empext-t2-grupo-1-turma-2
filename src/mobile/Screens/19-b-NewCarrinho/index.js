@@ -11,6 +11,8 @@ import SelectDropdown from "react-native-select-dropdown";
 import { v4 as uuid } from "uuid";
 
 const NewCarrinho = () => {
+  console.disableYellowBox = true;
+
   const navigation = useNavigation();
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
@@ -80,7 +82,7 @@ const NewCarrinho = () => {
     console.log(encoderOrder);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order`;
@@ -122,9 +124,6 @@ const NewCarrinho = () => {
     const user = JSON.parse(await AsyncStorage.getItem("userData"));
     const cart = JSON.parse(await AsyncStorage.getItem("cart"));
     console.log(user);
-    setUser(user);
-    setCart(cart);
-    setLoading(false);
 
     let totalValue = 0;
     let totalItems = 0;
@@ -145,6 +144,9 @@ const NewCarrinho = () => {
     setTotalPricePerItem(newPriceList);
     setTotalWithPercentage(totalWithPercentage);
     setTax(tax);
+    setUser(user);
+    setCart(cart);
+    setLoading(false);
   };
 
   const editCart = async (selectedItem, cartIndex) => {

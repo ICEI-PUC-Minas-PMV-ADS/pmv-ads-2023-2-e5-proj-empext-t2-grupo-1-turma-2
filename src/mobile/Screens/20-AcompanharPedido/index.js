@@ -19,6 +19,7 @@ import MenuInferior from "../../Components/MenuInferior";
 import SelectDropdown from "react-native-select-dropdown";
 
 const PedidosCliente = () => {
+  console.disableYellowBox = true;
   const navigation = useNavigation();
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -41,7 +42,7 @@ const PedidosCliente = () => {
     console.log(user);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order?email=${
@@ -89,7 +90,7 @@ const PedidosCliente = () => {
     console.log("Editando pedido.");
     console.log(item);
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order/${
@@ -112,7 +113,7 @@ const PedidosCliente = () => {
   };
 
   const contatoLoja = async () => {
-    const cell = "5531994543201";
+    const cell = "5531998325314";
     Linking.openURL(
       `https://api.whatsapp.com/send?phone=${cell}&text=Ola, gostaria de entrar em contato com a loja para falar sobre os meus pedidos!"`
     );
@@ -123,7 +124,7 @@ const PedidosCliente = () => {
     console.log(user);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "http://192.168.0.132";
+    const host = "https://backend-vq7d276ypa-uc.a.run.app";
     const port = "8080";
 
     const endpoint = `${host}:${port}/api/v1/order?email=${

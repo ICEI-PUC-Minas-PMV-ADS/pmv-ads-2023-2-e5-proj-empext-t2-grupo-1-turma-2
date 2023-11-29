@@ -1,16 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, LogBox } from "react-native";
+import {
+  NavigationContainer,
+  DefaultTheme,
+} from "@react-navigation/native";
 import Main from "./Routes/MainNavigation";
 
-
-
-
 export default function App() {
+  LogBox.ignoreAllLogs(true);
+
   return (
     <NavigationContainer>
-      <Main/>
+      <Main />
     </NavigationContainer>
   );
 }
@@ -23,4 +24,3 @@ export default function App() {
 //     justifyContent: 'center',
 //   },
 // });
-
