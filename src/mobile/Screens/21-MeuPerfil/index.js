@@ -192,8 +192,10 @@ const MeuPerfil = () => {
         <SaveButton text={"Salvar"} onPress={updateUser} />
         <Text></Text>
 
-        <DeleteButton text={"Excluir Conta"} onPress={deleteUser} />
+
+        <SaveButton text={"Excluir Conta"} onPress={deleteUser} />
         <Text></Text>
+
 
         <SaveButton text={"Deslogar Usuario"} onPress={deslogaUser} />
       </ScrollView>

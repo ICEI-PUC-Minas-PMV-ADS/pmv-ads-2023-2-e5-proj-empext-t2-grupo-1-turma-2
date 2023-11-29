@@ -11,6 +11,8 @@ import SelectDropdown from "react-native-select-dropdown";
 import { v4 as uuid } from "uuid";
 
 const NewCarrinho = () => {
+  console.disableYellowBox = true;
+
   const navigation = useNavigation();
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);

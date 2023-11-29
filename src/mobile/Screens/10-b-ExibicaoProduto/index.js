@@ -23,7 +23,6 @@ const ExibeProdutos = () => {
     }
 
 
-
     if (JSON.parse(user).isRootUser) {
       navigation.navigate("GerenciaProdutos");
     } else {
@@ -40,6 +39,8 @@ const ExibeProdutos = () => {
 
   const addItemToCart = async (item) => {
     console.log(item);
+    console.log(typeof cart);
+
     let repeated = false;
 
     const product = {
@@ -69,8 +70,10 @@ const ExibeProdutos = () => {
   const getParams = async () => {
 
     const category = await AsyncStorage.getItem('category');
-    
-    console.log(category)
+    const newCart = await AsyncStorage.getItem('cart');
+
+    setCart(JSON.parse(newCart));
+    console.log(category, cart);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
     const host = "http://192.168.0.132";
@@ -79,7 +82,8 @@ const ExibeProdutos = () => {
     const endpoint = `${host}:${port}/api/v1/product?category=${category}`;
 
     console.log(endpoint);
-    
+    console.log(cart);
+
     let result = await fetch(endpoint, {
       method: "GET",
       headers: {
@@ -139,7 +143,7 @@ const ExibeProdutos = () => {
 
                 <DefaultButton
                   text={"Adicionar ao Carrinho"}
-                  onPress={() => addItemToCart(item)}
+                  onPress={async () => await addItemToCart(item)}
                 />
               </View>
               <Text style={styles.paragraph}> </Text>

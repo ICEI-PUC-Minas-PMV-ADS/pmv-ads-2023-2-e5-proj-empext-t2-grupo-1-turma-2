@@ -19,6 +19,7 @@ import MenuInferior from "../../Components/MenuInferior";
 import SelectDropdown from "react-native-select-dropdown";
 
 const PedidosCliente = () => {
+  console.disableYellowBox = true;
   const navigation = useNavigation();
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -112,7 +113,7 @@ const PedidosCliente = () => {
   };
 
   const contatoLoja = async () => {
-    const cell = "5531994543201";
+    const cell = "5531998325314";
     Linking.openURL(
       `https://api.whatsapp.com/send?phone=${cell}&text=Ola, gostaria de entrar em contato com a loja para falar sobre os meus pedidos!"`
     );

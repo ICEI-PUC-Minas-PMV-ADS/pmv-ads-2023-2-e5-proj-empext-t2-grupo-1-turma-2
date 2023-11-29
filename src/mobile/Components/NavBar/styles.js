@@ -8,11 +8,12 @@ export const styles = StyleSheet.create({
     margin: 40
   },
   arrow: {
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
+    marginTop:20
   },
   logo: {
-    width: 32,
-    height: 30,
+    width: 60,
+    height: 60,
   },
 });
