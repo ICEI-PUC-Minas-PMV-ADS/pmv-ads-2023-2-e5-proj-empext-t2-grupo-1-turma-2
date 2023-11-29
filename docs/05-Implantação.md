@@ -17,7 +17,7 @@ Neste projeto, utilizaremos para aplicação:
 -  o [React Native Paper](https://callstack.github.io/react-native-paper/), uma coleção de componentes já prontos para uso.
 
 O IDE de desenvolvimento será o [Visual Studio Code](https://code.visualstudio.com/).
-
+engenharia de software 
 Para o design das telas, utilizamos o [Canva](https://www.canva.com/)
 
 
@@ -26,5 +26,15 @@ Para o design das telas, utilizamos o [Canva](https://www.canva.com/)
 A hospedagem da aplicação será feita através da apk anexa ou via playstore
 
 •	Apresentar o planejamento de evolução da aplicação.
+
+Depois de implantados, sistemas devem inevitavelmente mudar para permanecerem úteis, as mudanças no ambiente requerem atualizações do sistema.
+As fases de um sistema são:
+- Desenvolvimento Inicial :  Primeira solicitação do cliente;
+- Em Evolução :  Sistema é intensamente usado (Mudanças significativas são feitas tanto na arquitetura quando nas funcionalidades);
+- Em Serviço :  Sistema é pouco usado (Apenas mudanças pequenas e essenciais ocorrem);
+- Interrupção gradual :  Empresa considera a substituição do sistema.
+
+Os processos de evolução podem variar e cada solicitação de mudança é avaliada, planejada e implementada conforme figura a seguir:
+
 
 
