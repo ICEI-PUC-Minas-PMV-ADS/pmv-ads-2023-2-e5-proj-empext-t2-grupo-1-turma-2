@@ -34,7 +34,8 @@ As fases de um sistema são:
 - Em Serviço :  Sistema é pouco usado (Apenas mudanças pequenas e essenciais ocorrem);
 - Interrupção gradual :  Empresa considera a substituição do sistema.
 
-Os processos de evolução podem variar e cada solicitação de mudança é avaliada, planejada e implementada conforme figura a seguir:
+Os processos de evolução podem variar e cada solicitação de mudança é avaliada, planejada e implementada conforme figura de Pressman (2021) a seguir:
+![ProcessoEvolução](img/ProcessoEvolucao.png)
 
 
 
