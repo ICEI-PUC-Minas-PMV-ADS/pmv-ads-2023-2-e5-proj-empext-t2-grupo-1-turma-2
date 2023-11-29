@@ -121,7 +121,7 @@ etiquetas:</p>
 
 ## Metodologia ágil
 
-A equipe O Que tem pra Hoje utiliza métodos ágeis como metodologia de trabalho de acompanhamento do projeto. O método Scrum foi definido como base do processo de desenvolvimento. A equipe está organizada da seguinte maneira, conforme especificado no Project Model Canvas
+A equipe Doceria Ana Diniz utiliza métodos ágeis como metodologia de trabalho de acompanhamento do projeto. O método Scrum foi definido como base do processo de desenvolvimento. A equipe está organizada da seguinte maneira, conforme especificado no Project Model Canvas
 
 A equipe trabalhará com divisões de tarefas e com encontros semanais após reunião com o P.O. para planejar e tirar dúvidas a respeito das tarefas delegadas.
 Na primeira reunião de cada etapa, as tarefas serão organizadas e distribuídas.
