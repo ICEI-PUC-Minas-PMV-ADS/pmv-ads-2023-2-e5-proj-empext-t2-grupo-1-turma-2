@@ -56,7 +56,6 @@ Para atender os requisitos funcionais e não funcionais propomos a seguinte arqu
 - Banco de Dados - Banco de Dados Relacional MySQL.
 - API de Entrega - Express Delivery para a entrega dos produtos.
 - Gateway de Pagamento - em definição.
-- API dos Correios - para definição do raio de CEPs atendimentos pela Ana Diniz Doceria.
 - Whatsapp - para comunicação direta com o cliente.
 - Instagram - para divulgação e marketing.
 
