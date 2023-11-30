@@ -20,14 +20,7 @@ O IDE de desenvolvimento será o [Visual Studio Code](https://code.visualstudio.
 engenharia de software 
 Para o design das telas, utilizamos o [Canva](https://www.canva.com/)
 
-
-## Hospedagem
-
-A hospedagem da aplicação será feita através da apk anexa ou via playstore
-
-•	Apresentar o planejamento de evolução da aplicação.
-
-Depois de implantados, sistemas devem inevitavelmente mudar para permanecerem úteis, as mudanças no ambiente requerem atualizações do sistema.
+Depois de implantados, os sistemas devem inevitavelmente mudar para permanecerem úteis, as mudanças no ambiente requerem atualizações do sistema.
 As fases de um sistema são:
 - Desenvolvimento Inicial :  Primeira solicitação do cliente;
 - Em Evolução :  Sistema é intensamente usado (Mudanças significativas são feitas tanto na arquitetura quando nas funcionalidades);
@@ -35,7 +28,12 @@ As fases de um sistema são:
 - Interrupção gradual :  Empresa considera a substituição do sistema.
 
 Os processos de evolução podem variar e cada solicitação de mudança é avaliada, planejada e implementada conforme figura de Pressman (2021) a seguir:
+
 ![ProcessoEvolução](img/ProcessoEvolucao.png)
 
+
+## Hospedagem
+
+A hospedagem da aplicação será feita através da apk anexa ou via playstore
 
 
