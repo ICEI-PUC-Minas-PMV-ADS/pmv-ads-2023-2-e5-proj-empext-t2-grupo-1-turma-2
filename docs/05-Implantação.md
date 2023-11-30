@@ -2,7 +2,7 @@
 
 •	Apresentar o planejamento da implantação: descrever tecnologias e processo de implantação.
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas e processo de implantação
 
 Neste projeto, utilizaremos para aplicação:
 
