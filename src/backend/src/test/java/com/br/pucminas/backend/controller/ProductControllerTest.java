@@ -32,9 +32,9 @@ public class ProductControllerTest {
     @Test
     public void testGetProfile() {
         List<Product> productList = Arrays.asList(new Product(), new Product());
-        Mockito.when(productService.findAll()).thenReturn(productList);
+        Mockito.when(productService.findAll("")).thenReturn(productList);
 
-        ResponseEntity<List<Product>> response = productController.getProfile();
+        ResponseEntity<List<Product>> response = productController.getProduct("");
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(productList, response.getBody());
@@ -44,9 +44,9 @@ public class ProductControllerTest {
     public void testFindProductsByCategory() {
         String category = "exampleCategory";
         List<Product> productList = Arrays.asList(new Product(), new Product());
-        Mockito.when(productService.findAll()).thenReturn(productList);
+        Mockito.when(productService.findAll("")).thenReturn(productList);
 
-        ResponseEntity<List<Product>> response = productController.findProductsByCategory(category);
+        ResponseEntity<List<Product>> response = productController.getProduct(category);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(productList, response.getBody());

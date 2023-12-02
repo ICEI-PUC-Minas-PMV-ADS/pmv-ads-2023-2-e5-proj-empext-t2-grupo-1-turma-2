@@ -38,7 +38,7 @@ public class PromotionCampainControllerTest {
         List<PromotionCampain> campainList = new ArrayList<>();
         Mockito.when(promotionCampainService.findAll()).thenReturn(campainList);
 
-        ResponseEntity<List<PromotionCampain>> response = promotionCampainController.getProfile();
+        ResponseEntity<List<PromotionCampain>> response = promotionCampainController.getPromotion();
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(campainList, response.getBody());
@@ -50,7 +50,7 @@ public class PromotionCampainControllerTest {
         PromotionCampain createdCampain = new PromotionCampain();
         Mockito.when(promotionCampainService.createProduct(campainForm)).thenReturn(createdCampain);
 
-        ResponseEntity<PromotionCampain> response = promotionCampainController.postUser(campainForm);
+        ResponseEntity<PromotionCampain> response = promotionCampainController.insertPromotion(campainForm);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals(createdCampain, response.getBody());

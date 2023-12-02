@@ -7,6 +7,6 @@ COPY backend.jar /backend.war
 
 EXPOSE 8080
 
-CMD ["/usr/bin/java", "-Duser.timezone=America/Sao_Paulo", "-jar", "/backend.war"]
+CMD ["/usr/bin/java", "-XX:+ExitOnOutOfMemoryError","-Xms256m","-Xmx256m","-Duser.timezone=America/Sao_Paulo", "-jar", "/backend.war"]
 
 
