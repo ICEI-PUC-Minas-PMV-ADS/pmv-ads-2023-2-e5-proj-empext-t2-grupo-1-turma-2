@@ -47,7 +47,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 Para atender os requisitos funcionais e não funcionais propomos a seguinte arquitetura.
 
-![Diagrama de Integrações](img/digragramadeintegracoes2.png)
+![Diagrama de Integrações](img/digragramadeintegracoes2..png)
 
 # Tecnologias e Integrações
 
