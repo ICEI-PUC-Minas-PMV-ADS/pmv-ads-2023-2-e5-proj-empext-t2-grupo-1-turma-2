@@ -1,6 +1,5 @@
 # Apresentação da Solução
 
-Link com vídeo da aplicação em funcionamento (etapa 4):
-https://drive.google.com/file/d/1LjzG5YRUYHeaDZ008VdXbgsuNEI8Dvjt/view?usp=sharing
+Slides: [Clique aqui para visualizar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t2-grupo-1-turma-2/blob/main/presentation/Ana%20Diniz%20Doceria-%20Apresenta%C3%A7%C3%A3o%20Final.pdf)
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo. (etapa 5)
+Vídeo de apresentação da solução desenvolvida: [Clique aqui para assistir](https://youtu.be/MttdJ8U4GYI?si=8ZvfwvtqjndBqeNv)
