@@ -52,12 +52,9 @@ Para atender os requisitos funcionais e não funcionais propomos a seguinte arqu
 # Tecnologias e Integrações
 
 - Back End - App Java sendo executada em containers Docker.
-- Front End - será desenvolvido em React Native.
+- Front End - React Native.
 - Banco de Dados - Banco de Dados Relacional MySQL.
-- API de Entrega - Express Delivery para a entrega dos produtos.
-- Gateway de Pagamento - em definição.
 - Whatsapp - para comunicação direta com o cliente.
-- Instagram - para divulgação e marketing.
 
 ## Project Model Canvas
 
