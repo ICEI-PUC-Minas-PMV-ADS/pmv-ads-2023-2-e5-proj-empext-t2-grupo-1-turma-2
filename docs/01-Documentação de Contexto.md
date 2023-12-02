@@ -23,8 +23,7 @@ Como objetivos específicos, podemos ressaltar:
  
 -	Fornecer funcionalidades que permita que o cliente conheça os produtos produzidos, através de fotos, vídeos, catálogo de preços e que tenha facilidades para interagir com a proprietária para esclarecer dúvidas; 
 -	Integrar com WhatsApp web para contato com a proprietária; 
--	Integrar com Instagram para contato com a proprietária; 
--	Permitir a finalização do pedido, gerar dados de previsão de entrega, valor de frete, forma de pagamento e cupons de desconto (Programa de Fidelidade);
+-	Permitir a finalização do pedido;
 -	Permitir a inserção da quantidade do produto em estoque e seu gerenciamento;
 -	Fidelizar clientes; 
 -	Aumentar alcance da proprietária com clientes. 
