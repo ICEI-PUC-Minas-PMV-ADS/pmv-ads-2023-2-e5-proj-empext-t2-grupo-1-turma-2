@@ -65,34 +65,44 @@ function ChooseSweet() {
     }
   };
 
+  const navProdutos = async () => {
+    const user = await AsyncStorage.getItem("userData");
+
+    if (JSON.parse(user).isRootUser) {
+      navigation.navigate("ExibeProdutosAdmin");
+    } else {
+      navigation.navigate("ExibeProdutos");
+    }
+  };
+
   const selectIndispensaveis = async () => {
     await AsyncStorage.setItem("category", "Indispensáveis");
-    navigation.navigate("ExibeProdutos");
+    await navProdutos();
   };
 
   const selectCoxinhasDoces = async () => {
     await AsyncStorage.setItem("category", "Coxinhas Doces");
-    navigation.navigate("ExibeProdutos");
+    await navProdutos();
   };
 
   const selectCopoes = async () => {
     await AsyncStorage.setItem("category", "Copões");
-    navigation.navigate("ExibeProdutos");
+    await navProdutos();
   };
 
   const selectTortinhas = async () => {
     await AsyncStorage.setItem("category", "Tortinhas");
-    navigation.navigate("ExibeProdutos");
+    await navProdutos();
   };
 
   const selectSalgados = async () => {
     await AsyncStorage.setItem("category", "Salgados");
-    navigation.navigate("ExibeProdutos");
+    await navProdutos();
   };
 
   const selectBebidas = async () => {
     await AsyncStorage.setItem("category", "Bebidas");
-    navigation.navigate("ExibeProdutos");
+    await navProdutos();
   };
 
   return (

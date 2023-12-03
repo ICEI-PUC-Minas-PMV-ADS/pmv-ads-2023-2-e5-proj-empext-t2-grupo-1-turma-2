@@ -58,7 +58,7 @@ public class ProductControllerTest {
         Product createdProduct = new Product();
         Mockito.when(productService.createProduct(productForm)).thenReturn(createdProduct);
 
-        ResponseEntity<Product> response = productController.postUser(productForm);
+        ResponseEntity<Product> response = productController.postProduct(productForm);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals(createdProduct, response.getBody());

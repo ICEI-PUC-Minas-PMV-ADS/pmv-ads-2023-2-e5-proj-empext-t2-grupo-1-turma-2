@@ -32,8 +32,15 @@ public class ProductController {
 
     // ROTA DE POST - /v1/profile Teste@123.com
     @PostMapping("/v1/product")
-    public ResponseEntity<Product> postUser(@RequestBody ProductForm form) {
+    public ResponseEntity<Product> postProduct(@RequestBody ProductForm form) {
         Product newProduct = productService.createProduct(form);
         return ResponseEntity.created(URI.create("/v1/product" + newProduct.getId())).body(newProduct);
     }
+
+    @PutMapping("/v1/product/{id}")
+    public ResponseEntity<Product> putProduct(@PathVariable Integer id, @RequestBody ProductForm form) {
+        Product newProduct = productService.updateProduct(id, form);
+        return ResponseEntity.created(URI.create("/v1/product" + newProduct.getId())).body(newProduct);
+    }
+
 }

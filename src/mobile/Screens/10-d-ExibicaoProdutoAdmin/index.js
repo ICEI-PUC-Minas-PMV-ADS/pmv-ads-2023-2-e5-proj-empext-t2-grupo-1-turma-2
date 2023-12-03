@@ -8,81 +8,39 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import MenuInferior from "../../Components/MenuInferior";
 
-const ExibeProdutos = () => {
+const ExibeProdutosAdmin = () => {
   const navigation = useNavigation();
   const [data, setData] = useState([]);
-  const [cart, setCart] = useState([]);
   const [isLoading, setLoading] = useState(false);
-  const [isAdmin, setAdmin] = useState(false);
+  const [cart, setCart] = useState([]);
 
   const retorno = async () => {
-    const user = await AsyncStorage.getItem("userData");
 
     if(cart != null){
       await AsyncStorage.setItem("cart", JSON.stringify(cart));
     }
 
-
-    if (JSON.parse(user).isRootUser) {
-      navigation.navigate("GerenciaProdutos");
-    } else {
-      navigation.navigate("ChooseSweet");
-    }
+    navigation.navigate("ChooseSweet");
   };
 
-  const closeOrder = async () => {
-    await AsyncStorage.setItem("cart", JSON.stringify(cart));
-    console.log(cart)
 
-    navigation.navigate("NewCarrinho")
-  }
-
-  const addItemToCart = async (item) => {
+  const editCart = async (item) => {
     console.log(item);
-    console.log(typeof cart);
-
-    let repeated = false;
-
-    const product = {
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      link: item.link,
-      quantity: 1,
-    };
-
-    for (const element of cart) {
-      if (element.id === product.id) {
-        element.quantity += 1;
-        repeated = true;
-      }
-    }
-
-    if (!repeated) {
-      cart.push(product);
-    }
-
-    await AsyncStorage.setItem("cart", JSON.stringify(cart));
-    Alert.alert("Sucesso", "Produto adicionado ao carrinho");
-    console.log(cart);
+    await AsyncStorage.setItem("item", JSON.stringify(item));
+    navigation.navigate("EditaProduto");
   };
 
   const getParams = async () => {
 
     const category = await AsyncStorage.getItem('category');
-    const newCart = await AsyncStorage.getItem('cart');
-
-    setCart(JSON.parse(newCart));
-    console.log(category, cart);
+    console.log(category);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
     const host = "https://anadinizdoceria-back-ff0334c828d0.herokuapp.com";
     const port = "8080";
 
     const endpoint = `${host}/api/v1/product?category=${category}`;
-
     console.log(endpoint);
-    console.log(cart);
 
     let result = await fetch(endpoint, {
       method: "GET",
@@ -105,6 +63,7 @@ const ExibeProdutos = () => {
      
      <Nav onPress={retorno} />
 
+     
 
       <View style={styles.container}>
         {isLoading ? (
@@ -144,26 +103,13 @@ const ExibeProdutos = () => {
                 <Text style={styles.paragraph}> </Text>
 
                 <DefaultButton
-                  text={"Adicionar ao Carrinho"}
-                  onPress={async () => await addItemToCart(item)}
+                  text={"Editar Produto"}
+                  onPress={async () => await editCart(item)}
                 />
               </View>
               <Text style={styles.paragraph}> </Text>
             </>
           ))
-        )}
-      <Text style={styles.paragraph}> </Text>
-
-        {!isAdmin ? (
-          <DefaultButton
-            text={"Fechar o Pedido"}
-            onPress={closeOrder}
-          />
-        ) : (
-          <DefaultButton
-            text={"Adicionar Produtos ao Cardapio"}
-            onPress={() => navigation.navigate("NovoProduto")}
-          />
         )}
 
         <Text style={styles.paragraph}> </Text>
@@ -173,4 +119,4 @@ const ExibeProdutos = () => {
   );
 };
 
-export default ExibeProdutos;
+export default ExibeProdutosAdmin;
