@@ -22,11 +22,11 @@ const ExibeProdutosCategoria = () => {
 
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = 'http://192.168.0.132'
+    const host = 'https://anadinizdoceria-back-ff0334c828d0.herokuapp.com'
     const port = '8080' 
     
     
-    const endpoint = `${host}:${port}/api/v1/product/find-by-category?${category}`;
+    const endpoint = `${host}/api/v1/product/find-by-category?${category}`;
 
     let result = await fetch(endpoint, {
       method: 'GET',
