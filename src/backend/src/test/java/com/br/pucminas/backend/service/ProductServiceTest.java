@@ -33,7 +33,7 @@ public class ProductServiceTest {
         List<Product> productList = new ArrayList<>();
         Mockito.when(productRepository.findAll()).thenReturn(productList);
 
-        List<Product> result = productService.findAll();
+        List<Product> result = productService.findAll("");
 
         assertEquals(productList, result);
     }

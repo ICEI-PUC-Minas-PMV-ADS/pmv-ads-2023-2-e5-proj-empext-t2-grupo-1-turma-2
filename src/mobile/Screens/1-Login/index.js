@@ -25,14 +25,14 @@ const Login = () => {
     console.log("Recuperando conta...");
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "https://backend-vq7d276ypa-uc.a.run.app";
+    const host = "https://anadinizdoceria-back-ff0334c828d0.herokuapp.com";
     const port = "8080";
 
     if (email == "" || email == null) {
       Alert.alert("Erro", "Digite um e-mail válido");
     }
 
-    const endpoint = `${host}:${port}/api/v1/user/recovery-password/${email}`;
+    const endpoint = `${host}/api/v1/user/recovery-password/${email}`;
 
     console.log(endpoint);
 
@@ -62,10 +62,10 @@ const Login = () => {
     let encoderUser = JSON.stringify(user);
     console.log(encoderUser);
 
-    const host = "https://backend-vq7d276ypa-uc.a.run.app";
+    const host = "https://anadinizdoceria-back-ff0334c828d0.herokuapp.com";
     const port = "8080";
 
-    const endpoint = `${host}:${port}/api/v1/user/login`;
+    const endpoint = `${host}/api/v1/user/login`;
 
     console.log(endpoint);
     console.log(encoderUser);

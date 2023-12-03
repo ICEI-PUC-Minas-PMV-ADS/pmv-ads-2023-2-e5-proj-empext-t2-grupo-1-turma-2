@@ -41,10 +41,10 @@ const PedidosAdmin = () => {
     console.log(user);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "https://backend-vq7d276ypa-uc.a.run.app";
+    const host = "https://anadinizdoceria-back-ff0334c828d0.herokuapp.com";
     const port = "8080";
 
-    const endpoint = `${host}:${port}/api/v1/order?email=${
+    const endpoint = `${host}/api/v1/order?email=${
       JSON.parse(user).email
     }`;
 
@@ -89,10 +89,10 @@ const PedidosAdmin = () => {
     console.log("Editando pedido.");
     console.log(item);
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "https://backend-vq7d276ypa-uc.a.run.app";
+    const host = "https://anadinizdoceria-back-ff0334c828d0.herokuapp.com";
     const port = "8080";
 
-    const endpoint = `${host}:${port}/api/v1/order/${
+    const endpoint = `${host}/api/v1/order/${
       item.id
     }/status/${parseNameToStatus(statusPedidoSelecionado2)}`;
 
@@ -122,10 +122,10 @@ const PedidosAdmin = () => {
     console.log(user);
 
     // Para testar, trocar o IP para o IP LAN ou IPV4 da máquina que está rodando o backend
-    const host = "https://backend-vq7d276ypa-uc.a.run.app";
+    const host = "https://anadinizdoceria-back-ff0334c828d0.herokuapp.com";
     const port = "8080";
 
-    const endpoint = `${host}:${port}/api/v1/order?email=${
+    const endpoint = `${host}/api/v1/order?email=${
       JSON.parse(user).email
     }&status=${parseNameToStatus(statusPedidoSelecionado)}`;
 

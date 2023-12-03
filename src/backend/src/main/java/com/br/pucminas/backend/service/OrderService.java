@@ -4,21 +4,16 @@ import com.br.pucminas.backend.domain.entity.*;
 import com.br.pucminas.backend.model.usercase.*;
 import org.springframework.stereotype.Service;
 
-import com.br.pucminas.backend.repository.CartRepository;
 import com.br.pucminas.backend.repository.OrderProductRepository;
 import com.br.pucminas.backend.repository.OrderRepository;
 import com.br.pucminas.backend.repository.ProductRepository;
 import com.br.pucminas.backend.repository.UserRepository;
-import com.br.pucminas.backend.utils.enums.Operacao;
 import com.br.pucminas.backend.utils.enums.StatusPedido;
-import com.br.pucminas.backend.utils.enums.SystemErrors;
 
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -40,12 +35,6 @@ public class OrderService {
 
     @Autowired
     ProductRepository productRepository;
-
-    @Autowired
-    CartService cartService;
-
-    @Autowired
-    CartRepository cartRepository;
 
     public List<OrderResponse> findAllOrders(){
         
