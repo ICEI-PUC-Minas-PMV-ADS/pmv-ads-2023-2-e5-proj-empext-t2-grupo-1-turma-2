@@ -51,9 +51,11 @@ Para atender os requisitos funcionais e não funcionais propomos a seguinte arqu
 
 # Tecnologias e Integrações
 
-- Back End - App Java sendo executada em containers Docker.
-- Front End - React Native.
-- Banco de Dados - Banco de Dados Relacional MySQL.
+- Back End - a IDE da Jetbrains (IntelliJ) para compilar api em java integrado com banco h2 (dados em memoria) e o Postman para testar as requisições com essa API
+- Front End - [React Native](https://reactnative.dev/), uma biblioteca escrita utilizando a linguagem Java para criar interfaces componentizadas e reutilizáveis e VsCode como editor para codar o frontend.
+- Para testar a aplicação de forma nativa, utilizamos o Expo Go direto dos celulares que o grupo tem em mãos.
+- O IDE de desenvolvimento será o [Visual Studio Code](https://code.visualstudio.com/).
+- Para o design das telas, utilizamos o [Canva](https://www.canva.com/)
 - Whatsapp - para comunicação direta com o cliente.
 
 ## Project Model Canvas
