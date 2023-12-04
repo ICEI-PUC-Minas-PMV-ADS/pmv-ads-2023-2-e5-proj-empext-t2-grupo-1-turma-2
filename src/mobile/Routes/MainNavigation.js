@@ -37,6 +37,8 @@ import NewCarrinho from "../Screens/19-b-NewCarrinho/index";
 import Carrinho from "../Screens/19-Carrinho/index";
 
 import PedidosAdmin from "../Screens/20-AcompanharPedido-admin/index";
+import EditaProduto from "../Screens/9-b-EditaProduto/index";
+import ExibeProdutosAdmin from "../Screens/10-d-ExibicaoProdutoAdmin/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -248,6 +250,23 @@ const Main = () => {
           header: () => null,
         }}
         />
+
+      <Stack.Screen
+        name="EditaProduto"
+        component={EditaProduto}
+        options={{
+          header: () => null,
+        }}
+      />
+
+      <Stack.Screen
+        name="ExibeProdutosAdmin"
+        component={ExibeProdutosAdmin}
+        options={{
+          header: () => null,
+        }}
+      />
+      
     </Stack.Navigator>
   );
 };

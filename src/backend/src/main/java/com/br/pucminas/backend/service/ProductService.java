@@ -49,6 +49,24 @@ public class ProductService {
         return newProduct;
     }
 
+    public Product updateProduct(Integer id, ProductForm form){
+
+        Product newProduct = Product.
+                builder().
+                id(id).
+                name(form.getName()).
+                description(form.getDescription()).
+                category(form.getCategory()).
+                quantity(form.getQuantity()).
+                link(form.getLink()).
+                price(form.getPrice()).
+                build();
+
+        productRepository.save(newProduct);
+
+        return newProduct;
+    }
+
 
 
 

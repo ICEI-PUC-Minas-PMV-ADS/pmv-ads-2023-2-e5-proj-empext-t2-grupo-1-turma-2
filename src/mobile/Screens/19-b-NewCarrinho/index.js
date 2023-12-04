@@ -189,7 +189,6 @@ const NewCarrinho = () => {
   };
 
   useEffect(async () => {
-    setLoading(true);
     await getParams();
   }, []);
 
