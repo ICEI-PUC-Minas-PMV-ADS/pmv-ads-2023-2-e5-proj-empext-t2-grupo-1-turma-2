@@ -23,7 +23,7 @@ O projeto Ana Diniz Doceria visa oferecer um ambiente de compras intuitivo para 
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Acesse o link e instale a aplicação - https://expo.dev//accounts/pedro.d.jardim/projects/Ana-Diniz-Doceria/builds/b659c91e-bcfa-4f7b-83a7-5d2256418775
 
 # Documentação
 
